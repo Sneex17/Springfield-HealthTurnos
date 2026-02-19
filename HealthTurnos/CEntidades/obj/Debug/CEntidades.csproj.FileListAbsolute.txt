@@ -1,0 +1,6 @@
+C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CEntidades\bin\Debug\CEntidades.dll
+C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CEntidades\bin\Debug\CEntidades.pdb
+C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CEntidades\obj\Debug\CEntidades.csproj.AssemblyReference.cache
+C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CEntidades\obj\Debug\CEntidades.csproj.CoreCompileInputs.cache
+C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CEntidades\obj\Debug\CEntidades.dll
+C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CEntidades\obj\Debug\CEntidades.pdb

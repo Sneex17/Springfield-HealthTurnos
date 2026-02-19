@@ -1,0 +1,11 @@
+C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CNegocio\bin\Debug\CNegocio.dll
+C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CNegocio\bin\Debug\CNegocio.pdb
+C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CNegocio\bin\Debug\CDatos.dll
+C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CNegocio\bin\Debug\CEntidades.dll
+C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CNegocio\bin\Debug\CDatos.pdb
+C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CNegocio\bin\Debug\CEntidades.pdb
+C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CNegocio\obj\Debug\CNegocio.csproj.AssemblyReference.cache
+C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CNegocio\obj\Debug\CNegocio.csproj.CoreCompileInputs.cache
+C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CNegocio\obj\Debug\CNegocio.csproj.Up2Date
+C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CNegocio\obj\Debug\CNegocio.dll
+C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CNegocio\obj\Debug\CNegocio.pdb

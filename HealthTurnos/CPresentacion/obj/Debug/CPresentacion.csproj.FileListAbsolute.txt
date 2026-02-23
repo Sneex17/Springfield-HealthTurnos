@@ -67,3 +67,8 @@ C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CPresen
 C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CPresentacion\bin\Debug\CNegocio.dll
 C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CPresentacion\bin\Debug\CEntidades.pdb
 C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CPresentacion\bin\Debug\CNegocio.pdb
+C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CPresentacion\bin\Debug\MaterialSkin.dll
+C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CPresentacion\obj\Debug\CPresentacion.Views.MenuPrincipal.resources
+C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CPresentacion\obj\Debug\CPresentacion.FrmClientes.resources
+C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CPresentacion\obj\Debug\CPresentacion.UserControl1.resources
+C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CPresentacion\bin\Debug\Guna.UI2.dll

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CPresentacion.Views;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace CPresentacion
 {
@@ -38,6 +40,13 @@ namespace CPresentacion
                 BuVerPass.IconChar = FontAwesome.Sharp.IconChar.Eye;
                 textbPassword.UseSystemPasswordChar = true;
             }
+        }
+
+        private void BuAcceder_Click(object sender, EventArgs e)
+        {
+            MenuPrincipal menu = new MenuPrincipal();
+            menu.Show();
+            this.Hide();
         }
     }
 }

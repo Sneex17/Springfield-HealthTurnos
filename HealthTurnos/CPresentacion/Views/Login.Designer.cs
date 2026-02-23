@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.panelFondo = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.BuVerPass = new FontAwesome.Sharp.IconButton();
             this.iconPassword = new FontAwesome.Sharp.IconPictureBox();
             this.textbPassword = new System.Windows.Forms.TextBox();
@@ -38,8 +40,7 @@
             this.iconUser = new FontAwesome.Sharp.IconPictureBox();
             this.textbUsuario = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.BuAcceder = new Guna.UI2.WinForms.Guna2GradientButton();
             this.panelFondo.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPassword)).BeginInit();
@@ -53,13 +54,15 @@
             this.panelFondo.Controls.Add(this.panel1);
             this.panelFondo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelFondo.Location = new System.Drawing.Point(0, 0);
+            this.panelFondo.Margin = new System.Windows.Forms.Padding(2);
             this.panelFondo.Name = "panelFondo";
-            this.panelFondo.Size = new System.Drawing.Size(782, 453);
+            this.panelFondo.Size = new System.Drawing.Size(588, 375);
             this.panelFondo.TabIndex = 0;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.BuAcceder);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.BuVerPass);
@@ -69,10 +72,35 @@
             this.panel1.Controls.Add(this.iconUser);
             this.panel1.Controls.Add(this.textbUsuario);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(248, 12);
+            this.panel1.Location = new System.Drawing.Point(186, 10);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(287, 428);
+            this.panel1.Size = new System.Drawing.Size(215, 348);
             this.panel1.TabIndex = 0;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Simpsonfont", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label4.Location = new System.Drawing.Point(19, 45);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(174, 31);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "HealthTurnos";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Simpsonfont", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label3.Location = new System.Drawing.Point(6, 13);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(202, 31);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "The Springfield";
             // 
             // BuVerPass
             // 
@@ -83,9 +111,10 @@
             this.BuVerPass.IconColor = System.Drawing.Color.Black;
             this.BuVerPass.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BuVerPass.IconSize = 32;
-            this.BuVerPass.Location = new System.Drawing.Point(239, 210);
+            this.BuVerPass.Location = new System.Drawing.Point(179, 171);
+            this.BuVerPass.Margin = new System.Windows.Forms.Padding(2);
             this.BuVerPass.Name = "BuVerPass";
-            this.BuVerPass.Size = new System.Drawing.Size(38, 32);
+            this.BuVerPass.Size = new System.Drawing.Size(28, 26);
             this.BuVerPass.TabIndex = 6;
             this.BuVerPass.UseVisualStyleBackColor = false;
             this.BuVerPass.Click += new System.EventHandler(this.BuVerPass_Click);
@@ -97,9 +126,11 @@
             this.iconPassword.IconChar = FontAwesome.Sharp.IconChar.Lock;
             this.iconPassword.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.iconPassword.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPassword.Location = new System.Drawing.Point(3, 207);
+            this.iconPassword.IconSize = 24;
+            this.iconPassword.Location = new System.Drawing.Point(2, 168);
+            this.iconPassword.Margin = new System.Windows.Forms.Padding(2);
             this.iconPassword.Name = "iconPassword";
-            this.iconPassword.Size = new System.Drawing.Size(32, 32);
+            this.iconPassword.Size = new System.Drawing.Size(24, 26);
             this.iconPassword.TabIndex = 5;
             this.iconPassword.TabStop = false;
             // 
@@ -107,18 +138,20 @@
             // 
             this.textbPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textbPassword.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textbPassword.Location = new System.Drawing.Point(41, 213);
+            this.textbPassword.Location = new System.Drawing.Point(31, 173);
+            this.textbPassword.Margin = new System.Windows.Forms.Padding(2);
             this.textbPassword.Name = "textbPassword";
-            this.textbPassword.Size = new System.Drawing.Size(192, 26);
+            this.textbPassword.Size = new System.Drawing.Size(144, 22);
             this.textbPassword.TabIndex = 4;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Montserrat SemiBold", 9F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(37, 189);
+            this.label2.Location = new System.Drawing.Point(28, 154);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(98, 21);
+            this.label2.Size = new System.Drawing.Size(77, 16);
             this.label2.TabIndex = 3;
             this.label2.Text = "Contraseña";
             // 
@@ -129,9 +162,11 @@
             this.iconUser.IconChar = FontAwesome.Sharp.IconChar.User;
             this.iconUser.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.iconUser.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconUser.Location = new System.Drawing.Point(3, 148);
+            this.iconUser.IconSize = 24;
+            this.iconUser.Location = new System.Drawing.Point(2, 120);
+            this.iconUser.Margin = new System.Windows.Forms.Padding(2);
             this.iconUser.Name = "iconUser";
-            this.iconUser.Size = new System.Drawing.Size(32, 32);
+            this.iconUser.Size = new System.Drawing.Size(24, 26);
             this.iconUser.TabIndex = 2;
             this.iconUser.TabStop = false;
             // 
@@ -139,52 +174,53 @@
             // 
             this.textbUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textbUsuario.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textbUsuario.Location = new System.Drawing.Point(41, 154);
+            this.textbUsuario.Location = new System.Drawing.Point(31, 125);
+            this.textbUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.textbUsuario.Name = "textbUsuario";
-            this.textbUsuario.Size = new System.Drawing.Size(192, 26);
+            this.textbUsuario.Size = new System.Drawing.Size(144, 22);
             this.textbUsuario.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Montserrat SemiBold", 9F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(37, 130);
+            this.label1.Location = new System.Drawing.Point(28, 106);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 21);
+            this.label1.Size = new System.Drawing.Size(53, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Usuario";
             // 
-            // label3
+            // BuAcceder
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Simpsonfont", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label3.Location = new System.Drawing.Point(17, 16);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(252, 40);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "The Springfield";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Simpsonfont", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label4.Location = new System.Drawing.Point(34, 55);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(216, 40);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "HealthTurnos";
+            this.BuAcceder.BorderRadius = 17;
+            this.BuAcceder.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BuAcceder.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.BuAcceder.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.BuAcceder.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.BuAcceder.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.BuAcceder.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.BuAcceder.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.BuAcceder.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.BuAcceder.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BuAcceder.ForeColor = System.Drawing.Color.White;
+            this.BuAcceder.Location = new System.Drawing.Point(17, 220);
+            this.BuAcceder.Name = "BuAcceder";
+            this.BuAcceder.Size = new System.Drawing.Size(180, 45);
+            this.BuAcceder.TabIndex = 9;
+            this.BuAcceder.Text = "Acceder al sistema";
+            this.BuAcceder.Click += new System.EventHandler(this.BuAcceder_Click);
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(782, 453);
+            this.ClientSize = new System.Drawing.Size(588, 375);
             this.Controls.Add(this.panelFondo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximumSize = new System.Drawing.Size(800, 500);
-            this.MinimumSize = new System.Drawing.Size(800, 500);
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximumSize = new System.Drawing.Size(604, 414);
+            this.MinimumSize = new System.Drawing.Size(604, 414);
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HealthTurnos";
@@ -210,6 +246,7 @@
         private FontAwesome.Sharp.IconButton BuVerPass;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private Guna.UI2.WinForms.Guna2GradientButton BuAcceder;
     }
 }
 

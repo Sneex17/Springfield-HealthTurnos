@@ -7,11 +7,14 @@ using CEntidades;
 using CDatos;
 using CDatos.Controllers;
 using System.Data;
+using CInfraestructura;
+using System.Net.Http;
 
 namespace CNegocio
 {
     public class ReglasNegocio
     {
+       
         //Empleados
         public static List<Empleado> verEmpleados()
         {
@@ -47,6 +50,14 @@ namespace CNegocio
         public static List<Especialidad> VerEspecialidades()
         {
             return EspecialidadController.VerEspecialiad();
+        }
+
+
+        public static async Task<List<Character>> VerPacientes()
+        {
+            IPacientesRepository repository = new PacientesApiRepository(new HttpClient());
+            var services = new PacienteServices(repository);
+            return await services.ObtenerPacientes();
         }
 
     }

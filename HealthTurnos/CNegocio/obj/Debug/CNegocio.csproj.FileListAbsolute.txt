@@ -13,3 +13,8 @@ C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CNegoci
 C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CNegocio\bin\Debug\CDatos.dll.config
 C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CNegocio\bin\Debug\FluentValidation.dll
 C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CNegocio\bin\Debug\FluentValidation.xml
+C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CNegocio\bin\Debug\CInfraestructura.dll
+C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CNegocio\bin\Debug\CInfraestructura.pdb
+C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CNegocio\bin\Debug\CInfraestructura.dll.config
+C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CNegocio\bin\Debug\Newtonsoft.Json.dll
+C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CNegocio\bin\Debug\Newtonsoft.Json.xml

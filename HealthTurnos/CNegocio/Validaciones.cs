@@ -2,6 +2,7 @@
 using FluentValidation;
 using System;
 using System.Security.Cryptography;
+using CNegocio;
 
 namespace CNegocio
 {

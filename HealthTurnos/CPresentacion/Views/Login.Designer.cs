@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.panelFondo = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.BuAcceder = new MaterialSkin.Controls.MaterialButton();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.BuVerPass = new FontAwesome.Sharp.IconButton();
@@ -40,7 +41,6 @@
             this.iconUser = new FontAwesome.Sharp.IconPictureBox();
             this.textbUsuario = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.BuAcceder = new MaterialSkin.Controls.MaterialButton();
             this.panelFondo.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPassword)).BeginInit();
@@ -77,6 +77,26 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(215, 348);
             this.panel1.TabIndex = 0;
+            // 
+            // BuAcceder
+            // 
+            this.BuAcceder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BuAcceder.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.BuAcceder.Depth = 0;
+            this.BuAcceder.HighEmphasis = true;
+            this.BuAcceder.Icon = null;
+            this.BuAcceder.Location = new System.Drawing.Point(17, 253);
+            this.BuAcceder.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.BuAcceder.MouseState = MaterialSkin.MouseState.HOVER;
+            this.BuAcceder.Name = "BuAcceder";
+            this.BuAcceder.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.BuAcceder.Size = new System.Drawing.Size(158, 36);
+            this.BuAcceder.TabIndex = 9;
+            this.BuAcceder.Text = "materialButton1";
+            this.BuAcceder.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.BuAcceder.UseAccentColor = false;
+            this.BuAcceder.UseVisualStyleBackColor = true;
+            this.BuAcceder.Click += new System.EventHandler(this.BuAcceder_Click);
             // 
             // label4
             // 
@@ -190,26 +210,6 @@
             this.label1.Size = new System.Drawing.Size(53, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Usuario";
-            // 
-            // BuAcceder
-            // 
-            this.BuAcceder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BuAcceder.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.BuAcceder.Depth = 0;
-            this.BuAcceder.HighEmphasis = true;
-            this.BuAcceder.Icon = null;
-            this.BuAcceder.Location = new System.Drawing.Point(17, 253);
-            this.BuAcceder.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.BuAcceder.MouseState = MaterialSkin.MouseState.HOVER;
-            this.BuAcceder.Name = "BuAcceder";
-            this.BuAcceder.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.BuAcceder.Size = new System.Drawing.Size(158, 36);
-            this.BuAcceder.TabIndex = 9;
-            this.BuAcceder.Text = "materialButton1";
-            this.BuAcceder.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.BuAcceder.UseAccentColor = false;
-            this.BuAcceder.UseVisualStyleBackColor = true;
-            this.BuAcceder.Click += new System.EventHandler(this.BuAcceder_Click);
             // 
             // Login
             // 

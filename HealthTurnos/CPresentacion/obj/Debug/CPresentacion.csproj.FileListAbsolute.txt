@@ -10,7 +10,6 @@ C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CPresen
 C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CPresentacion\bin\Debug\Microsoft.ReportViewer.Design.dll
 C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CPresentacion\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
 C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CPresentacion\bin\Debug\Microsoft.ReportViewer.WinForms.dll
-C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CPresentacion\bin\Debug\Microsoft.SqlServer.Types.dll
 C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CPresentacion\bin\Debug\EnvDTE.dll
 C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CPresentacion\bin\Debug\stdole.dll
 C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CPresentacion\bin\Debug\de\Microsoft.ReportViewer.Common.resources.dll
@@ -69,8 +68,6 @@ C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CPresen
 C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CPresentacion\bin\Debug\CNegocio.pdb
 C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CPresentacion\bin\Debug\MaterialSkin.dll
 C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CPresentacion\obj\Debug\CPresentacion.Views.MenuPrincipal.resources
-C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CPresentacion\obj\Debug\CPresentacion.FrmClientes.resources
-C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CPresentacion\obj\Debug\CPresentacion.UserControl1.resources
 C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CPresentacion\bin\Debug\CNegocio.dll.config
 C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CPresentacion\obj\Debug\CPresentacion.Plantillas.ucGestion.resources
 C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CPresentacion\obj\Debug\CPresentacion.Views.UserControls.ucEmpleados.resources
@@ -81,3 +78,12 @@ C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CPresen
 C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CPresentacion\bin\Debug\CDatos.dll.config
 C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CPresentacion\bin\Debug\FluentValidation.dll
 C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CPresentacion\bin\Debug\FluentValidation.xml
+C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CPresentacion\bin\Debug\ReaLTaiizor.dll
+C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CPresentacion\bin\Debug\ReaLTaiizor.xml
+C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CPresentacion\bin\Debug\CInfraestructura.dll
+C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CPresentacion\bin\Debug\CInfraestructura.pdb
+C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CPresentacion\bin\Debug\CInfraestructura.dll.config
+C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CPresentacion\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CPresentacion\bin\Debug\Newtonsoft.Json.dll
+C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CPresentacion\bin\Debug\Newtonsoft.Json.xml
+C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CPresentacion\obj\Debug\CPresentacion.fmPacientes.resources

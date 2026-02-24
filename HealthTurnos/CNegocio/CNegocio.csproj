@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ControlExcepciones.cs" />
+    <Compile Include="PacienteServices.cs" />
     <Compile Include="ReglasNegocio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Validaciones.cs" />
@@ -57,6 +58,10 @@
     <ProjectReference Include="..\CEntidades\CEntidades.csproj">
       <Project>{af51b161-86a8-4639-b77d-4d0181750918}</Project>
       <Name>CEntidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CInfraestructura\CInfraestructura.csproj">
+      <Project>{cee41ec9-7c6e-4100-bfd6-d94fc9726d9b}</Project>
+      <Name>CInfraestructura</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

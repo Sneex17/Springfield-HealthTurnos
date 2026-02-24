@@ -63,10 +63,8 @@ namespace CPresentacion.Views
             formulario.TopLevel = false;
             formulario.FormBorderStyle = FormBorderStyle.None;
             formulario.Dock = DockStyle.Fill;
-
             tabPage.Controls.Clear();
             tabPage.Controls.Add(formulario);
-
             formulario.Show();
         }
 
@@ -75,15 +73,13 @@ namespace CPresentacion.Views
             if (materialTabControl1.SelectedTab == tabRegistrarTurno
                 && tabRegistrarTurno.Controls.Count == 0)
             {
-                AbrirFormularioEnTab(new FrmClientes(), tabRegistrarTurno);
+                
             }
 
             if(materialTabControl1.SelectedTab == tabPaciente
                 && tabPaciente.Controls.Count == 0)
             {
-                UserControl1 userControl1 = new UserControl1();
-                userControl1.Dock = DockStyle.Fill;
-                tabPaciente.Controls.Add(userControl1);
+                AbrirFormularioEnTab(new fmPacientes(), tabPaciente);
             }
 
             if (materialTabControl1.SelectedTab == tabEmpleados
@@ -98,7 +94,6 @@ namespace CPresentacion.Views
                 && tabMedicos.Controls.Count == 0)
             {
                 ucMedicos medicos = new ucMedicos();
-                medicos.Refresh();
                 medicos.Dock = DockStyle.Fill;
                 tabMedicos.Controls.Add(medicos);
             }
@@ -107,7 +102,6 @@ namespace CPresentacion.Views
                 && tabAsistente.Controls.Count == 0)
             {
                 ucAsistentes asistentes = new ucAsistentes();
-                asistentes.Refresh();
                 asistentes.Dock = DockStyle.Fill;
                 tabAsistente.Controls.Add(asistentes);
             }

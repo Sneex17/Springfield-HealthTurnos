@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
+
 namespace CPresentacion
 {
     public partial class Login : Form
@@ -18,6 +19,7 @@ namespace CPresentacion
         {
             InitializeComponent();
             Load += (s, e) => CargarComponentes();
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -44,7 +46,7 @@ namespace CPresentacion
 
         private void BuAcceder_Click(object sender, EventArgs e)
         {
-            MenuPrincipal menu = new MenuPrincipal(1);
+            MenuPrincipal menu = new MenuPrincipal(3);
             menu.Show();
             this.Hide();
         }

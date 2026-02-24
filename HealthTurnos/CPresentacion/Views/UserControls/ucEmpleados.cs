@@ -155,5 +155,14 @@ namespace CPresentacion.Views.UserControls
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }    
         }
+
+        private void ucEmpleados_VisibleChanged(object sender, EventArgs e)
+        {
+            if (this.Visible)
+            {
+                LimpiarControles();
+                CargarDatos();
+            }
+        }
     }
 }

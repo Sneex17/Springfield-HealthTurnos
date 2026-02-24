@@ -44,7 +44,7 @@ namespace CPresentacion
 
         private void BuAcceder_Click(object sender, EventArgs e)
         {
-            MenuPrincipal menu = new MenuPrincipal();
+            MenuPrincipal menu = new MenuPrincipal(1);
             menu.Show();
             this.Hide();
         }

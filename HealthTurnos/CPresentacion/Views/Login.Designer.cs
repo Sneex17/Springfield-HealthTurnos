@@ -40,7 +40,7 @@
             this.iconUser = new FontAwesome.Sharp.IconPictureBox();
             this.textbUsuario = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.BuAcceder = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.BuAcceder = new MaterialSkin.Controls.MaterialButton();
             this.panelFondo.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPassword)).BeginInit();
@@ -193,22 +193,22 @@
             // 
             // BuAcceder
             // 
-            this.BuAcceder.BorderRadius = 17;
-            this.BuAcceder.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BuAcceder.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.BuAcceder.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.BuAcceder.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.BuAcceder.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.BuAcceder.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.BuAcceder.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.BuAcceder.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.BuAcceder.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BuAcceder.ForeColor = System.Drawing.Color.White;
-            this.BuAcceder.Location = new System.Drawing.Point(17, 220);
+            this.BuAcceder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BuAcceder.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.BuAcceder.Depth = 0;
+            this.BuAcceder.HighEmphasis = true;
+            this.BuAcceder.Icon = null;
+            this.BuAcceder.Location = new System.Drawing.Point(17, 253);
+            this.BuAcceder.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.BuAcceder.MouseState = MaterialSkin.MouseState.HOVER;
             this.BuAcceder.Name = "BuAcceder";
-            this.BuAcceder.Size = new System.Drawing.Size(180, 45);
+            this.BuAcceder.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.BuAcceder.Size = new System.Drawing.Size(158, 36);
             this.BuAcceder.TabIndex = 9;
-            this.BuAcceder.Text = "Acceder al sistema";
+            this.BuAcceder.Text = "materialButton1";
+            this.BuAcceder.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.BuAcceder.UseAccentColor = false;
+            this.BuAcceder.UseVisualStyleBackColor = true;
             this.BuAcceder.Click += new System.EventHandler(this.BuAcceder_Click);
             // 
             // Login
@@ -246,7 +246,7 @@
         private FontAwesome.Sharp.IconButton BuVerPass;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private Guna.UI2.WinForms.Guna2GradientButton BuAcceder;
+        private MaterialSkin.Controls.MaterialButton BuAcceder;
     }
 }
 

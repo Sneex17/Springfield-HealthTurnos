@@ -71,4 +71,13 @@ C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CPresen
 C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CPresentacion\obj\Debug\CPresentacion.Views.MenuPrincipal.resources
 C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CPresentacion\obj\Debug\CPresentacion.FrmClientes.resources
 C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CPresentacion\obj\Debug\CPresentacion.UserControl1.resources
-C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CPresentacion\bin\Debug\Guna.UI2.dll
+C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CPresentacion\bin\Debug\CNegocio.dll.config
+C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CPresentacion\obj\Debug\CPresentacion.Plantillas.ucGestion.resources
+C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CPresentacion\obj\Debug\CPresentacion.Views.UserControls.ucEmpleados.resources
+C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CPresentacion\obj\Debug\CPresentacion.Views.UserControls.ucAsistentes.resources
+C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CPresentacion\obj\Debug\CPresentacion.Views.UserControls.ucMedicos.resources
+C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CPresentacion\bin\Debug\CDatos.dll
+C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CPresentacion\bin\Debug\CDatos.pdb
+C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CPresentacion\bin\Debug\CDatos.dll.config
+C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CPresentacion\bin\Debug\FluentValidation.dll
+C:\Users\xrami\OneDrive\Escritorio\Springfield HealthTurnos\HealthTurnos\CPresentacion\bin\Debug\FluentValidation.xml

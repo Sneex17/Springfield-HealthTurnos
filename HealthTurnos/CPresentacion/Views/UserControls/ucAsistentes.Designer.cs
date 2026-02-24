@@ -102,9 +102,9 @@
             this.label4.Font = new System.Drawing.Font("Montserrat SemiBold", 11F, System.Drawing.FontStyle.Bold);
             this.label4.Location = new System.Drawing.Point(435, 116);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(106, 21);
+            this.label4.Size = new System.Drawing.Size(45, 21);
             this.label4.TabIndex = 41;
-            this.label4.Text = "Especialidad";
+            this.label4.Text = "Área";
             // 
             // label5
             // 

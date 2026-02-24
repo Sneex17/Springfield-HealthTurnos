@@ -76,7 +76,6 @@ namespace CPresentacion.Views
                 && tabRegistrarTurno.Controls.Count == 0)
             {
                 AbrirFormularioEnTab(new FrmClientes(), tabRegistrarTurno);
-                
             }
 
             if(materialTabControl1.SelectedTab == tabPaciente
@@ -99,6 +98,7 @@ namespace CPresentacion.Views
                 && tabMedicos.Controls.Count == 0)
             {
                 ucMedicos medicos = new ucMedicos();
+                medicos.Refresh();
                 medicos.Dock = DockStyle.Fill;
                 tabMedicos.Controls.Add(medicos);
             }
@@ -107,6 +107,7 @@ namespace CPresentacion.Views
                 && tabAsistente.Controls.Count == 0)
             {
                 ucAsistentes asistentes = new ucAsistentes();
+                asistentes.Refresh();
                 asistentes.Dock = DockStyle.Fill;
                 tabAsistente.Controls.Add(asistentes);
             }

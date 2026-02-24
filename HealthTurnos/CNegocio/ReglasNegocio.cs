@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 using CEntidades;
 using CDatos;
 using CDatos.Controllers;
+using System.Data;
 
 namespace CNegocio
 {
     public class ReglasNegocio
     {
+        //Empleados
         public static List<Empleado> verEmpleados()
         {
             return EmpleadoController.VerEmpleados();
@@ -31,6 +33,21 @@ namespace CNegocio
             return $"{nombre.ToLower()}.{apellido.ToLower()}@HealthTurnos.com";
         }
 
+
+        //Médicos
+        public static DataTable verMedicos()
+        {
+            return MedicoController.VerMedicos();
+        }
+        
+
+
+
+        //Especialidades
+        public static List<Especialidad> VerEspecialidades()
+        {
+            return EspecialidadController.VerEspecialiad();
+        }
 
     }
 

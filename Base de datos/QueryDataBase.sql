@@ -155,6 +155,33 @@ BEGIN
     WHERE IdEmpleado = @IdEmpleado
 END
 
+--procedimientos medicos 
+
+create view vwListaMedicos
+with schemabinding
+as
+select e.IdEmpleado, e.Nombre, e.Apellido, e.Email, m.NroLicencia, x.Nombre as Especialidad
+from dbo.Medico as m 
+inner join dbo.Empleado as e on m.IdEmpleado = e.IdEmpleado
+inner join dbo.Especialidad as x on m.IdEspecialidad = x.IdEspecialidad
+
+create proc spVerMedicos
+as 
+set nocount on
+begin
+select * from vwListaMedicos
+end
+
+
+--procedimientos especialidad medicos
+create proc spVerEspecialidad
+as
+set nocount on
+begin
+select * from Especialidad
+end
+
+
 
 select * from Empleado
 select * from Medico

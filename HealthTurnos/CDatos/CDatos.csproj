@@ -170,6 +170,7 @@
     <Compile Include="Class1.cs" />
     <Compile Include="ConexionBD.cs" />
     <Compile Include="Controllers\EmpleadoController.cs" />
+    <Compile Include="Controllers\EspecialidadController.cs" />
     <Compile Include="Controllers\MedicoController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

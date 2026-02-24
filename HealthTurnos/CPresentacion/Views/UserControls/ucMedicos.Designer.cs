@@ -41,7 +41,10 @@
             this.textbIdEmpleado = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.viewDatosMedicos = new System.Windows.Forms.DataGridView();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbxEspecialidad = new System.Windows.Forms.ComboBox();
+            this.BuBuscar = new FontAwesome.Sharp.IconButton();
+            this.textIdBuscar = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.panelInfo.SuspendLayout();
             this.panelContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.viewDatosMedicos)).BeginInit();
@@ -54,7 +57,10 @@
             // 
             // panelContainer
             // 
-            this.panelContainer.Controls.Add(this.comboBox1);
+            this.panelContainer.Controls.Add(this.textIdBuscar);
+            this.panelContainer.Controls.Add(this.label7);
+            this.panelContainer.Controls.Add(this.BuBuscar);
+            this.panelContainer.Controls.Add(this.cbxEspecialidad);
             this.panelContainer.Controls.Add(this.BuGuardar);
             this.panelContainer.Controls.Add(this.label4);
             this.panelContainer.Controls.Add(this.texbTelefono);
@@ -86,6 +92,7 @@
             this.BuGuardar.TabIndex = 28;
             this.BuGuardar.Text = "Registrar";
             this.BuGuardar.UseVisualStyleBackColor = false;
+            this.BuGuardar.Click += new System.EventHandler(this.BuGuardar_Click);
             // 
             // label4
             // 
@@ -203,15 +210,54 @@
             this.viewDatosMedicos.Name = "viewDatosMedicos";
             this.viewDatosMedicos.Size = new System.Drawing.Size(842, 222);
             this.viewDatosMedicos.TabIndex = 15;
+            this.viewDatosMedicos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.viewDatosMedicos_CellDoubleClick);
             // 
-            // comboBox1
+            // cbxEspecialidad
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.2F);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(439, 139);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(190, 28);
-            this.comboBox1.TabIndex = 29;
+            this.cbxEspecialidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.2F);
+            this.cbxEspecialidad.FormattingEnabled = true;
+            this.cbxEspecialidad.Location = new System.Drawing.Point(439, 139);
+            this.cbxEspecialidad.Name = "cbxEspecialidad";
+            this.cbxEspecialidad.Size = new System.Drawing.Size(190, 28);
+            this.cbxEspecialidad.TabIndex = 29;
+            // 
+            // BuBuscar
+            // 
+            this.BuBuscar.BackColor = System.Drawing.Color.SeaGreen;
+            this.BuBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BuBuscar.Font = new System.Drawing.Font("Montserrat SemiBold", 10F, System.Drawing.FontStyle.Bold);
+            this.BuBuscar.ForeColor = System.Drawing.Color.White;
+            this.BuBuscar.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            this.BuBuscar.IconColor = System.Drawing.Color.White;
+            this.BuBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.BuBuscar.IconSize = 32;
+            this.BuBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BuBuscar.Location = new System.Drawing.Point(770, 140);
+            this.BuBuscar.Name = "BuBuscar";
+            this.BuBuscar.Size = new System.Drawing.Size(121, 47);
+            this.BuBuscar.TabIndex = 30;
+            this.BuBuscar.Text = "Buscar";
+            this.BuBuscar.UseVisualStyleBackColor = false;
+            this.BuBuscar.Click += new System.EventHandler(this.BuBuscar_Click);
+            // 
+            // textIdBuscar
+            // 
+            this.textIdBuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textIdBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.textIdBuscar.Location = new System.Drawing.Point(661, 161);
+            this.textIdBuscar.Name = "textIdBuscar";
+            this.textIdBuscar.Size = new System.Drawing.Size(103, 26);
+            this.textIdBuscar.TabIndex = 32;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Montserrat SemiBold", 11F, System.Drawing.FontStyle.Bold);
+            this.label7.Location = new System.Drawing.Point(657, 137);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(107, 21);
+            this.label7.TabIndex = 31;
+            this.label7.Text = "Id Empleado";
             // 
             // ucMedicos
             // 
@@ -242,6 +288,9 @@
         private System.Windows.Forms.TextBox textbIdEmpleado;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView viewDatosMedicos;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbxEspecialidad;
+        private FontAwesome.Sharp.IconButton BuBuscar;
+        private System.Windows.Forms.TextBox textIdBuscar;
+        private System.Windows.Forms.Label label7;
     }
 }

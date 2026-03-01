@@ -36,14 +36,24 @@ namespace CPresentacion.Views.UserControls
             viewDatosMedicos.DataSource = null;
             viewDatosMedicos.DataSource = ReglasNegocio.verMedicos();
         }
-
+        private void LimpiarControles()
+        {
+            textbIdEmpleado.Text = string.Empty;
+            textbNombre.Text = string.Empty;
+            textbApellido.Text = string.Empty;
+            textbEmail.Text = string.Empty;
+            texbNLicencia.Text = string.Empty;
+            textIdBuscar.Text = string.Empty;
+            BuGuardar.BackColor = Color.SeaGreen;
+            BuGuardar.IconChar = IconChar.Plus;
+        }
         private void viewDatosMedicos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             textbIdEmpleado.Text = viewDatosMedicos.Rows[e.RowIndex].Cells["IdEmpleado"].Value.ToString();
             textbNombre.Text = viewDatosMedicos.Rows[e.RowIndex].Cells["Nombre"].Value.ToString();
             textbApellido.Text = viewDatosMedicos.Rows[e.RowIndex].Cells["Apellido"].Value.ToString();
             textbEmail.Text = viewDatosMedicos.Rows[e.RowIndex].Cells["Email"].Value.ToString();
-            texbTelefono.Text = viewDatosMedicos.Rows[e.RowIndex].Cells["NroLicencia"].Value.ToString();
+            texbNLicencia.Text = viewDatosMedicos.Rows[e.RowIndex].Cells["NroLicencia"].Value.ToString();
             cbxEspecialidad.Text = viewDatosMedicos.Rows[e.RowIndex].Cells["Especialidad"].Value.ToString();
 
             ControlUpdate(textbIdEmpleado.Text);
@@ -106,7 +116,106 @@ namespace CPresentacion.Views.UserControls
 
         private void BuGuardar_Click(object sender, EventArgs e)
         {
+            try
+            {
+                DataRow[] empleadoMedico = ReglasNegocio.verMedicos().Select($"IdEmpleado = {textbIdEmpleado.Text}");
+                DataRow[] empleadoAsistente = ReglasNegocio.verAsistentes().Select($"IdEmpleado = {textbIdEmpleado.Text}");
 
+                if (empleadoMedico != null)
+                {
+                    LimpiarControles();
+                    throw new ControlExcepciones("Este empleado ya esta registrado como medico");
+                }
+
+                if (empleadoAsistente != null)
+                {
+                    LimpiarControles();
+                    throw new ControlExcepciones("Este empleado ya esta registrado como asistente");
+                }
+
+                if (materialSwitchActualizar.Checked == false)
+                {
+                    Medico medico = new Medico();
+                    medico.IdEmpleado = Convert.ToInt32(textbIdEmpleado.Text);
+                    medico.IdEspecialidad = Convert.ToInt32(cbxEspecialidad.SelectedValue);
+                    medico.NroLicencia = texbNLicencia.Text;
+
+                    var validacion = new MedicoValidacion();
+                    var resultado = validacion.Validate(medico);
+
+                    if (!resultado.IsValid)
+                    {
+                        string error = string.Join("\n",
+                            resultado.Errors.Select(M => M.ErrorMessage));
+
+                        throw new ControlExcepciones(error);
+                    }
+
+                    var mensaje = MessageBox.Show("Desea registrar este empleado como medico?", "Registro de medico",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    if (mensaje == DialogResult.Yes)
+                    {
+                        ReglasNegocio.RegistarMedico(medico);
+                        MessageBox.Show("Medico registrado con exito!", "Registro de medico",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        LimpiarControles();
+                        CargarComponentes();
+                    }
+                }
+                else
+                {
+                    Medico medico = new Medico();
+                    medico.IdEmpleado = Convert.ToInt32(textbIdEmpleado.Text);
+                    medico.IdEspecialidad = Convert.ToInt32(cbxEspecialidad.SelectedValue);
+                    medico.NroLicencia = texbNLicencia.Text;
+
+                    var validacion = new MedicoValidacion();
+                    var resultado = validacion.Validate(medico);
+
+                    if (!resultado.IsValid)
+                    {
+                        string error = string.Join("\n",
+                            resultado.Errors.Select(M => M.ErrorMessage));
+
+                        throw new ControlExcepciones(error);
+                    }
+
+                    var mensaje = MessageBox.Show("Desea actualizar los datos de este medico?", "Actualización de medico",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    if (mensaje == DialogResult.Yes)
+                    {
+                        ReglasNegocio.ActualizarMedico(medico);
+                        MessageBox.Show("Datos del medico actualizados con exito!", "Actualización de medico",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        LimpiarControles();
+                        CargarComponentes();
+                    }
+                }
+            }
+            catch (ControlExcepciones ex)
+            {
+                MessageBox.Show($"{ex.Message}", "Error en la operación",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"{ex.Message}", "Error en la operación",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void panelContainer_VisibleChanged(object sender, EventArgs e)
+        {
+            if(this.Visible)
+            {
+                DatosEspecialidad();
+                CargarComponentes();
+                LimpiarControles();
+            }
         }
     }
 }

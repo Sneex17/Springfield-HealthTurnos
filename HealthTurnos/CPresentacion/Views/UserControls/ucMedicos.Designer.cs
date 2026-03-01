@@ -30,7 +30,7 @@
         {
             this.BuGuardar = new FontAwesome.Sharp.IconButton();
             this.label4 = new System.Windows.Forms.Label();
-            this.texbTelefono = new System.Windows.Forms.TextBox();
+            this.texbNLicencia = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.textbEmail = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -45,6 +45,7 @@
             this.BuBuscar = new FontAwesome.Sharp.IconButton();
             this.textIdBuscar = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.materialSwitchActualizar = new MaterialSkin.Controls.MaterialSwitch();
             this.panelInfo.SuspendLayout();
             this.panelContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.viewDatosMedicos)).BeginInit();
@@ -57,13 +58,14 @@
             // 
             // panelContainer
             // 
+            this.panelContainer.Controls.Add(this.materialSwitchActualizar);
             this.panelContainer.Controls.Add(this.textIdBuscar);
             this.panelContainer.Controls.Add(this.label7);
             this.panelContainer.Controls.Add(this.BuBuscar);
             this.panelContainer.Controls.Add(this.cbxEspecialidad);
             this.panelContainer.Controls.Add(this.BuGuardar);
             this.panelContainer.Controls.Add(this.label4);
-            this.panelContainer.Controls.Add(this.texbTelefono);
+            this.panelContainer.Controls.Add(this.texbNLicencia);
             this.panelContainer.Controls.Add(this.label5);
             this.panelContainer.Controls.Add(this.textbEmail);
             this.panelContainer.Controls.Add(this.label6);
@@ -74,6 +76,7 @@
             this.panelContainer.Controls.Add(this.textbIdEmpleado);
             this.panelContainer.Controls.Add(this.label1);
             this.panelContainer.Controls.Add(this.viewDatosMedicos);
+            this.panelContainer.VisibleChanged += new System.EventHandler(this.panelContainer_VisibleChanged);
             // 
             // BuGuardar
             // 
@@ -90,7 +93,7 @@
             this.BuGuardar.Name = "BuGuardar";
             this.BuGuardar.Size = new System.Drawing.Size(179, 47);
             this.BuGuardar.TabIndex = 28;
-            this.BuGuardar.Text = "Registrar";
+            this.BuGuardar.Text = "Guardar";
             this.BuGuardar.UseVisualStyleBackColor = false;
             this.BuGuardar.Click += new System.EventHandler(this.BuGuardar_Click);
             // 
@@ -104,14 +107,14 @@
             this.label4.TabIndex = 26;
             this.label4.Text = "Especialidad";
             // 
-            // texbTelefono
+            // texbNLicencia
             // 
-            this.texbTelefono.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.texbTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.texbTelefono.Location = new System.Drawing.Point(244, 140);
-            this.texbTelefono.Name = "texbTelefono";
-            this.texbTelefono.Size = new System.Drawing.Size(190, 26);
-            this.texbTelefono.TabIndex = 25;
+            this.texbNLicencia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.texbNLicencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.texbNLicencia.Location = new System.Drawing.Point(244, 140);
+            this.texbNLicencia.Name = "texbNLicencia";
+            this.texbNLicencia.Size = new System.Drawing.Size(190, 26);
+            this.texbNLicencia.TabIndex = 25;
             // 
             // label5
             // 
@@ -146,6 +149,7 @@
             // textbApellido
             // 
             this.textbApellido.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textbApellido.Enabled = false;
             this.textbApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
             this.textbApellido.Location = new System.Drawing.Point(439, 60);
             this.textbApellido.Name = "textbApellido";
@@ -165,6 +169,7 @@
             // textbNombre
             // 
             this.textbNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textbNombre.Enabled = false;
             this.textbNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
             this.textbNombre.Location = new System.Drawing.Point(244, 60);
             this.textbNombre.Name = "textbNombre";
@@ -232,7 +237,7 @@
             this.BuBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BuBuscar.IconSize = 32;
             this.BuBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BuBuscar.Location = new System.Drawing.Point(770, 140);
+            this.BuBuscar.Location = new System.Drawing.Point(770, 119);
             this.BuBuscar.Name = "BuBuscar";
             this.BuBuscar.Size = new System.Drawing.Size(121, 47);
             this.BuBuscar.TabIndex = 30;
@@ -244,7 +249,7 @@
             // 
             this.textIdBuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textIdBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.textIdBuscar.Location = new System.Drawing.Point(661, 161);
+            this.textIdBuscar.Location = new System.Drawing.Point(661, 140);
             this.textIdBuscar.Name = "textIdBuscar";
             this.textIdBuscar.Size = new System.Drawing.Size(103, 26);
             this.textIdBuscar.TabIndex = 32;
@@ -253,11 +258,26 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Montserrat SemiBold", 11F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(657, 137);
+            this.label7.Location = new System.Drawing.Point(657, 116);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(107, 21);
             this.label7.TabIndex = 31;
             this.label7.Text = "Id Empleado";
+            // 
+            // materialSwitchActualizar
+            // 
+            this.materialSwitchActualizar.AutoSize = true;
+            this.materialSwitchActualizar.Depth = 0;
+            this.materialSwitchActualizar.Location = new System.Drawing.Point(712, 13);
+            this.materialSwitchActualizar.Margin = new System.Windows.Forms.Padding(0);
+            this.materialSwitchActualizar.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.materialSwitchActualizar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialSwitchActualizar.Name = "materialSwitchActualizar";
+            this.materialSwitchActualizar.Ripple = true;
+            this.materialSwitchActualizar.Size = new System.Drawing.Size(129, 37);
+            this.materialSwitchActualizar.TabIndex = 34;
+            this.materialSwitchActualizar.Text = "Actualizar";
+            this.materialSwitchActualizar.UseVisualStyleBackColor = true;
             // 
             // ucMedicos
             // 
@@ -277,7 +297,7 @@
 
         private FontAwesome.Sharp.IconButton BuGuardar;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox texbTelefono;
+        private System.Windows.Forms.TextBox texbNLicencia;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textbEmail;
         private System.Windows.Forms.Label label6;
@@ -292,5 +312,6 @@
         private FontAwesome.Sharp.IconButton BuBuscar;
         private System.Windows.Forms.TextBox textIdBuscar;
         private System.Windows.Forms.Label label7;
+        private MaterialSkin.Controls.MaterialSwitch materialSwitchActualizar;
     }
 }

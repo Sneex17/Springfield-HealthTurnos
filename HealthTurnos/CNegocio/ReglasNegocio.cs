@@ -42,7 +42,29 @@ namespace CNegocio
         {
             return MedicoController.VerMedicos();
         }
-        
+        public static void RegistarMedico(Medico medico)
+        {
+            MedicoController.InsertarMedico(medico);
+        }
+        public static void ActualizarMedico(Medico medico)
+        {
+            MedicoController.ActualizarMedico(medico);
+        }
+
+        //Asistentes
+        public static DataTable verAsistentes()
+        {
+            return AsistenteController.VerAsistentes();
+        }
+        public static void RegistarAsistente(Asistente asistente)
+        {
+            AsistenteController.InsertarAsistente(asistente);
+        }
+        public static void ActualizarAsistente(Asistente asistente)
+        {
+            AsistenteController.ActualizarAsistente(asistente);
+        }
+
 
 
 

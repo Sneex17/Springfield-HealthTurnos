@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbxArea = new System.Windows.Forms.ComboBox();
             this.BuGuardar = new FontAwesome.Sharp.IconButton();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -41,7 +41,11 @@
             this.textbIdEmpleado = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.viewDatosAsistentes = new System.Windows.Forms.DataGridView();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cbxTurnos = new System.Windows.Forms.ComboBox();
+            this.materialSwitchActualizar = new MaterialSkin.Controls.MaterialSwitch();
+            this.textIdBuscar = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.BuBuscar = new FontAwesome.Sharp.IconButton();
             this.panelInfo.SuspendLayout();
             this.panelContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.viewDatosAsistentes)).BeginInit();
@@ -54,8 +58,12 @@
             // 
             // panelContainer
             // 
-            this.panelContainer.Controls.Add(this.comboBox2);
-            this.panelContainer.Controls.Add(this.comboBox1);
+            this.panelContainer.Controls.Add(this.textIdBuscar);
+            this.panelContainer.Controls.Add(this.label7);
+            this.panelContainer.Controls.Add(this.BuBuscar);
+            this.panelContainer.Controls.Add(this.materialSwitchActualizar);
+            this.panelContainer.Controls.Add(this.cbxTurnos);
+            this.panelContainer.Controls.Add(this.cbxArea);
             this.panelContainer.Controls.Add(this.BuGuardar);
             this.panelContainer.Controls.Add(this.label4);
             this.panelContainer.Controls.Add(this.label5);
@@ -68,15 +76,16 @@
             this.panelContainer.Controls.Add(this.textbIdEmpleado);
             this.panelContainer.Controls.Add(this.label1);
             this.panelContainer.Controls.Add(this.viewDatosAsistentes);
+            this.panelContainer.VisibleChanged += new System.EventHandler(this.panelContainer_VisibleChanged);
             // 
-            // comboBox1
+            // cbxArea
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.2F);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(439, 139);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(190, 28);
-            this.comboBox1.TabIndex = 43;
+            this.cbxArea.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.2F);
+            this.cbxArea.FormattingEnabled = true;
+            this.cbxArea.Location = new System.Drawing.Point(439, 139);
+            this.cbxArea.Name = "cbxArea";
+            this.cbxArea.Size = new System.Drawing.Size(190, 28);
+            this.cbxArea.TabIndex = 43;
             // 
             // BuGuardar
             // 
@@ -93,8 +102,9 @@
             this.BuGuardar.Name = "BuGuardar";
             this.BuGuardar.Size = new System.Drawing.Size(179, 47);
             this.BuGuardar.TabIndex = 42;
-            this.BuGuardar.Text = "Registrar";
+            this.BuGuardar.Text = "Guardar";
             this.BuGuardar.UseVisualStyleBackColor = false;
+            this.BuGuardar.Click += new System.EventHandler(this.BuGuardar_Click);
             // 
             // label4
             // 
@@ -139,6 +149,7 @@
             // textbApellido
             // 
             this.textbApellido.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textbApellido.Enabled = false;
             this.textbApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
             this.textbApellido.Location = new System.Drawing.Point(439, 60);
             this.textbApellido.Name = "textbApellido";
@@ -158,6 +169,7 @@
             // textbNombre
             // 
             this.textbNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textbNombre.Enabled = false;
             this.textbNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
             this.textbNombre.Location = new System.Drawing.Point(244, 60);
             this.textbNombre.Name = "textbNombre";
@@ -203,15 +215,69 @@
             this.viewDatosAsistentes.Name = "viewDatosAsistentes";
             this.viewDatosAsistentes.Size = new System.Drawing.Size(842, 222);
             this.viewDatosAsistentes.TabIndex = 30;
+            this.viewDatosAsistentes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.viewDatosAsistentes_CellDoubleClick);
             // 
-            // comboBox2
+            // cbxTurnos
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.2F);
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(244, 140);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(190, 28);
-            this.comboBox2.TabIndex = 44;
+            this.cbxTurnos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.2F);
+            this.cbxTurnos.FormattingEnabled = true;
+            this.cbxTurnos.Location = new System.Drawing.Point(244, 140);
+            this.cbxTurnos.Name = "cbxTurnos";
+            this.cbxTurnos.Size = new System.Drawing.Size(190, 28);
+            this.cbxTurnos.TabIndex = 44;
+            // 
+            // materialSwitchActualizar
+            // 
+            this.materialSwitchActualizar.AutoSize = true;
+            this.materialSwitchActualizar.Depth = 0;
+            this.materialSwitchActualizar.Location = new System.Drawing.Point(712, 13);
+            this.materialSwitchActualizar.Margin = new System.Windows.Forms.Padding(0);
+            this.materialSwitchActualizar.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.materialSwitchActualizar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialSwitchActualizar.Name = "materialSwitchActualizar";
+            this.materialSwitchActualizar.Ripple = true;
+            this.materialSwitchActualizar.Size = new System.Drawing.Size(129, 37);
+            this.materialSwitchActualizar.TabIndex = 45;
+            this.materialSwitchActualizar.Text = "Actualizar";
+            this.materialSwitchActualizar.UseVisualStyleBackColor = true;
+            // 
+            // textIdBuscar
+            // 
+            this.textIdBuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textIdBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.textIdBuscar.Location = new System.Drawing.Point(661, 142);
+            this.textIdBuscar.Name = "textIdBuscar";
+            this.textIdBuscar.Size = new System.Drawing.Size(103, 26);
+            this.textIdBuscar.TabIndex = 48;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Montserrat SemiBold", 11F, System.Drawing.FontStyle.Bold);
+            this.label7.Location = new System.Drawing.Point(657, 118);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(107, 21);
+            this.label7.TabIndex = 47;
+            this.label7.Text = "Id Empleado";
+            // 
+            // BuBuscar
+            // 
+            this.BuBuscar.BackColor = System.Drawing.Color.SeaGreen;
+            this.BuBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BuBuscar.Font = new System.Drawing.Font("Montserrat SemiBold", 10F, System.Drawing.FontStyle.Bold);
+            this.BuBuscar.ForeColor = System.Drawing.Color.White;
+            this.BuBuscar.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            this.BuBuscar.IconColor = System.Drawing.Color.White;
+            this.BuBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.BuBuscar.IconSize = 32;
+            this.BuBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BuBuscar.Location = new System.Drawing.Point(770, 121);
+            this.BuBuscar.Name = "BuBuscar";
+            this.BuBuscar.Size = new System.Drawing.Size(121, 47);
+            this.BuBuscar.TabIndex = 46;
+            this.BuBuscar.Text = "Buscar";
+            this.BuBuscar.UseVisualStyleBackColor = false;
+            this.BuBuscar.Click += new System.EventHandler(this.BuBuscar_Click);
             // 
             // ucAsistentes
             // 
@@ -229,8 +295,8 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbxTurnos;
+        private System.Windows.Forms.ComboBox cbxArea;
         private FontAwesome.Sharp.IconButton BuGuardar;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
@@ -243,5 +309,9 @@
         private System.Windows.Forms.TextBox textbIdEmpleado;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView viewDatosAsistentes;
+        private MaterialSkin.Controls.MaterialSwitch materialSwitchActualizar;
+        private System.Windows.Forms.TextBox textIdBuscar;
+        private System.Windows.Forms.Label label7;
+        private FontAwesome.Sharp.IconButton BuBuscar;
     }
 }

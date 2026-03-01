@@ -38,6 +38,8 @@
             this.tabEmpleados = new System.Windows.Forms.TabPage();
             this.tabMedicos = new System.Windows.Forms.TabPage();
             this.tabAsistente = new System.Windows.Forms.TabPage();
+            this.tabEspecialidades = new System.Windows.Forms.TabPage();
+            this.tabUsuarios = new System.Windows.Forms.TabPage();
             this.materialTabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,6 +53,8 @@
             this.materialTabControl1.Controls.Add(this.tabEmpleados);
             this.materialTabControl1.Controls.Add(this.tabMedicos);
             this.materialTabControl1.Controls.Add(this.tabAsistente);
+            this.materialTabControl1.Controls.Add(this.tabEspecialidades);
+            this.materialTabControl1.Controls.Add(this.tabUsuarios);
             this.materialTabControl1.Depth = 0;
             this.materialTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.materialTabControl1.Location = new System.Drawing.Point(3, 64);
@@ -139,6 +143,25 @@
             this.tabAsistente.Text = "Gestión de asistentes";
             this.tabAsistente.UseVisualStyleBackColor = true;
             // 
+            // tabEspecialidades
+            // 
+            this.tabEspecialidades.Location = new System.Drawing.Point(4, 22);
+            this.tabEspecialidades.Name = "tabEspecialidades";
+            this.tabEspecialidades.Padding = new System.Windows.Forms.Padding(3);
+            this.tabEspecialidades.Size = new System.Drawing.Size(936, 557);
+            this.tabEspecialidades.TabIndex = 8;
+            this.tabEspecialidades.Text = "Especialidades";
+            this.tabEspecialidades.UseVisualStyleBackColor = true;
+            // 
+            // tabUsuarios
+            // 
+            this.tabUsuarios.Location = new System.Drawing.Point(4, 22);
+            this.tabUsuarios.Name = "tabUsuarios";
+            this.tabUsuarios.Size = new System.Drawing.Size(936, 557);
+            this.tabUsuarios.TabIndex = 9;
+            this.tabUsuarios.Text = "Gestión de Usuarios";
+            this.tabUsuarios.UseVisualStyleBackColor = true;
+            // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -166,5 +189,7 @@
         private System.Windows.Forms.TabPage tabEmpleados;
         private System.Windows.Forms.TabPage tabMedicos;
         private System.Windows.Forms.TabPage tabAsistente;
+        private System.Windows.Forms.TabPage tabEspecialidades;
+        private System.Windows.Forms.TabPage tabUsuarios;
     }
 }

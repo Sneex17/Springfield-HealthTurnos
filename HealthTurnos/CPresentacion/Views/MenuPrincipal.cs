@@ -39,7 +39,6 @@ namespace CPresentacion.Views
                         tabRegistrarTurno.Parent = null;
                         tabAtenderPacientes.Parent = null;
                         tabColaTurnos.Parent = null;
-
                     }
                     break;
                 case 2:
@@ -104,6 +103,22 @@ namespace CPresentacion.Views
                 ucAsistentes asistentes = new ucAsistentes();
                 asistentes.Dock = DockStyle.Fill;
                 tabAsistente.Controls.Add(asistentes);
+            }
+
+            if (materialTabControl1.SelectedTab == tabEspecialidades
+                && tabEspecialidades.Controls.Count == 0)
+            {
+                ucEspecialidades especialidades = new ucEspecialidades();
+                especialidades.Dock = DockStyle.Fill;
+                tabEspecialidades.Controls.Add(especialidades);
+            }
+
+            if (materialTabControl1.SelectedTab == tabUsuarios
+                && tabUsuarios.Controls.Count == 0)
+            {
+                ucUsuarios usuarios = new ucUsuarios();
+                usuarios.Dock = DockStyle.Fill;
+                tabUsuarios.Controls.Add(usuarios);
             }
         }
     }

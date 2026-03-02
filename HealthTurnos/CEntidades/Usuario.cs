@@ -1,4 +1,7 @@
-﻿namespace CEntidades
+﻿using System;
+using System.Collections.Generic;
+
+namespace CEntidades
 {
     public class Usuario
     {
@@ -7,5 +10,5 @@
         public int IdRol { get; set; }
         public string Username { get; set; }
         public string Passwords { get; set; }
-    }
+    }   
 }

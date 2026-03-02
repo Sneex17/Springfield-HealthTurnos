@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CEntidades;
-using CNegocio.StatePattern;
+using CEntidades.StatePattern;
 
-namespace CNegocio.BuilderPattern
+namespace CEntidades.BuilderPattern
 {
     public class Turno
     {

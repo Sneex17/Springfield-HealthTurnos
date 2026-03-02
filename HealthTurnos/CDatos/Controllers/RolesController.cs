@@ -62,5 +62,5 @@ namespace CDatos.Controllers
                 resultado = comando.ExecuteNonQuery();
             }
         }
-    } 
+    }
 }

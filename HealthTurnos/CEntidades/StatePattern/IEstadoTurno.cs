@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CNegocio.StatePattern
+namespace CEntidades.StatePattern
 {
     public interface IEstadoTurno
     {

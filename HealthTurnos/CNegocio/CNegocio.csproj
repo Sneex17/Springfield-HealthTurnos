@@ -44,19 +44,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BuilderPattern\ITurnoBuilder.cs" />
-    <Compile Include="BuilderPattern\Turno.cs" />
-    <Compile Include="BuilderPattern\TurnoBuilder.cs" />
     <Compile Include="ControlExcepciones.cs" />
     <Compile Include="PacienteServices.cs" />
     <Compile Include="ReglasNegocio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StatePattern\EstadoAtendido.cs" />
-    <Compile Include="StatePattern\EstadoCancelado.cs" />
-    <Compile Include="StatePattern\EstadoEnAtencion.cs" />
-    <Compile Include="StatePattern\EstadoPendiente.cs" />
-    <Compile Include="StatePattern\EstadoTurno.cs" />
-    <Compile Include="StatePattern\IEstadoTurno.cs" />
     <Compile Include="Validaciones.cs" />
   </ItemGroup>
   <ItemGroup>

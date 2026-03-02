@@ -1,8 +1,7 @@
 ﻿using System;
-using CEntidades;
 using CNegocio.StatePattern;
 
-namespace CNegocio.BuilderPattern
+namespace CEntidades.BuilderPattern
 {
     public interface ITurnoBuilder
     {

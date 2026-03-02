@@ -46,4 +46,13 @@ namespace CNegocio
                .NotEmpty().WithMessage("El campo de área no puede estar vacío");
         }
     }
+
+    public class UsuarioValidacion : AbstractValidator<Usuario>
+    {
+        public UsuarioValidacion()
+        {
+            RuleFor(L => L.Passwords)
+               .NotEmpty().WithMessage("El campo de contraseña no puede estar vacío");
+        }
+    }
 }

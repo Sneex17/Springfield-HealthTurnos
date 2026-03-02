@@ -3,28 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\xrami\\OneDrive\\Documentos\\Springfield HealthTurnos\\HealthTurnos\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7A489A2A-1EB2-4AE6-849E-74D9A87AE0D3}|CPresentacion\\CPresentacion.csproj|c:\\users\\xrami\\onedrive\\documentos\\springfield healthturnos\\healthturnos\\cpresentacion\\views\\menuprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7A489A2A-1EB2-4AE6-849E-74D9A87AE0D3}|CPresentacion\\CPresentacion.csproj|solutionrelative:cpresentacion\\views\\menuprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7A489A2A-1EB2-4AE6-849E-74D9A87AE0D3}|CPresentacion\\CPresentacion.csproj|c:\\users\\xrami\\onedrive\\documentos\\springfield healthturnos\\healthturnos\\cpresentacion\\views\\usercontrols\\ucespecialidades.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{7A489A2A-1EB2-4AE6-849E-74D9A87AE0D3}|CPresentacion\\CPresentacion.csproj|solutionrelative:cpresentacion\\views\\usercontrols\\ucespecialidades.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7A489A2A-1EB2-4AE6-849E-74D9A87AE0D3}|CPresentacion\\CPresentacion.csproj|c:\\users\\xrami\\onedrive\\documentos\\springfield healthturnos\\healthturnos\\cpresentacion\\views\\usercontrols\\ucespecialidades.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7A489A2A-1EB2-4AE6-849E-74D9A87AE0D3}|CPresentacion\\CPresentacion.csproj|solutionrelative:cpresentacion\\views\\usercontrols\\ucespecialidades.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7A489A2A-1EB2-4AE6-849E-74D9A87AE0D3}|CPresentacion\\CPresentacion.csproj|C:\\Users\\xrami\\OneDrive\\Documentos\\Springfield HealthTurnos\\HealthTurnos\\cpresentacion\\views\\menuprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{7A489A2A-1EB2-4AE6-849E-74D9A87AE0D3}|CPresentacion\\CPresentacion.csproj|c:\\users\\xrami\\onedrive\\documentos\\springfield healthturnos\\healthturnos\\cpresentacion\\views\\menuprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{7A489A2A-1EB2-4AE6-849E-74D9A87AE0D3}|CPresentacion\\CPresentacion.csproj|solutionrelative:cpresentacion\\views\\menuprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4E164D7B-F1E9-4BDC-B71C-D5B1A5545F84}|CDatos\\CDatos.csproj|c:\\users\\xrami\\onedrive\\documentos\\springfield healthturnos\\healthturnos\\cdatos\\controllers\\especialidadcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4E164D7B-F1E9-4BDC-B71C-D5B1A5545F84}|CDatos\\CDatos.csproj|solutionrelative:cdatos\\controllers\\especialidadcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4E164D7B-F1E9-4BDC-B71C-D5B1A5545F84}|CDatos\\CDatos.csproj|c:\\users\\xrami\\onedrive\\documentos\\springfield healthturnos\\healthturnos\\cdatos\\controllers\\asistentecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4E164D7B-F1E9-4BDC-B71C-D5B1A5545F84}|CDatos\\CDatos.csproj|solutionrelative:cdatos\\controllers\\asistentecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,88 +14,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "MenuPrincipal.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\xrami\\OneDrive\\Documentos\\Springfield HealthTurnos\\HealthTurnos\\CPresentacion\\Views\\MenuPrincipal.cs",
               "RelativeDocumentMoniker": "CPresentacion\\Views\\MenuPrincipal.cs",
               "ToolTip": "C:\\Users\\xrami\\OneDrive\\Documentos\\Springfield HealthTurnos\\HealthTurnos\\CPresentacion\\Views\\MenuPrincipal.cs [Dise\u00F1o]",
               "RelativeToolTip": "CPresentacion\\Views\\MenuPrincipal.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-24T22:32:59.456Z",
+              "WhenOpened": "2026-03-02T00:07:37.006Z",
               "IsPinned": true,
               "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ucEspecialidades.cs",
-              "DocumentMoniker": "C:\\Users\\xrami\\OneDrive\\Documentos\\Springfield HealthTurnos\\HealthTurnos\\CPresentacion\\Views\\UserControls\\ucEspecialidades.cs",
-              "RelativeDocumentMoniker": "CPresentacion\\Views\\UserControls\\ucEspecialidades.cs",
-              "ToolTip": "C:\\Users\\xrami\\OneDrive\\Documentos\\Springfield HealthTurnos\\HealthTurnos\\CPresentacion\\Views\\UserControls\\ucEspecialidades.cs",
-              "RelativeToolTip": "CPresentacion\\Views\\UserControls\\ucEspecialidades.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAA1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-01T08:59:43.141Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ucEspecialidades.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\xrami\\OneDrive\\Documentos\\Springfield HealthTurnos\\HealthTurnos\\CPresentacion\\Views\\UserControls\\ucEspecialidades.cs",
-              "RelativeDocumentMoniker": "CPresentacion\\Views\\UserControls\\ucEspecialidades.cs",
-              "ToolTip": "C:\\Users\\xrami\\OneDrive\\Documentos\\Springfield HealthTurnos\\HealthTurnos\\CPresentacion\\Views\\UserControls\\ucEspecialidades.cs [Dise\u00F1o]",
-              "RelativeToolTip": "CPresentacion\\Views\\UserControls\\ucEspecialidades.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-01T08:59:38.404Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MenuPrincipal.cs",
-              "DocumentMoniker": "C:\\Users\\xrami\\OneDrive\\Documentos\\Springfield HealthTurnos\\HealthTurnos\\CPresentacion\\Views\\MenuPrincipal.cs",
-              "RelativeDocumentMoniker": "CPresentacion\\Views\\MenuPrincipal.cs",
-              "ToolTip": "C:\\Users\\xrami\\OneDrive\\Documentos\\Springfield HealthTurnos\\HealthTurnos\\CPresentacion\\Views\\MenuPrincipal.cs",
-              "RelativeToolTip": "CPresentacion\\Views\\MenuPrincipal.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAA1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-01T08:58:11.667Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "EspecialidadController.cs",
-              "DocumentMoniker": "C:\\Users\\xrami\\OneDrive\\Documentos\\Springfield HealthTurnos\\HealthTurnos\\CDatos\\Controllers\\EspecialidadController.cs",
-              "RelativeDocumentMoniker": "CDatos\\Controllers\\EspecialidadController.cs",
-              "ToolTip": "C:\\Users\\xrami\\OneDrive\\Documentos\\Springfield HealthTurnos\\HealthTurnos\\CDatos\\Controllers\\EspecialidadController.cs",
-              "RelativeToolTip": "CDatos\\Controllers\\EspecialidadController.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAgwAcAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-01T08:51:06.81Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "AsistenteController.cs",
-              "DocumentMoniker": "C:\\Users\\xrami\\OneDrive\\Documentos\\Springfield HealthTurnos\\HealthTurnos\\CDatos\\Controllers\\AsistenteController.cs",
-              "RelativeDocumentMoniker": "CDatos\\Controllers\\AsistenteController.cs",
-              "ToolTip": "C:\\Users\\xrami\\OneDrive\\Documentos\\Springfield HealthTurnos\\HealthTurnos\\CDatos\\Controllers\\AsistenteController.cs",
-              "RelativeToolTip": "CDatos\\Controllers\\AsistenteController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-01T08:49:52.346Z",
-              "EditorCaption": ""
             }
           ]
         }

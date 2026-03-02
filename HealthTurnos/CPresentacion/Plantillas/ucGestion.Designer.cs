@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.panelInfo = new System.Windows.Forms.Panel();
-            this.BuCerrarVentada = new FontAwesome.Sharp.IconButton();
             this.labelText = new System.Windows.Forms.Label();
             this.panelContainer = new System.Windows.Forms.Panel();
             this.panelInfo.SuspendLayout();
@@ -38,31 +37,12 @@
             // panelInfo
             // 
             this.panelInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.panelInfo.Controls.Add(this.BuCerrarVentada);
             this.panelInfo.Controls.Add(this.labelText);
             this.panelInfo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelInfo.Location = new System.Drawing.Point(0, 0);
             this.panelInfo.Name = "panelInfo";
             this.panelInfo.Size = new System.Drawing.Size(936, 69);
             this.panelInfo.TabIndex = 0;
-            // 
-            // BuCerrarVentada
-            // 
-            this.BuCerrarVentada.BackColor = System.Drawing.Color.Tan;
-            this.BuCerrarVentada.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BuCerrarVentada.Font = new System.Drawing.Font("Montserrat SemiBold", 10F, System.Drawing.FontStyle.Bold);
-            this.BuCerrarVentada.ForeColor = System.Drawing.Color.White;
-            this.BuCerrarVentada.IconChar = FontAwesome.Sharp.IconChar.SignOut;
-            this.BuCerrarVentada.IconColor = System.Drawing.Color.White;
-            this.BuCerrarVentada.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BuCerrarVentada.IconSize = 32;
-            this.BuCerrarVentada.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BuCerrarVentada.Location = new System.Drawing.Point(784, 11);
-            this.BuCerrarVentada.Name = "BuCerrarVentada";
-            this.BuCerrarVentada.Size = new System.Drawing.Size(123, 47);
-            this.BuCerrarVentada.TabIndex = 16;
-            this.BuCerrarVentada.Text = "Cerrar";
-            this.BuCerrarVentada.UseVisualStyleBackColor = false;
             // 
             // labelText
             // 
@@ -105,6 +85,5 @@
         public System.Windows.Forms.Panel panelInfo;
         public System.Windows.Forms.Label labelText;
         public System.Windows.Forms.Panel panelContainer;
-        public FontAwesome.Sharp.IconButton BuCerrarVentada;
     }
 }

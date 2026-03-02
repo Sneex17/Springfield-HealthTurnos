@@ -99,13 +99,23 @@ namespace CPresentacion.Views.UserControls
         {
             try
             {
-                //DataRow[] empleadoAsistente = ReglasNegocio.verAsistentes().Select($"IdEmpleado = {textbIdEmpleado.Text}");
+                DataRow[] empleadoAsistente = ReglasNegocio.verAsistentes().Select($"IdEmpleado = {textbIdEmpleado.Text}");
 
-                //if (empleadoAsistente != null)
-                //{
-                //    LimpiarControles();
-                //    throw new ControlExcepciones("Este empleado ya esta registrado como asistente");
-                //}
+                if (empleadoAsistente.Length > 0)
+                {
+                    LimpiarControles();
+                    CargarDatos();
+                    throw new ControlExcepciones("Este empleado ya esta registrado como asistente");
+                }
+
+                DataRow[] empleadoMedico = ReglasNegocio.verMedicos().Select($"IdEmpleado = {textbIdEmpleado.Text}");
+
+                if (empleadoMedico.Length > 0)
+                {
+                    LimpiarControles();
+                    CargarDatos();
+                    throw new ControlExcepciones("Este empleado ya esta registrado como médico");
+                }
 
                 if (materialSwitchActualizar.Checked == false)
                 {

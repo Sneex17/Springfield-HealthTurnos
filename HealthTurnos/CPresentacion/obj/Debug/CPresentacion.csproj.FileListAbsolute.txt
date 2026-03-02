@@ -177,3 +177,4 @@ C:\Users\xrami\OneDrive\Documentos\Springfield HealthTurnos\HealthTurnos\CPresen
 C:\Users\xrami\OneDrive\Documentos\Springfield HealthTurnos\HealthTurnos\CPresentacion\obj\Debug\CPresentacion.exe
 C:\Users\xrami\OneDrive\Documentos\Springfield HealthTurnos\HealthTurnos\CPresentacion\obj\Debug\CPresentacion.pdb
 C:\Users\xrami\OneDrive\Documentos\Springfield HealthTurnos\HealthTurnos\CPresentacion\obj\Debug\CPresentacion.Views.UserControls.ucEspecialidades.resources
+C:\Users\xrami\OneDrive\Documentos\Springfield HealthTurnos\HealthTurnos\CPresentacion\obj\Debug\CPresentacion.Views.UserControls.ucUsuarios.resources

@@ -121,15 +121,17 @@ namespace CPresentacion.Views.UserControls
                 DataRow[] empleadoMedico = ReglasNegocio.verMedicos().Select($"IdEmpleado = {textbIdEmpleado.Text}");
                 DataRow[] empleadoAsistente = ReglasNegocio.verAsistentes().Select($"IdEmpleado = {textbIdEmpleado.Text}");
 
-                if (empleadoMedico != null)
+                if (empleadoMedico.Length > 0)
                 {
                     LimpiarControles();
-                    throw new ControlExcepciones("Este empleado ya esta registrado como medico");
+                    DatosEspecialidad();
+                    throw new ControlExcepciones("Este empleado ya esta registrado como médico");
                 }
 
-                if (empleadoAsistente != null)
+                if (empleadoAsistente.Length > 0)
                 {
                     LimpiarControles();
+                    DatosEspecialidad();
                     throw new ControlExcepciones("Este empleado ya esta registrado como asistente");
                 }
 

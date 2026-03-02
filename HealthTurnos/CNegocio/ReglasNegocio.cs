@@ -65,7 +65,34 @@ namespace CNegocio
             AsistenteController.ActualizarAsistente(asistente);
         }
 
+        //Roles
+        public static List<Rol> verRoles()
+        {
+            return RolesController.VerRolesUsuaio();
+        }
+        public static void RegistarRol(Rol rol)
+        {
+            RolesController.InsertarRol(rol);
+        }
+        public static void ActualizarRol(Rol rol)
+        {
+            RolesController.ActualizarRol(rol);
+        }
 
+
+        //Médicos
+        public static DataTable verUsuarios()
+        {
+            return UsuarioController.VerUsuarios();
+        }
+        public static void RegistarUsuario(Usuario usuario)
+        {
+            UsuarioController.InsertarUsuario(usuario);
+        }
+        public static void ActualizarUsuario(Usuario usuario)
+        {
+            UsuarioController.ActualizarUsuario(usuario);
+        }
 
 
         //Especialidades

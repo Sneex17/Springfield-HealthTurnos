@@ -56,7 +56,7 @@ namespace CDatos.Controllers
             using (SqlConnection acceso = ConexionBD.Instancia.ObtenerConexion())
             {
                 int resultado;
-                SqlCommand comando = new SqlCommand("spInsertarEspecialidad", acceso);
+                SqlCommand comando = new SqlCommand("spActualizarEspecialidad", acceso);
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("@IdEspecialidad", especialidad.IdEspecialidad);
                 comando.Parameters.AddWithValue("@Nombre", especialidad.Nombre);

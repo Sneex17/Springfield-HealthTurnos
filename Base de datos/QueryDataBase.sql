@@ -190,3 +190,178 @@ select * from Especialidad
 select * from Rol
 select * from Usuario
 
+--1/3/26
+--procedimientos medicos 
+
+create view vwListaAsistente
+with schemabinding
+as
+select e.IdEmpleado, e.Nombre, e.Apellido, e.Email, a.Turno, a.Area
+from dbo.Asistente as a 
+inner join dbo.Empleado as e on a.IdEmpleado = e.IdEmpleado
+go
+
+
+CREATE PROCEDURE spInsertarMedico
+    @IdEmpleado     INT,
+    @IdEspecialidad INT,
+    @NroLicencia    VARCHAR(50)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    INSERT INTO Medico (IdEmpleado, IdEspecialidad, NroLicencia)
+    VALUES (@IdEmpleado, @IdEspecialidad, @NroLicencia);
+END
+go
+
+CREATE PROCEDURE spActualizarMedico
+    @IdEmpleado     INT,
+    @IdEspecialidad INT,
+    @NroLicencia    VARCHAR(50)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    UPDATE Medico
+    SET IdEspecialidad = @IdEspecialidad,
+        NroLicencia    = @NroLicencia
+    WHERE IdEmpleado = @IdEmpleado;
+END
+go
+
+
+--procedimientos asistente
+create proc spVerAsistente
+as 
+set nocount on
+begin
+select * from vwListaAsistente
+end
+go
+
+
+CREATE PROCEDURE spInsertarAsistente
+    @IdEmpleado INT,
+    @Turno      VARCHAR(50),
+    @Area       VARCHAR(50)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    INSERT INTO Asistente (IdEmpleado, Turno, Area)
+    VALUES (@IdEmpleado, @Turno, @Area);
+END
+GO
+
+CREATE PROCEDURE spActualizarAsistente
+    @IdEmpleado INT,
+    @Turno      VARCHAR(50),
+    @Area       VARCHAR(50)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    UPDATE Asistente
+    SET Turno = @Turno,
+        Area  = @Area
+    WHERE IdEmpleado = @IdEmpleado;
+END
+go
+
+
+
+select * from Asistente
+
+select * from Empleado
+
+select * from Usuario
+
+--Roles de Usuario
+create proc spVerRoles
+as
+set nocount on
+begin
+select * from Rol
+end
+
+CREATE PROCEDURE spInsertarRol
+    @Nombre VARCHAR(50)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    INSERT INTO Rol (Nombre)
+    VALUES (@Nombre);
+END
+GO
+
+CREATE PROCEDURE spActualizarRol
+    @IdRol INT,
+    @Nombre VARCHAR(50)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    UPDATE Rol
+    SET Nombre = @Nombre
+    WHERE IdRol = @IdRol;
+END
+GO
+
+select * from Usuario
+
+
+--procedimienos usuarios
+create or alter view vwVerUsuarios
+with schemabinding
+as
+select u.IdUsuario, e.IdEmpleado, e.Nombre, e.Apellido, 
+u.Username as Usuario, u.Passwords as Contraseña, r.Nombre as Rol
+from dbo.Usuario as u
+inner join dbo.Empleado as e on u.IdEmpleado = e.IdEmpleado
+inner join dbo.Rol as r on u.IdRol = r.IdRol
+
+create or alter proc spVerUsuarios
+as
+set nocount on
+begin
+select * from vwVerUsuarios
+end
+go
+
+CREATE PROCEDURE spInsertarUsuario
+    @IdEmpleado INT,
+    @IdRol      INT,
+    @Username   VARCHAR(50),
+    @Passwords  VARCHAR(50)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    INSERT INTO Usuario (IdEmpleado, IdRol, Username, Passwords)
+    VALUES (@IdEmpleado, @IdRol, @Username, @Passwords);
+END
+GO
+
+CREATE PROCEDURE spActualizarUsuario
+    @IdUsuario  INT,
+    @IdEmpleado INT,
+    @IdRol      INT,
+    @Username   VARCHAR(50),
+    @Passwords  VARCHAR(50)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    UPDATE Usuario
+    SET IdEmpleado = @IdEmpleado,
+        IdRol      = @IdRol,
+        Username   = @Username,
+        Passwords  = @Passwords
+    WHERE IdUsuario = @IdUsuario;
+END
+GO
+
+
+select * from Usuario

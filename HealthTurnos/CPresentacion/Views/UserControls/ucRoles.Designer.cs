@@ -1,6 +1,6 @@
 ﻿namespace CPresentacion.Views.UserControls
 {
-    partial class ucEspecialidades
+    partial class ucRoles
     {
         /// <summary> 
         /// Variable del diseñador necesaria.
@@ -31,31 +31,27 @@
             this.BuGuardar = new FontAwesome.Sharp.IconButton();
             this.textbNombre = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textbIdEspecialidad = new System.Windows.Forms.TextBox();
+            this.textbIdRol = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.viewDatosEspecialidades = new System.Windows.Forms.DataGridView();
-            this.textbSalario = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.viewDatosRoles = new System.Windows.Forms.DataGridView();
             this.panelInfo.SuspendLayout();
             this.panelContainer.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.viewDatosEspecialidades)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.viewDatosRoles)).BeginInit();
             this.SuspendLayout();
             // 
             // labelText
             // 
-            this.labelText.Size = new System.Drawing.Size(360, 26);
-            this.labelText.Text = "Gestión de especialidades médicas";
+            this.labelText.Size = new System.Drawing.Size(290, 26);
+            this.labelText.Text = "Gestión de roles de usuarios";
             // 
             // panelContainer
             // 
-            this.panelContainer.Controls.Add(this.textbSalario);
-            this.panelContainer.Controls.Add(this.label3);
             this.panelContainer.Controls.Add(this.BuGuardar);
             this.panelContainer.Controls.Add(this.textbNombre);
             this.panelContainer.Controls.Add(this.label2);
-            this.panelContainer.Controls.Add(this.textbIdEspecialidad);
+            this.panelContainer.Controls.Add(this.textbIdRol);
             this.panelContainer.Controls.Add(this.label1);
-            this.panelContainer.Controls.Add(this.viewDatosEspecialidades);
+            this.panelContainer.Controls.Add(this.viewDatosRoles);
             // 
             // BuGuardar
             // 
@@ -71,7 +67,7 @@
             this.BuGuardar.Location = new System.Drawing.Point(712, 53);
             this.BuGuardar.Name = "BuGuardar";
             this.BuGuardar.Size = new System.Drawing.Size(179, 47);
-            this.BuGuardar.TabIndex = 28;
+            this.BuGuardar.TabIndex = 22;
             this.BuGuardar.Text = "Registrar";
             this.BuGuardar.UseVisualStyleBackColor = false;
             this.BuGuardar.Click += new System.EventHandler(this.BuGuardar_Click);
@@ -83,7 +79,7 @@
             this.textbNombre.Location = new System.Drawing.Point(244, 60);
             this.textbNombre.Name = "textbNombre";
             this.textbNombre.Size = new System.Drawing.Size(190, 26);
-            this.textbNombre.TabIndex = 27;
+            this.textbNombre.TabIndex = 19;
             // 
             // label2
             // 
@@ -92,18 +88,18 @@
             this.label2.Location = new System.Drawing.Point(240, 36);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(73, 21);
-            this.label2.TabIndex = 26;
+            this.label2.TabIndex = 18;
             this.label2.Text = "Nombre";
             // 
-            // textbIdEspecialidad
+            // textbIdRol
             // 
-            this.textbIdEspecialidad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textbIdEspecialidad.Enabled = false;
-            this.textbIdEspecialidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.textbIdEspecialidad.Location = new System.Drawing.Point(49, 60);
-            this.textbIdEspecialidad.Name = "textbIdEspecialidad";
-            this.textbIdEspecialidad.Size = new System.Drawing.Size(190, 26);
-            this.textbIdEspecialidad.TabIndex = 25;
+            this.textbIdRol.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textbIdRol.Enabled = false;
+            this.textbIdRol.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.textbIdRol.Location = new System.Drawing.Point(49, 60);
+            this.textbIdRol.Name = "textbIdRol";
+            this.textbIdRol.Size = new System.Drawing.Size(190, 26);
+            this.textbIdRol.TabIndex = 17;
             // 
             // label1
             // 
@@ -111,64 +107,43 @@
             this.label1.Font = new System.Drawing.Font("Montserrat SemiBold", 11F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(45, 36);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(125, 21);
-            this.label1.TabIndex = 24;
-            this.label1.Text = "Id Especialidad";
+            this.label1.Size = new System.Drawing.Size(54, 21);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Id Rol";
             // 
-            // viewDatosEspecialidades
+            // viewDatosRoles
             // 
-            this.viewDatosEspecialidades.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.viewDatosEspecialidades.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.viewDatosEspecialidades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.viewDatosEspecialidades.Location = new System.Drawing.Point(49, 230);
-            this.viewDatosEspecialidades.Name = "viewDatosEspecialidades";
-            this.viewDatosEspecialidades.Size = new System.Drawing.Size(842, 222);
-            this.viewDatosEspecialidades.TabIndex = 23;
-            this.viewDatosEspecialidades.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.viewDatosEspecialidades_CellDoubleClick);
+            this.viewDatosRoles.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.viewDatosRoles.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.viewDatosRoles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.viewDatosRoles.Location = new System.Drawing.Point(49, 230);
+            this.viewDatosRoles.Name = "viewDatosRoles";
+            this.viewDatosRoles.Size = new System.Drawing.Size(842, 222);
+            this.viewDatosRoles.TabIndex = 15;
+            this.viewDatosRoles.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.viewDatosRoles_CellDoubleClick);
             // 
-            // textbSalario
-            // 
-            this.textbSalario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textbSalario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.textbSalario.Location = new System.Drawing.Point(440, 60);
-            this.textbSalario.Name = "textbSalario";
-            this.textbSalario.Size = new System.Drawing.Size(190, 26);
-            this.textbSalario.TabIndex = 30;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Montserrat SemiBold", 11F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(436, 36);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 21);
-            this.label3.TabIndex = 29;
-            this.label3.Text = "Salario";
-            // 
-            // ucEspecialidades
+            // ucRoles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Name = "ucEspecialidades";
-            this.VisibleChanged += new System.EventHandler(this.ucEspecialidades_VisibleChanged);
+            this.Name = "ucRoles";
+            this.VisibleChanged += new System.EventHandler(this.ucRoles_VisibleChanged);
             this.panelInfo.ResumeLayout(false);
             this.panelInfo.PerformLayout();
             this.panelContainer.ResumeLayout(false);
             this.panelContainer.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.viewDatosEspecialidades)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.viewDatosRoles)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TextBox textbSalario;
-        private System.Windows.Forms.Label label3;
         private FontAwesome.Sharp.IconButton BuGuardar;
         private System.Windows.Forms.TextBox textbNombre;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textbIdEspecialidad;
+        private System.Windows.Forms.TextBox textbIdRol;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView viewDatosEspecialidades;
+        private System.Windows.Forms.DataGridView viewDatosRoles;
     }
 }

@@ -55,4 +55,24 @@ namespace CNegocio
                .NotEmpty().WithMessage("El campo de contraseña no puede estar vacío");
         }
     }
+
+    public class RolValidacion : AbstractValidator<Rol>
+    {
+        public RolValidacion()
+        {
+            RuleFor(L => L.Nombre)
+               .NotEmpty().WithMessage("El campo de nombre del rol no puede estar vacío");
+        }
+    }
+
+    public class EspecialidadValidacion : AbstractValidator<Especialidad>
+    {
+        public EspecialidadValidacion()
+        {
+            RuleFor(L => L.Nombre)
+               .NotEmpty().WithMessage("El campo de nombre de la especialidad no puede estar vacío");
+            RuleFor(L => L.Salario)
+               .NotEmpty().WithMessage("El campo de salario de la especialidad no puede estar vacío");
+        }
+    }
 }

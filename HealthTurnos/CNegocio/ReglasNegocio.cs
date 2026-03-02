@@ -100,7 +100,14 @@ namespace CNegocio
         {
             return EspecialidadController.VerEspecialiad();
         }
-
+        public static void RegistarEspecialidad(Especialidad especialidad)
+        {
+            EspecialidadController.InsertarEspecialidad(especialidad);
+        }
+        public static void ActualizarEspecialidad(Especialidad especialidad)
+        {
+            EspecialidadController.ActualizarEspecialidad(especialidad);
+        }
 
         public static async Task<List<Character>> VerPacientes()
         {

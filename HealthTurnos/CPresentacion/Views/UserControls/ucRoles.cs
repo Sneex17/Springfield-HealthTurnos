@@ -14,9 +14,9 @@ using System.Windows.Forms;
 
 namespace CPresentacion.Views.UserControls
 {
-    public partial class ucEspecialidades : ucGestion
+    public partial class ucRoles : ucGestion
     {
-        public ucEspecialidades()
+        public ucRoles()
         {
             InitializeComponent();
             CargarDatos();
@@ -24,14 +24,13 @@ namespace CPresentacion.Views.UserControls
 
         private void CargarDatos()
         {
-            viewDatosEspecialidades.DataSource = ReglasNegocio.VerEspecialidades();
+            viewDatosRoles.DataSource = ReglasNegocio.verRoles();
         }
         private void LimpiarControles()
         {
-            textbIdEspecialidad.Text = string.Empty;
+            textbIdRol.Text = string.Empty;
             textbNombre.Text = string.Empty;
-            textbSalario.Text = string.Empty;
-            ControlUpdate(textbIdEspecialidad.Text);
+            ControlUpdate(textbIdRol.Text);
         }
         private void ControlUpdate(string id)
         {
@@ -48,28 +47,25 @@ namespace CPresentacion.Views.UserControls
                 BuGuardar.IconChar = IconChar.Plus;
             }
         }
-
-        private void viewDatosEspecialidades_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void viewDatosRoles_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            textbIdEspecialidad.Text = viewDatosEspecialidades.Rows[e.RowIndex].Cells["IdEspecialidad"].Value.ToString();
-            textbNombre.Text = viewDatosEspecialidades.Rows[e.RowIndex].Cells["Nombre"].Value.ToString();
-            textbSalario.Text = viewDatosEspecialidades.Rows[e.RowIndex].Cells["Salario"].Value.ToString();
+            textbIdRol.Text = viewDatosRoles.Rows[e.RowIndex].Cells["IdRol"].Value.ToString();
+            textbNombre.Text = viewDatosRoles.Rows[e.RowIndex].Cells["Nombre"].Value.ToString();
 
-            ControlUpdate(textbIdEspecialidad.Text);
+            ControlUpdate(textbIdRol.Text);
         }
 
         private void BuGuardar_Click(object sender, EventArgs e)
         {
             try
             {
-                if (string.IsNullOrWhiteSpace(textbIdEspecialidad.Text))
+                if (string.IsNullOrWhiteSpace(textbIdRol.Text))
                 {
-                    Especialidad especialidad = new Especialidad();
-                    especialidad.Nombre = textbNombre.Text;
-                    especialidad.Salario = Convert.ToDecimal(textbSalario.Text);
+                    Rol rol = new Rol();
+                    rol.Nombre = textbNombre.Text;
 
-                    var validacion = new EspecialidadValidacion();
-                    var resultado = validacion.Validate(especialidad);
+                    var validacion = new RolValidacion();
+                    var resultado = validacion.Validate(rol);
 
                     if (!resultado.IsValid)
                     {
@@ -79,13 +75,13 @@ namespace CPresentacion.Views.UserControls
                         throw new ControlExcepciones(error);
                     }
 
-                    var mensaje = MessageBox.Show("Desea registrar esta especialidad?", "Registro de especialidad",
+                    var mensaje = MessageBox.Show("Desea registrar este rol?", "Registro de rol",
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                     if (mensaje == DialogResult.Yes)
                     {
-                        ReglasNegocio.RegistarEspecialidad(especialidad);
-                        MessageBox.Show("Especialidad registrada con exito!", "Registro de especialidad",
+                        ReglasNegocio.RegistarRol(rol);
+                        MessageBox.Show("Rol registrado con exito!", "Registro de rol",
                             MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         LimpiarControles();
@@ -94,13 +90,12 @@ namespace CPresentacion.Views.UserControls
                 }
                 else
                 {
-                    Especialidad especialidad = new Especialidad();
-                    especialidad.IdEspecialidad = Convert.ToInt32(textbIdEspecialidad.Text);
-                    especialidad.Nombre = textbNombre.Text;
-                    especialidad.Salario = Convert.ToDecimal(textbSalario.Text);
-
-                    var validacion = new EspecialidadValidacion();
-                    var resultado = validacion.Validate(especialidad);
+                    Rol rol = new Rol();
+                    rol.IdRol = Convert.ToInt32(textbIdRol.Text);
+                    rol.Nombre = textbNombre.Text;
+                   
+                    var validacion = new RolValidacion();
+                    var resultado = validacion.Validate(rol);
 
                     if (!resultado.IsValid)
                     {
@@ -110,13 +105,13 @@ namespace CPresentacion.Views.UserControls
                         throw new ControlExcepciones(error);
                     }
 
-                    var mensaje = MessageBox.Show("Desea actualizar los datos de esta especialidad?", "Actualización de especialidad",
+                    var mensaje = MessageBox.Show("Desea actualizar los datos de este rol?", "Actualización de rol",
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                     if (mensaje == DialogResult.Yes)
                     {
-                        ReglasNegocio.ActualizarEspecialidad(especialidad);
-                        MessageBox.Show("Datos de la especialidad actualizados con exito!", "Actualización de especialidad",
+                        ReglasNegocio.ActualizarRol(rol);
+                        MessageBox.Show("Datos del rol actualizados con exito!", "Actualización de rol",
                             MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         LimpiarControles();
@@ -136,7 +131,7 @@ namespace CPresentacion.Views.UserControls
             }
         }
 
-        private void ucEspecialidades_VisibleChanged(object sender, EventArgs e)
+        private void ucRoles_VisibleChanged(object sender, EventArgs e)
         {
             if(this.Visible)
             {

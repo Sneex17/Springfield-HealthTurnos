@@ -23,9 +23,9 @@ namespace CPresentacion.Views
             //var materialSkinManager = MaterialSkinManager.Instance;
             //materialSkinManager.AddFormToManage(this);
             //materialSkinManager.ColorScheme = new ColorScheme(
-            //    Primary.Blue600,
-            //    Primary.Blue700,
-            //    Primary.Blue200,
+            //    Primary.Orange100,
+            //    Primary.Orange700,
+            //    Primary.Orange200,
             //    Accent.LightBlue200,
             //    TextShade.WHITE);
         }
@@ -111,6 +111,14 @@ namespace CPresentacion.Views
                 ucEspecialidades especialidades = new ucEspecialidades();
                 especialidades.Dock = DockStyle.Fill;
                 tabEspecialidades.Controls.Add(especialidades);
+            }
+
+            if (materialTabControl1.SelectedTab == tabRoles
+                && tabRoles.Controls.Count == 0)
+            {
+                ucRoles roles = new ucRoles();
+                roles.Dock = DockStyle.Fill;
+                tabRoles.Controls.Add(roles);
             }
 
             if (materialTabControl1.SelectedTab == tabUsuarios

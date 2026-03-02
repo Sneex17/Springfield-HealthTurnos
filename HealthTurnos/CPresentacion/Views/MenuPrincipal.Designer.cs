@@ -40,6 +40,7 @@
             this.tabAsistente = new System.Windows.Forms.TabPage();
             this.tabEspecialidades = new System.Windows.Forms.TabPage();
             this.tabUsuarios = new System.Windows.Forms.TabPage();
+            this.tabRoles = new System.Windows.Forms.TabPage();
             this.materialTabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,9 +52,10 @@
             this.materialTabControl1.Controls.Add(this.tabAtenderPacientes);
             this.materialTabControl1.Controls.Add(this.tabColaTurnos);
             this.materialTabControl1.Controls.Add(this.tabEmpleados);
+            this.materialTabControl1.Controls.Add(this.tabEspecialidades);
             this.materialTabControl1.Controls.Add(this.tabMedicos);
             this.materialTabControl1.Controls.Add(this.tabAsistente);
-            this.materialTabControl1.Controls.Add(this.tabEspecialidades);
+            this.materialTabControl1.Controls.Add(this.tabRoles);
             this.materialTabControl1.Controls.Add(this.tabUsuarios);
             this.materialTabControl1.Depth = 0;
             this.materialTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -68,10 +70,10 @@
             // 
             // tabHome
             // 
-            this.tabHome.Location = new System.Drawing.Point(4, 22);
+            this.tabHome.Location = new System.Drawing.Point(4, 40);
             this.tabHome.Name = "tabHome";
             this.tabHome.Padding = new System.Windows.Forms.Padding(3);
-            this.tabHome.Size = new System.Drawing.Size(936, 557);
+            this.tabHome.Size = new System.Drawing.Size(936, 539);
             this.tabHome.TabIndex = 0;
             this.tabHome.Text = "Home";
             this.tabHome.UseVisualStyleBackColor = true;
@@ -122,7 +124,7 @@
             this.tabEmpleados.Padding = new System.Windows.Forms.Padding(3);
             this.tabEmpleados.Size = new System.Drawing.Size(936, 557);
             this.tabEmpleados.TabIndex = 5;
-            this.tabEmpleados.Text = "Gestión de empleados";
+            this.tabEmpleados.Text = "Gest. de empleados";
             this.tabEmpleados.UseVisualStyleBackColor = true;
             // 
             // tabMedicos
@@ -131,7 +133,7 @@
             this.tabMedicos.Name = "tabMedicos";
             this.tabMedicos.Size = new System.Drawing.Size(936, 557);
             this.tabMedicos.TabIndex = 6;
-            this.tabMedicos.Text = "Gestión de médicos";
+            this.tabMedicos.Text = "Gest. de médicos";
             this.tabMedicos.UseVisualStyleBackColor = true;
             // 
             // tabAsistente
@@ -140,7 +142,7 @@
             this.tabAsistente.Name = "tabAsistente";
             this.tabAsistente.Size = new System.Drawing.Size(936, 557);
             this.tabAsistente.TabIndex = 7;
-            this.tabAsistente.Text = "Gestión de asistentes";
+            this.tabAsistente.Text = "Gest. de asistentes";
             this.tabAsistente.UseVisualStyleBackColor = true;
             // 
             // tabEspecialidades
@@ -150,17 +152,27 @@
             this.tabEspecialidades.Padding = new System.Windows.Forms.Padding(3);
             this.tabEspecialidades.Size = new System.Drawing.Size(936, 557);
             this.tabEspecialidades.TabIndex = 8;
-            this.tabEspecialidades.Text = "Especialidades";
+            this.tabEspecialidades.Text = "Gest. de especialidades";
             this.tabEspecialidades.UseVisualStyleBackColor = true;
             // 
             // tabUsuarios
             // 
-            this.tabUsuarios.Location = new System.Drawing.Point(4, 22);
+            this.tabUsuarios.Location = new System.Drawing.Point(4, 40);
             this.tabUsuarios.Name = "tabUsuarios";
-            this.tabUsuarios.Size = new System.Drawing.Size(936, 557);
+            this.tabUsuarios.Size = new System.Drawing.Size(936, 539);
             this.tabUsuarios.TabIndex = 9;
-            this.tabUsuarios.Text = "Gestión de Usuarios";
+            this.tabUsuarios.Text = "Gest. de Usuarios";
             this.tabUsuarios.UseVisualStyleBackColor = true;
+            // 
+            // tabRoles
+            // 
+            this.tabRoles.Location = new System.Drawing.Point(4, 22);
+            this.tabRoles.Name = "tabRoles";
+            this.tabRoles.Padding = new System.Windows.Forms.Padding(3);
+            this.tabRoles.Size = new System.Drawing.Size(936, 557);
+            this.tabRoles.TabIndex = 10;
+            this.tabRoles.Text = "Gest. Roles";
+            this.tabRoles.UseVisualStyleBackColor = true;
             // 
             // MenuPrincipal
             // 
@@ -191,5 +203,6 @@
         private System.Windows.Forms.TabPage tabAsistente;
         private System.Windows.Forms.TabPage tabEspecialidades;
         private System.Windows.Forms.TabPage tabUsuarios;
+        private System.Windows.Forms.TabPage tabRoles;
     }
 }

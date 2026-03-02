@@ -3,8 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\xrami\\OneDrive\\Documentos\\Springfield HealthTurnos\\HealthTurnos\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{4E164D7B-F1E9-4BDC-B71C-D5B1A5545F84}|CDatos\\CDatos.csproj|c:\\users\\xrami\\onedrive\\documentos\\springfield healthturnos\\healthturnos\\cdatos\\controllers\\especialidadcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E164D7B-F1E9-4BDC-B71C-D5B1A5545F84}|CDatos\\CDatos.csproj|solutionrelative:cdatos\\controllers\\especialidadcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A489A2A-1EB2-4AE6-849E-74D9A87AE0D3}|CPresentacion\\CPresentacion.csproj|c:\\users\\xrami\\onedrive\\documentos\\springfield healthturnos\\healthturnos\\cpresentacion\\views\\usercontrols\\ucespecialidades.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A489A2A-1EB2-4AE6-849E-74D9A87AE0D3}|CPresentacion\\CPresentacion.csproj|solutionrelative:cpresentacion\\views\\usercontrols\\ucespecialidades.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A489A2A-1EB2-4AE6-849E-74D9A87AE0D3}|CPresentacion\\CPresentacion.csproj|c:\\users\\xrami\\onedrive\\documentos\\springfield healthturnos\\healthturnos\\cpresentacion\\views\\usercontrols\\ucespecialidades.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7A489A2A-1EB2-4AE6-849E-74D9A87AE0D3}|CPresentacion\\CPresentacion.csproj|solutionrelative:cpresentacion\\views\\usercontrols\\ucespecialidades.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{7A489A2A-1EB2-4AE6-849E-74D9A87AE0D3}|CPresentacion\\CPresentacion.csproj|c:\\users\\xrami\\onedrive\\documentos\\springfield healthturnos\\healthturnos\\cpresentacion\\views\\menuprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{7A489A2A-1EB2-4AE6-849E-74D9A87AE0D3}|CPresentacion\\CPresentacion.csproj|solutionrelative:cpresentacion\\views\\menuprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D6046C94-0713-4A88-A7ED-A777A4EDDBC2}|CNegocio\\CNegocio.csproj|c:\\users\\xrami\\onedrive\\documentos\\springfield healthturnos\\healthturnos\\cnegocio\\reglasnegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D6046C94-0713-4A88-A7ED-A777A4EDDBC2}|CNegocio\\CNegocio.csproj|solutionrelative:cnegocio\\reglasnegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D6046C94-0713-4A88-A7ED-A777A4EDDBC2}|CNegocio\\CNegocio.csproj|c:\\users\\xrami\\onedrive\\documentos\\springfield healthturnos\\healthturnos\\cnegocio\\validaciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D6046C94-0713-4A88-A7ED-A777A4EDDBC2}|CNegocio\\CNegocio.csproj|solutionrelative:cnegocio\\validaciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,11 +34,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "MenuPrincipal.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\xrami\\OneDrive\\Documentos\\Springfield HealthTurnos\\HealthTurnos\\CPresentacion\\Views\\MenuPrincipal.cs",
               "RelativeDocumentMoniker": "CPresentacion\\Views\\MenuPrincipal.cs",
@@ -32,6 +52,70 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EspecialidadController.cs",
+              "DocumentMoniker": "C:\\Users\\xrami\\OneDrive\\Documentos\\Springfield HealthTurnos\\HealthTurnos\\CDatos\\Controllers\\EspecialidadController.cs",
+              "RelativeDocumentMoniker": "CDatos\\Controllers\\EspecialidadController.cs",
+              "ToolTip": "C:\\Users\\xrami\\OneDrive\\Documentos\\Springfield HealthTurnos\\HealthTurnos\\CDatos\\Controllers\\EspecialidadController.cs",
+              "RelativeToolTip": "CDatos\\Controllers\\EspecialidadController.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAgwBwAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-02T02:16:02.429Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ucEspecialidades.cs",
+              "DocumentMoniker": "C:\\Users\\xrami\\OneDrive\\Documentos\\Springfield HealthTurnos\\HealthTurnos\\CPresentacion\\Views\\UserControls\\ucEspecialidades.cs",
+              "RelativeDocumentMoniker": "CPresentacion\\Views\\UserControls\\ucEspecialidades.cs",
+              "ToolTip": "C:\\Users\\xrami\\OneDrive\\Documentos\\Springfield HealthTurnos\\HealthTurnos\\CPresentacion\\Views\\UserControls\\ucEspecialidades.cs",
+              "RelativeToolTip": "CPresentacion\\Views\\UserControls\\ucEspecialidades.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAQwIcAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-02T02:05:27.322Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ucEspecialidades.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\xrami\\OneDrive\\Documentos\\Springfield HealthTurnos\\HealthTurnos\\CPresentacion\\Views\\UserControls\\ucEspecialidades.cs",
+              "RelativeDocumentMoniker": "CPresentacion\\Views\\UserControls\\ucEspecialidades.cs",
+              "ToolTip": "C:\\Users\\xrami\\OneDrive\\Documentos\\Springfield HealthTurnos\\HealthTurnos\\CPresentacion\\Views\\UserControls\\ucEspecialidades.cs [Dise\u00F1o]",
+              "RelativeToolTip": "CPresentacion\\Views\\UserControls\\ucEspecialidades.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-02T01:59:39.5Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Validaciones.cs",
+              "DocumentMoniker": "C:\\Users\\xrami\\OneDrive\\Documentos\\Springfield HealthTurnos\\HealthTurnos\\CNegocio\\Validaciones.cs",
+              "RelativeDocumentMoniker": "CNegocio\\Validaciones.cs",
+              "ToolTip": "C:\\Users\\xrami\\OneDrive\\Documentos\\Springfield HealthTurnos\\HealthTurnos\\CNegocio\\Validaciones.cs",
+              "RelativeToolTip": "CNegocio\\Validaciones.cs",
+              "ViewState": "AgIAADMAAAAAAAAAAAAwwD8AAABaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-02T00:41:54.451Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ReglasNegocio.cs",
+              "DocumentMoniker": "C:\\Users\\xrami\\OneDrive\\Documentos\\Springfield HealthTurnos\\HealthTurnos\\CNegocio\\ReglasNegocio.cs",
+              "RelativeDocumentMoniker": "CNegocio\\ReglasNegocio.cs",
+              "ToolTip": "C:\\Users\\xrami\\OneDrive\\Documentos\\Springfield HealthTurnos\\HealthTurnos\\CNegocio\\ReglasNegocio.cs",
+              "RelativeToolTip": "CNegocio\\ReglasNegocio.cs",
+              "ViewState": "AgIAAFwAAAAAAAAAAAAAAGUAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-02T00:38:49.703Z",
+              "EditorCaption": ""
             }
           ]
         }

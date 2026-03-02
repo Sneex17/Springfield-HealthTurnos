@@ -37,10 +37,6 @@
           "SelectedChildIndex": 2,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "MenuPrincipal.cs [Dise\u00F1o]",
@@ -54,6 +50,10 @@
               "EditorCaption": " [Dise\u00F1o]"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "EspecialidadController.cs",
@@ -61,7 +61,7 @@
               "RelativeDocumentMoniker": "CDatos\\Controllers\\EspecialidadController.cs",
               "ToolTip": "C:\\Users\\xrami\\OneDrive\\Documentos\\Springfield HealthTurnos\\HealthTurnos\\CDatos\\Controllers\\EspecialidadController.cs",
               "RelativeToolTip": "CDatos\\Controllers\\EspecialidadController.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAAACEAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAABcAAAAAAAAAAAAgwBwAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-02T02:16:02.429Z",
               "EditorCaption": ""

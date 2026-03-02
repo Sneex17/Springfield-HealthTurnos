@@ -1,5 +1,5 @@
 ﻿using System;
-using CNegocio.StatePattern;
+using CEntidades.StatePattern;
 
 namespace CEntidades.BuilderPattern
 {

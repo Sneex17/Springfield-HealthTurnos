@@ -114,6 +114,12 @@
     <Compile Include="Views\MenuPrincipal.Designer.cs">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\UserControlsTurnos\ucRegistroTurno.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\UserControlsTurnos\ucRegistroTurno.Designer.cs">
+      <DependentUpon>ucRegistroTurno.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\UserControls\ucAsistentes.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -171,6 +177,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\UserControlsTurnos\ucRegistroTurno.resx">
+      <DependentUpon>ucRegistroTurno.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\UserControls\ucAsistentes.resx">
       <DependentUpon>ucAsistentes.cs</DependentUpon>

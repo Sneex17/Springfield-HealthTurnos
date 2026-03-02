@@ -45,11 +45,25 @@ namespace CPresentacion.Views
                     {
                         tabRegistrarTurno.Parent = null;
                         tabPaciente.Parent = null;
+                        tabEmpleados.Parent = null;
+                        tabMedicos.Parent = null;
+                        tabAsistente.Parent = null;
+                        tabEspecialidades.Parent = null;
+                        tabRoles.Parent = null;
+                        tabUsuarios.Parent = null;
+
                     }
                     break;
                 case 3:
                     {
                         tabAtenderPacientes.Parent = null;
+                        tabEmpleados.Parent = null;
+                        tabMedicos.Parent = null;
+                        tabAsistente.Parent = null;
+                        tabEspecialidades.Parent = null;
+                        tabRoles.Parent = null;
+                        tabUsuarios.Parent = null;
+                        
                     }
                     break;
                 

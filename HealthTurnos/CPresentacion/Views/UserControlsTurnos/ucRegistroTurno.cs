@@ -17,5 +17,17 @@ namespace CPresentacion.Views.UserControlsTurnos
         {
             InitializeComponent();
         }
+
+        private void BuBuscarPaciente_Click(object sender, EventArgs e)
+        {
+            fmPacientes paciente = new fmPacientes();
+            paciente.SeleccionarPaciente += (pacientes) =>
+            {
+                textbIdPaciente.Text = pacientes.id.ToString();
+                textbNombrePaciente.Text = pacientes.name.ToString();
+                textbSexoPaciente.Text = pacientes.gender.ToString();
+            };
+            paciente.ShowDialog();
+        }
     }
 }

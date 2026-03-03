@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CPresentacion.Views.UserControls;
+using CPresentacion.Views.UserControlsTurnos;
 using MaterialSkin;
 using MaterialSkin.Controls;
 
@@ -141,6 +142,14 @@ namespace CPresentacion.Views
                 ucUsuarios usuarios = new ucUsuarios();
                 usuarios.Dock = DockStyle.Fill;
                 tabUsuarios.Controls.Add(usuarios);
+            }
+
+            if (materialTabControl1.SelectedTab == tabRegistrarTurno
+                && tabRegistrarTurno.Controls.Count == 0)
+            {
+                ucRegistroTurno turno = new ucRegistroTurno();
+                turno.Dock = DockStyle.Fill;
+                tabRegistrarTurno.Controls.Add(turno);
             }
         }
     }

@@ -14,6 +14,8 @@ namespace CEntidades.BuilderPattern
         public DateTime Fecha { get; set; }
         public Medico Medico { get; set; }
         public string Observaciones { get; set; }
+        public Prioridad Prioridad { get; set; }
         public EstadoTurno Estado { get; set; }
+        
     }
 }

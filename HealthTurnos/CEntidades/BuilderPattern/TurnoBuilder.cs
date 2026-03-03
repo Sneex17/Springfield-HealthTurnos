@@ -31,6 +31,11 @@ namespace CEntidades.BuilderPattern
             _turno.Observaciones = observaciones;
             return this;
         }
+        public ITurnoBuilder conPrioridad(Prioridad prioridad)
+        {
+            _turno.Prioridad = prioridad;
+            return this;
+        }
         public ITurnoBuilder conEstado(EstadoTurno estado)
         {
             _turno.Estado = estado;

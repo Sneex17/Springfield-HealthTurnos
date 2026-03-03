@@ -28,29 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textbApellido = new System.Windows.Forms.TextBox();
+            this.textbSexoPaciente = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textbNombre = new System.Windows.Forms.TextBox();
+            this.textbNombrePaciente = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textbIdEmpleado = new System.Windows.Forms.TextBox();
+            this.textbIdPaciente = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textbEspecialidadMedico = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textbNombreMedico = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textbIdMedico = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.BuBuscarPaciente = new FontAwesome.Sharp.IconButton();
-            this.cbxEspecialidad = new System.Windows.Forms.ComboBox();
+            this.cbxEProridad = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.rbObservaciones = new System.Windows.Forms.RichTextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textbEstado = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.BuBuscarMedico = new FontAwesome.Sharp.IconButton();
             this.BuGuardar = new FontAwesome.Sharp.IconButton();
+            this.viewDatosTurnos = new System.Windows.Forms.DataGridView();
             this.panelInfo.SuspendLayout();
             this.panelContainer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.viewDatosTurnos)).BeginInit();
             this.SuspendLayout();
             // 
             // labelText
@@ -60,36 +62,38 @@
             // 
             // panelContainer
             // 
+            this.panelContainer.Controls.Add(this.viewDatosTurnos);
             this.panelContainer.Controls.Add(this.BuGuardar);
             this.panelContainer.Controls.Add(this.BuBuscarMedico);
-            this.panelContainer.Controls.Add(this.textBox4);
+            this.panelContainer.Controls.Add(this.textbEstado);
             this.panelContainer.Controls.Add(this.label9);
             this.panelContainer.Controls.Add(this.label8);
-            this.panelContainer.Controls.Add(this.richTextBox1);
-            this.panelContainer.Controls.Add(this.cbxEspecialidad);
+            this.panelContainer.Controls.Add(this.rbObservaciones);
+            this.panelContainer.Controls.Add(this.cbxEProridad);
             this.panelContainer.Controls.Add(this.label7);
-            this.panelContainer.Controls.Add(this.textBox1);
+            this.panelContainer.Controls.Add(this.textbEspecialidadMedico);
             this.panelContainer.Controls.Add(this.label4);
-            this.panelContainer.Controls.Add(this.textBox2);
+            this.panelContainer.Controls.Add(this.textbNombreMedico);
             this.panelContainer.Controls.Add(this.label5);
-            this.panelContainer.Controls.Add(this.textBox3);
+            this.panelContainer.Controls.Add(this.textbIdMedico);
             this.panelContainer.Controls.Add(this.label6);
             this.panelContainer.Controls.Add(this.BuBuscarPaciente);
-            this.panelContainer.Controls.Add(this.textbApellido);
+            this.panelContainer.Controls.Add(this.textbSexoPaciente);
             this.panelContainer.Controls.Add(this.label3);
-            this.panelContainer.Controls.Add(this.textbNombre);
+            this.panelContainer.Controls.Add(this.textbNombrePaciente);
             this.panelContainer.Controls.Add(this.label2);
-            this.panelContainer.Controls.Add(this.textbIdEmpleado);
+            this.panelContainer.Controls.Add(this.textbIdPaciente);
             this.panelContainer.Controls.Add(this.label1);
             // 
-            // textbApellido
+            // textbSexoPaciente
             // 
-            this.textbApellido.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textbApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.textbApellido.Location = new System.Drawing.Point(410, 44);
-            this.textbApellido.Name = "textbApellido";
-            this.textbApellido.Size = new System.Drawing.Size(170, 26);
-            this.textbApellido.TabIndex = 20;
+            this.textbSexoPaciente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textbSexoPaciente.Enabled = false;
+            this.textbSexoPaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.textbSexoPaciente.Location = new System.Drawing.Point(410, 44);
+            this.textbSexoPaciente.Name = "textbSexoPaciente";
+            this.textbSexoPaciente.Size = new System.Drawing.Size(170, 26);
+            this.textbSexoPaciente.TabIndex = 20;
             // 
             // label3
             // 
@@ -101,14 +105,15 @@
             this.label3.TabIndex = 19;
             this.label3.Text = "Sexo";
             // 
-            // textbNombre
+            // textbNombrePaciente
             // 
-            this.textbNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textbNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.textbNombre.Location = new System.Drawing.Point(229, 44);
-            this.textbNombre.Name = "textbNombre";
-            this.textbNombre.Size = new System.Drawing.Size(170, 26);
-            this.textbNombre.TabIndex = 18;
+            this.textbNombrePaciente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textbNombrePaciente.Enabled = false;
+            this.textbNombrePaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.textbNombrePaciente.Location = new System.Drawing.Point(229, 44);
+            this.textbNombrePaciente.Name = "textbNombrePaciente";
+            this.textbNombrePaciente.Size = new System.Drawing.Size(170, 26);
+            this.textbNombrePaciente.TabIndex = 18;
             // 
             // label2
             // 
@@ -120,15 +125,15 @@
             this.label2.TabIndex = 17;
             this.label2.Text = "Nombre";
             // 
-            // textbIdEmpleado
+            // textbIdPaciente
             // 
-            this.textbIdEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textbIdEmpleado.Enabled = false;
-            this.textbIdEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.textbIdEmpleado.Location = new System.Drawing.Point(49, 44);
-            this.textbIdEmpleado.Name = "textbIdEmpleado";
-            this.textbIdEmpleado.Size = new System.Drawing.Size(170, 26);
-            this.textbIdEmpleado.TabIndex = 16;
+            this.textbIdPaciente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textbIdPaciente.Enabled = false;
+            this.textbIdPaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.textbIdPaciente.Location = new System.Drawing.Point(49, 44);
+            this.textbIdPaciente.Name = "textbIdPaciente";
+            this.textbIdPaciente.Size = new System.Drawing.Size(170, 26);
+            this.textbIdPaciente.TabIndex = 16;
             // 
             // label1
             // 
@@ -140,14 +145,15 @@
             this.label1.TabIndex = 15;
             this.label1.Text = "Id Paciente";
             // 
-            // textBox1
+            // textbEspecialidadMedico
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.textBox1.Location = new System.Drawing.Point(410, 109);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(170, 26);
-            this.textBox1.TabIndex = 27;
+            this.textbEspecialidadMedico.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textbEspecialidadMedico.Enabled = false;
+            this.textbEspecialidadMedico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.textbEspecialidadMedico.Location = new System.Drawing.Point(410, 109);
+            this.textbEspecialidadMedico.Name = "textbEspecialidadMedico";
+            this.textbEspecialidadMedico.Size = new System.Drawing.Size(170, 26);
+            this.textbEspecialidadMedico.TabIndex = 27;
             // 
             // label4
             // 
@@ -159,14 +165,15 @@
             this.label4.TabIndex = 26;
             this.label4.Text = "Especialidad";
             // 
-            // textBox2
+            // textbNombreMedico
             // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.textBox2.Location = new System.Drawing.Point(229, 109);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(170, 26);
-            this.textBox2.TabIndex = 25;
+            this.textbNombreMedico.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textbNombreMedico.Enabled = false;
+            this.textbNombreMedico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.textbNombreMedico.Location = new System.Drawing.Point(229, 109);
+            this.textbNombreMedico.Name = "textbNombreMedico";
+            this.textbNombreMedico.Size = new System.Drawing.Size(170, 26);
+            this.textbNombreMedico.TabIndex = 25;
             // 
             // label5
             // 
@@ -178,15 +185,15 @@
             this.label5.TabIndex = 24;
             this.label5.Text = "Nombre";
             // 
-            // textBox3
+            // textbIdMedico
             // 
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Enabled = false;
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.textBox3.Location = new System.Drawing.Point(49, 109);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(170, 26);
-            this.textBox3.TabIndex = 23;
+            this.textbIdMedico.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textbIdMedico.Enabled = false;
+            this.textbIdMedico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.textbIdMedico.Location = new System.Drawing.Point(49, 109);
+            this.textbIdMedico.Name = "textbIdMedico";
+            this.textbIdMedico.Size = new System.Drawing.Size(170, 26);
+            this.textbIdMedico.TabIndex = 23;
             // 
             // label6
             // 
@@ -215,15 +222,16 @@
             this.BuBuscarPaciente.TabIndex = 21;
             this.BuBuscarPaciente.Text = "Buscar paciente";
             this.BuBuscarPaciente.UseVisualStyleBackColor = false;
+            this.BuBuscarPaciente.Click += new System.EventHandler(this.BuBuscarPaciente_Click);
             // 
-            // cbxEspecialidad
+            // cbxEProridad
             // 
-            this.cbxEspecialidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.2F);
-            this.cbxEspecialidad.FormattingEnabled = true;
-            this.cbxEspecialidad.Location = new System.Drawing.Point(410, 237);
-            this.cbxEspecialidad.Name = "cbxEspecialidad";
-            this.cbxEspecialidad.Size = new System.Drawing.Size(170, 28);
-            this.cbxEspecialidad.TabIndex = 31;
+            this.cbxEProridad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.2F);
+            this.cbxEProridad.FormattingEnabled = true;
+            this.cbxEProridad.Location = new System.Drawing.Point(410, 237);
+            this.cbxEProridad.Name = "cbxEProridad";
+            this.cbxEProridad.Size = new System.Drawing.Size(170, 28);
+            this.cbxEProridad.TabIndex = 31;
             // 
             // label7
             // 
@@ -235,14 +243,14 @@
             this.label7.TabIndex = 30;
             this.label7.Text = "Prioridad";
             // 
-            // richTextBox1
+            // rbObservaciones
             // 
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.richTextBox1.Location = new System.Drawing.Point(49, 179);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(350, 86);
-            this.richTextBox1.TabIndex = 32;
-            this.richTextBox1.Text = "";
+            this.rbObservaciones.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.rbObservaciones.Location = new System.Drawing.Point(49, 179);
+            this.rbObservaciones.Name = "rbObservaciones";
+            this.rbObservaciones.Size = new System.Drawing.Size(350, 86);
+            this.rbObservaciones.TabIndex = 32;
+            this.rbObservaciones.Text = "";
             // 
             // label8
             // 
@@ -254,14 +262,15 @@
             this.label8.TabIndex = 33;
             this.label8.Text = "Observaciones";
             // 
-            // textBox4
+            // textbEstado
             // 
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.textBox4.Location = new System.Drawing.Point(410, 174);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(170, 26);
-            this.textBox4.TabIndex = 35;
+            this.textbEstado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textbEstado.Enabled = false;
+            this.textbEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.textbEstado.Location = new System.Drawing.Point(410, 174);
+            this.textbEstado.Name = "textbEstado";
+            this.textbEstado.Size = new System.Drawing.Size(170, 26);
+            this.textbEstado.TabIndex = 35;
             // 
             // label9
             // 
@@ -309,6 +318,16 @@
             this.BuGuardar.Text = "Registrar";
             this.BuGuardar.UseVisualStyleBackColor = false;
             // 
+            // viewDatosTurnos
+            // 
+            this.viewDatosTurnos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.viewDatosTurnos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.viewDatosTurnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.viewDatosTurnos.Location = new System.Drawing.Point(47, 303);
+            this.viewDatosTurnos.Name = "viewDatosTurnos";
+            this.viewDatosTurnos.Size = new System.Drawing.Size(842, 147);
+            this.viewDatosTurnos.TabIndex = 38;
+            // 
             // ucRegistroTurno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -318,32 +337,34 @@
             this.panelInfo.PerformLayout();
             this.panelContainer.ResumeLayout(false);
             this.panelContainer.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.viewDatosTurnos)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textbEspecialidadMedico;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textbNombreMedico;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textbIdMedico;
         private System.Windows.Forms.Label label6;
         private FontAwesome.Sharp.IconButton BuBuscarPaciente;
-        private System.Windows.Forms.TextBox textbApellido;
+        private System.Windows.Forms.TextBox textbSexoPaciente;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textbNombre;
+        private System.Windows.Forms.TextBox textbNombrePaciente;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textbIdEmpleado;
+        private System.Windows.Forms.TextBox textbIdPaciente;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cbxEspecialidad;
+        private System.Windows.Forms.ComboBox cbxEProridad;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox rbObservaciones;
         private FontAwesome.Sharp.IconButton BuGuardar;
         private FontAwesome.Sharp.IconButton BuBuscarMedico;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textbEstado;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.DataGridView viewDatosTurnos;
     }
 }

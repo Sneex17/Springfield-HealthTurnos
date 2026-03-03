@@ -10,6 +10,7 @@ namespace CEntidades.BuilderPattern
         ITurnoBuilder conFecha(DateTime fecha);
         ITurnoBuilder conMedico(Medico mediico);
         ITurnoBuilder conObservaciones(string observaciones);
+        ITurnoBuilder conPrioridad(Prioridad prioridad);
         ITurnoBuilder conEstado(EstadoTurno estado);
         Turno CrearTurno();
     }

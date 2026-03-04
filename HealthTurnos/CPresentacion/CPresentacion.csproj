@@ -87,6 +87,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Views\fmMedicos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\fmMedicos.Designer.cs">
+      <DependentUpon>fmMedicos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\fmPacientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,6 +162,9 @@
     <Compile Include="Views\UserControls\ucUsuarios.Designer.cs">
       <DependentUpon>ucUsuarios.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Views\fmMedicos.resx">
+      <DependentUpon>fmMedicos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\fmPacientes.resx">
       <DependentUpon>fmPacientes.cs</DependentUpon>
     </EmbeddedResource>

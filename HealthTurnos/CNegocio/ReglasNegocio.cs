@@ -9,6 +9,7 @@ using CDatos.Controllers;
 using System.Data;
 using CInfraestructura;
 using System.Net.Http;
+using CEntidades.BuilderPattern;
 
 namespace CNegocio
 {
@@ -109,6 +110,17 @@ namespace CNegocio
             EspecialidadController.ActualizarEspecialidad(especialidad);
         }
 
+        //Turnos
+        public static List<Prioridad> VerPrioridades()
+        {
+            return PrioridadController.VerRolesUsuaio();
+        }
+        public static void RegistrarTurno(Turno turno)
+        {
+            TurnoController.InsertarTurno(turno);
+        }
+
+        //Pacientes
         public static async Task<List<Character>> VerPacientes()
         {
             IPacientesRepository repository = new PacientesApiRepository(new HttpClient());

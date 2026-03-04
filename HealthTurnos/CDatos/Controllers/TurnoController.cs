@@ -1,5 +1,6 @@
 ﻿using CEntidades;
 using CEntidades.BuilderPattern;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -33,8 +34,10 @@ namespace CDatos.Controllers
                 SqlCommand comando = new SqlCommand("spInsertarTurno", acceso);
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("@IdPaciente", turno.Paciente.id);
+                comando.Parameters.AddWithValue("@IdAsistente", turno.Asistente.IdEmpleado);
                 comando.Parameters.AddWithValue("@Fecha", turno.Fecha);
                 comando.Parameters.AddWithValue("@IdMedico", turno.Medico.IdEmpleado);
+                comando.Parameters.AddWithValue("@IdPrioridad", turno.Prioridad.IdPrioridad);
                 comando.Parameters.AddWithValue("@Observaciones", turno.Observaciones);
                 comando.Parameters.AddWithValue("@IdEstado", turno.Estado.estado.IdEstado);
                 resultado = comando.ExecuteNonQuery();

@@ -12,6 +12,7 @@ namespace CEntidades.BuilderPattern
         public int IdTurno { get; set; }
         public Character Paciente { get; set; }
         public DateTime Fecha { get; set; }
+        public Asistente Asistente { get; set; }
         public Medico Medico { get; set; }
         public string Observaciones { get; set; }
         public Prioridad Prioridad { get; set; }

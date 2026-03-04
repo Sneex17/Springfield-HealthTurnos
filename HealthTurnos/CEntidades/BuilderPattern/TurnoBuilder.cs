@@ -21,6 +21,11 @@ namespace CEntidades.BuilderPattern
             _turno.Fecha = fecha;
             return this;
         }
+        public ITurnoBuilder conAsistente(Asistente asistente)
+        {
+            _turno.Asistente = asistente;
+            return this;
+        }
         public ITurnoBuilder conMedico(Medico mediico)
         {
             _turno.Medico = mediico;

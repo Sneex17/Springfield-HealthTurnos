@@ -8,6 +8,7 @@ namespace CEntidades.BuilderPattern
         ITurnoBuilder conIdTurno(int idturno);
         ITurnoBuilder conPaciente(Character paciente);
         ITurnoBuilder conFecha(DateTime fecha);
+        ITurnoBuilder conAsistente(Asistente asistente);
         ITurnoBuilder conMedico(Medico mediico);
         ITurnoBuilder conObservaciones(string observaciones);
         ITurnoBuilder conPrioridad(Prioridad prioridad);

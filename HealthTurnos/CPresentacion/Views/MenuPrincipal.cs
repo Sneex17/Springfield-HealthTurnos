@@ -153,6 +153,15 @@ namespace CPresentacion.Views
                 turno.Dock = DockStyle.Fill;
                 tabRegistrarTurno.Controls.Add(turno);
             }
+
+            if (materialTabControl1.SelectedTab == tabColaTurnos
+                && tabColaTurnos.Controls.Count == 0)
+            {
+                ucColaTurno colaTurno = new ucColaTurno(user);
+                colaTurno.Dock = DockStyle.Fill;
+                tabColaTurnos.Controls.Add(colaTurno);
+            }
+
         }
     }
 }

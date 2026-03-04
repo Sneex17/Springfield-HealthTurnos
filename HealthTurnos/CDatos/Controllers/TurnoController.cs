@@ -11,12 +11,18 @@ namespace CDatos.Controllers
         /// <summary>
         /// Método para obtener los turnos
         /// </summary>
+        /// <param name="id">Id del asistente o del medico</param>
         /// <returns>Un datatable con los turnos</returns>
-        public static DataTable VerTurnos()
+        public static DataTable VerTurnos(int id)
         {
             using (SqlConnection acceso = ConexionBD.Instancia.ObtenerConexion())
             {
-                SqlDataAdapter adapter = new SqlDataAdapter("spListaTurnos", acceso);
+                SqlCommand comando = new SqlCommand("spListaTurnos", acceso);
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@Id", id);
+
+                SqlDataAdapter adapter = new SqlDataAdapter(comando);
+                
                 DataTable table = new DataTable();
                 adapter.Fill(table);
                 return table;

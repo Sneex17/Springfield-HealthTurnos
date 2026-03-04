@@ -157,9 +157,24 @@ namespace CNegocio
             return await services.ObtenerPacientes();
         }
 
-    
+        public static DataTable ListaTurnoPaciente(int id)
+        {
+            return TurnoController.VerTurnos(id);
+        }
 
+        public static bool PacienteConTurnoActivo(int id, int paciente)
+        {
+            DataRow[] turnoActivo = TurnoController.VerTurnos(id).Select($"IdPaciente = '{id}'");
+
+            foreach (var item in turnoActivo)
+            {
+                string turno = item["Estado"].ToString();
+                if (turno == "Pendiente")
+                {
+                    return true;
+                }
+            }
+            return true;
+        }
     }
-
-
 }

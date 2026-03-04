@@ -22,11 +22,15 @@ namespace CPresentacion.Views.UserControlsTurnos
         public ucRegistroTurno(Usuario usuario)
         {
             InitializeComponent();
-            CargarDatos();
             user = usuario;
+            CargarDatos();
+            
         }
         private void CargarDatos()
         {
+            user.IdEmpleado = ReglasNegocio.IdAsistente(user.IdUsuario);
+            viewDatosTurnos.DataSource = ReglasNegocio.ListaTurnoPaciente(user.IdEmpleado);
+
             cbxProridad.DataSource = ReglasNegocio.VerPrioridades();
             cbxProridad.ValueMember = "IdPrioridad";
             cbxProridad.DisplayMember = "Nombre";
@@ -48,6 +52,7 @@ namespace CPresentacion.Views.UserControlsTurnos
 
         private void BuGuardar_Click(object sender, EventArgs e)
         {
+
             try
             {
                 var paciente = new Character()
@@ -78,7 +83,11 @@ namespace CPresentacion.Views.UserControlsTurnos
 
                 var estado = new EstadoTurno();
 
-                
+                if(ReglasNegocio.PacienteConTurnoActivo(asistente.IdEmpleado, paciente.id))
+                {
+                    throw new ControlExcepciones($"El paciente {paciente.name} ya tiene un turno activo");
+                }
+
 
                 ITurnoBuilder turnoBuilder = new TurnoBuilder();
                 Turno turno = turnoBuilder
@@ -101,6 +110,7 @@ namespace CPresentacion.Views.UserControlsTurnos
                         resultado.Errors.Select(M => M.ErrorMessage));
                     throw new ControlExcepciones(errores);
                 }
+                //ReglasNegocio.RegistrarTurno(turno);
 
                 MessageBox.Show($"{turno.Paciente.id}\n, {turno.Medico.IdEmpleado}\n, {turno.Asistente.IdEmpleado},\n, {turno.Fecha},\n, {turno.Prioridad.IdPrioridad},\n, {turno.Estado.estado.Estado},\n", "Error en la operación",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);

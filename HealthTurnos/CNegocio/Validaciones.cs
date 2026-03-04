@@ -3,6 +3,7 @@ using FluentValidation;
 using System;
 using System.Security.Cryptography;
 using CNegocio;
+using CEntidades.BuilderPattern;
 
 namespace CNegocio
 {
@@ -73,6 +74,20 @@ namespace CNegocio
                .NotEmpty().WithMessage("El campo de nombre de la especialidad no puede estar vacío");
             RuleFor(L => L.Salario)
                .NotEmpty().WithMessage("El campo de salario de la especialidad no puede estar vacío");
+        }
+    }
+
+
+    public class TurnoValidacion : AbstractValidator<Turno>
+    {
+        public TurnoValidacion()
+        {
+            RuleFor(L => L.Paciente.id)
+                .NotEmpty().WithMessage("El campo de paciente no puede estar vacío");
+            RuleFor(L => L.Medico.IdEmpleado)
+               .NotEmpty().WithMessage("El campo de médico no puede estar vacío");
+            RuleFor(L => L.Prioridad.IdPrioridad)
+               .NotEmpty().WithMessage("El campo de prioridad no puede estar vacío");
         }
     }
 }

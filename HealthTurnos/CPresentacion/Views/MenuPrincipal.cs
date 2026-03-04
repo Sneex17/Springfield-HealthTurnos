@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CEntidades;
 using CPresentacion.Views.UserControls;
 using CPresentacion.Views.UserControlsTurnos;
 using MaterialSkin;
@@ -16,11 +17,12 @@ namespace CPresentacion.Views
 {
     public partial class MenuPrincipal : MaterialForm
     {
-        
-        public MenuPrincipal(int rol)
+        Usuario user = new Usuario();
+        public MenuPrincipal(Usuario usuario)
         {
             InitializeComponent();
-            ControlDeRoles(rol);
+            user = usuario;
+            ControlDeRoles(user.IdRol);
             //var materialSkinManager = MaterialSkinManager.Instance;
             //materialSkinManager.AddFormToManage(this);
             //materialSkinManager.ColorScheme = new ColorScheme(
@@ -147,7 +149,7 @@ namespace CPresentacion.Views
             if (materialTabControl1.SelectedTab == tabRegistrarTurno
                 && tabRegistrarTurno.Controls.Count == 0)
             {
-                ucRegistroTurno turno = new ucRegistroTurno();
+                ucRegistroTurno turno = new ucRegistroTurno(user);
                 turno.Dock = DockStyle.Fill;
                 tabRegistrarTurno.Controls.Add(turno);
             }

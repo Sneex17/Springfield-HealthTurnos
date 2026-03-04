@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.panelFondo = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.BuAcceder = new MaterialSkin.Controls.MaterialButton();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.BuVerPass = new FontAwesome.Sharp.IconButton();
@@ -41,6 +40,7 @@
             this.iconUser = new FontAwesome.Sharp.IconPictureBox();
             this.textbUsuario = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.BuIngresar = new ReaLTaiizor.Controls.CyberButton();
             this.panelFondo.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPassword)).BeginInit();
@@ -62,7 +62,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.BuAcceder);
+            this.panel1.Controls.Add(this.BuIngresar);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.BuVerPass);
@@ -77,26 +77,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(215, 348);
             this.panel1.TabIndex = 0;
-            // 
-            // BuAcceder
-            // 
-            this.BuAcceder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BuAcceder.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.BuAcceder.Depth = 0;
-            this.BuAcceder.HighEmphasis = true;
-            this.BuAcceder.Icon = null;
-            this.BuAcceder.Location = new System.Drawing.Point(17, 253);
-            this.BuAcceder.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.BuAcceder.MouseState = MaterialSkin.MouseState.HOVER;
-            this.BuAcceder.Name = "BuAcceder";
-            this.BuAcceder.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.BuAcceder.Size = new System.Drawing.Size(158, 36);
-            this.BuAcceder.TabIndex = 9;
-            this.BuAcceder.Text = "materialButton1";
-            this.BuAcceder.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.BuAcceder.UseAccentColor = false;
-            this.BuAcceder.UseVisualStyleBackColor = true;
-            this.BuAcceder.Click += new System.EventHandler(this.BuAcceder_Click);
             // 
             // label4
             // 
@@ -211,6 +191,47 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Usuario";
             // 
+            // BuIngresar
+            // 
+            this.BuIngresar.Alpha = 20;
+            this.BuIngresar.BackColor = System.Drawing.Color.Transparent;
+            this.BuIngresar.Background = true;
+            this.BuIngresar.Background_WidthPen = 4F;
+            this.BuIngresar.BackgroundPen = true;
+            this.BuIngresar.ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+            this.BuIngresar.ColorBackground_1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+            this.BuIngresar.ColorBackground_2 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(63)))), ((int)(((byte)(86)))));
+            this.BuIngresar.ColorBackground_Pen = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.BuIngresar.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.BuIngresar.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+            this.BuIngresar.ColorPen_2 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(63)))), ((int)(((byte)(86)))));
+            this.BuIngresar.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            this.BuIngresar.Effect_1 = true;
+            this.BuIngresar.Effect_1_ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.BuIngresar.Effect_1_Transparency = 25;
+            this.BuIngresar.Effect_2 = true;
+            this.BuIngresar.Effect_2_ColorBackground = System.Drawing.Color.White;
+            this.BuIngresar.Effect_2_Transparency = 20;
+            this.BuIngresar.Font = new System.Drawing.Font("Montserrat SemiBold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BuIngresar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
+            this.BuIngresar.Lighting = false;
+            this.BuIngresar.LinearGradient_Background = false;
+            this.BuIngresar.LinearGradientPen = false;
+            this.BuIngresar.Location = new System.Drawing.Point(28, 218);
+            this.BuIngresar.Name = "BuIngresar";
+            this.BuIngresar.PenWidth = 15;
+            this.BuIngresar.Rounding = true;
+            this.BuIngresar.RoundingInt = 70;
+            this.BuIngresar.Size = new System.Drawing.Size(158, 50);
+            this.BuIngresar.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.BuIngresar.TabIndex = 10;
+            this.BuIngresar.Tag = "Cyber";
+            this.BuIngresar.TextButton = "Ingresar";
+            this.BuIngresar.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.BuIngresar.Timer_Effect_1 = 5;
+            this.BuIngresar.Timer_RGB = 300;
+            this.BuIngresar.Click += new System.EventHandler(this.BuIngresar_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -246,7 +267,7 @@
         private FontAwesome.Sharp.IconButton BuVerPass;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private MaterialSkin.Controls.MaterialButton BuAcceder;
+        private ReaLTaiizor.Controls.CyberButton BuIngresar;
     }
 }
 

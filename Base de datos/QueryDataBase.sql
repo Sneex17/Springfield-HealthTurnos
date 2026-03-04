@@ -180,7 +180,31 @@ set nocount on
 begin
 select * from Especialidad
 end
+go
 
+-- Insertar Especialidad
+CREATE PROCEDURE spInsertarEspecialidad
+    @Nombre VARCHAR(100),
+    @Salario DECIMAL(10,2)
+AS
+BEGIN
+    INSERT INTO Especialidad (Nombre, Salario)
+    VALUES (@Nombre, @Salario)
+END
+go
+
+-- Actualizar Especialidad
+CREATE PROCEDURE spActualizarEspecialidad
+    @IdEspecialidad INT,
+    @Nombre VARCHAR(100),
+    @Salario DECIMAL(10,2)
+AS
+BEGIN
+    UPDATE Especialidad
+    SET Nombre = @Nombre,
+        Salario = @Salario
+    WHERE IdEspecialidad = @IdEspecialidad
+END
 
 
 select * from Empleado
@@ -365,3 +389,118 @@ GO
 
 
 select * from Usuario
+
+select * from Especialidad
+select * from Rol
+select * from Medico
+delete rol where IdRol = 4
+
+--Martes 3/3/2026
+CREATE TABLE Prioridad (
+    IdPrioridad INT IDENTITY(1,1) PRIMARY KEY,
+    Nombre      VARCHAR(100) NOT NULL,
+    Descripcion VARCHAR(255) NULL
+);
+go
+
+CREATE PROCEDURE spVerPrioridades
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT 
+        IdPrioridad,
+        Nombre,
+        Descripcion
+    FROM Prioridad
+    ORDER BY IdPrioridad;
+END
+go
+
+
+INSERT INTO Prioridad (Nombre, Descripcion) VALUES
+('Normal',      'Solicitud de atención estándar, sin urgencia.'),
+('Prioritario', 'Requiere atención antes que las solicitudes normales.'),
+('Emergencia',  'Atención inmediata, situación crítica.');
+go
+
+
+--tabla de estados
+CREATE TABLE Estado (
+    IdEstado INT IDENTITY(1,1) PRIMARY KEY,
+    Estado   VARCHAR(100) NOT NULL
+);
+go
+
+INSERT INTO Estado (Estado) VALUES
+('Pendiente'),
+('En Atención'),
+('Atendido'),
+('Cancelado');
+
+--tabla turnos
+
+create table Turno(
+IdTurno int primary key identity,
+IdPaciente int not null,
+IdAsistente int not null,
+IdMedico int not null,
+IdPrioridad int not null,
+Observaciones varchar(max),
+Fecha date not null,
+IdEstado int not null
+
+constraint FK_TurnoAsistente foreign key (IdAsistente) references Asistente(IdEmpleado),
+constraint FK_TurnoMedico foreign key (IdMedico) references Medico(IdEmpleado),
+constraint FK_TurnoPrioridad foreign key (IdPrioridad) references Prioridad(IdPrioridad),
+constraint FK_TurnoEstado foreign key (IdEstado) references Estado(IdEstado)
+)
+go
+
+CREATE PROCEDURE spInsertarTurno
+    @IdPaciente    INT,
+    @IdAsistente   INT,
+    @Fecha         DATETIME,
+    @IdMedico      INT,
+    @IdPrioridad   INT,
+    @Observaciones VARCHAR(max) = NULL,
+    @IdEstado      INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    INSERT INTO Turno (IdPaciente, IdAsistente, Fecha, IdMedico, IdPrioridad, Observaciones, IdEstado)
+    VALUES           (@IdPaciente, @IdAsistente, @Fecha, @IdMedico, @IdPrioridad, @Observaciones, @IdEstado);
+
+END
+
+
+--miercoles 4/3/2026
+select * from Usuario
+select * from Rol
+go
+
+CREATE PROCEDURE spValidarUsuario
+    @Username  NVARCHAR(50),
+    @Passwords NVARCHAR(50)
+AS
+BEGIN
+    SELECT IdUsuario 
+    FROM Usuario
+    WHERE Username = @Username 
+      AND Passwords = @Passwords
+END
+
+update Usuario set Username = 'sa', Passwords = 'sa'
+where IdUsuario = 4
+go
+
+
+select * from Asistente
+
+select * from Turno
+select * from vwListaMedicos
+select * from Especialidad
+
+select * from vwVerUsuarios
+

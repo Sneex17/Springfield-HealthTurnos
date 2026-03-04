@@ -1,4 +1,6 @@
 ﻿using CEntidades;
+using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -57,6 +59,22 @@ namespace CDatos.Controllers
                 comando.Parameters.AddWithValue("@Username", usuario.Username);
                 comando.Parameters.AddWithValue("@Passwords", usuario.Passwords);
                 resultado = comando.ExecuteNonQuery();
+            }
+        }
+
+        public static int ValidarUsuario(Usuario usuario)
+        {
+            using (SqlConnection acceso = ConexionBD.Instancia.ObtenerConexion())
+            {
+                object resultado;
+                SqlCommand comando = new SqlCommand("spValidarUsuario", acceso);
+                comando.CommandType= CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@Username", usuario.Username);
+                comando.Parameters.AddWithValue("@Passwords", usuario.Passwords);
+
+                 resultado = comando.ExecuteScalar();
+
+                return resultado != null ? Convert.ToInt32(resultado) : 0;
             }
         }
     }

@@ -34,11 +34,13 @@ namespace CDatos.Controllers
                 SqlCommand comando = new SqlCommand("spInsertarTurno", acceso);
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("@IdPaciente", turno.Paciente.id);
+                comando.Parameters.AddWithValue("@Paciente", turno.Paciente.name);
+                comando.Parameters.AddWithValue("@Sexo", turno.Paciente.gender);
                 comando.Parameters.AddWithValue("@IdAsistente", turno.Asistente.IdEmpleado);
-                comando.Parameters.AddWithValue("@Fecha", turno.Fecha);
                 comando.Parameters.AddWithValue("@IdMedico", turno.Medico.IdEmpleado);
                 comando.Parameters.AddWithValue("@IdPrioridad", turno.Prioridad.IdPrioridad);
                 comando.Parameters.AddWithValue("@Observaciones", turno.Observaciones);
+                comando.Parameters.AddWithValue("@Fecha", turno.Fecha);
                 comando.Parameters.AddWithValue("@IdEstado", turno.Estado.estado.IdEstado);
                 resultado = comando.ExecuteNonQuery();
             }

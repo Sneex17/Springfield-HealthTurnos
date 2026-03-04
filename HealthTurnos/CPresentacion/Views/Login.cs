@@ -1,4 +1,6 @@
-﻿using CPresentacion.Views;
+﻿using CEntidades;
+using CNegocio;
+using CPresentacion.Views;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -44,11 +46,37 @@ namespace CPresentacion
             }
         }
 
-        private void BuAcceder_Click(object sender, EventArgs e)
+        private void BuIngresar_Click(object sender, EventArgs e)
         {
-            MenuPrincipal menu = new MenuPrincipal(3);
-            menu.Show();
-            this.Hide();
+            var usuario = new Usuario()
+            {
+                Username = textbUsuario.Text,
+                Passwords = textbPassword.Text
+            };
+
+            int resultado = ReglasNegocio.UsuarioExiste(usuario);
+
+            if(resultado != 0)
+            {
+                int rol = ReglasNegocio.RolUsuario(resultado);
+
+                if(rol != 0)
+                {
+                    usuario.IdUsuario = resultado;
+                    usuario.IdRol = rol;
+
+                    MenuPrincipal menu = new MenuPrincipal(usuario);
+                    menu.Show();
+                    this.Hide();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Usuario o Contraseña incorrectas","Usuario no valido", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            
+            
         }
     }
 }

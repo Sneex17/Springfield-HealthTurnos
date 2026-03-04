@@ -81,7 +81,7 @@ namespace CNegocio
         }
 
 
-        //Médicos
+        //Usuarios
         public static DataTable verUsuarios()
         {
             return UsuarioController.VerUsuarios();
@@ -93,6 +93,28 @@ namespace CNegocio
         public static void ActualizarUsuario(Usuario usuario)
         {
             UsuarioController.ActualizarUsuario(usuario);
+        }
+        public static int UsuarioExiste(Usuario usuario)
+        {
+            return UsuarioController.ValidarUsuario(usuario);
+        }
+
+        public static int RolUsuario(int id)
+        {
+            DataRow[] usuario = UsuarioController.VerUsuarios().Select($"IdUsuario = '{id}'");
+            string rol = usuario[0]["Rol"].ToString();
+
+            int idrol = RolesController.VerRolesUsuaio()
+                            .Where(L => L.Nombre == rol)
+                            .Select(M => M.IdRol).FirstOrDefault();
+            return idrol;
+        }
+        public static int IdAsistente(int id)
+        {
+            DataRow[] asistente = UsuarioController.VerUsuarios().Select($"IdUsuario = '{id}'");
+            int empleado = Convert.ToInt32(asistente[0]["IdEmpleado"].ToString());
+
+            return empleado;
         }
 
 
@@ -108,6 +130,13 @@ namespace CNegocio
         public static void ActualizarEspecialidad(Especialidad especialidad)
         {
             EspecialidadController.ActualizarEspecialidad(especialidad);
+        }
+        public static string EspecialidadMedico(int id)
+        {
+            DataRow[] medico = MedicoController.VerMedicos().Select($"IdEmpleado = '{id}'");
+            string especialidad = medico[0]["Especialidad"].ToString();
+
+            return especialidad;
         }
 
         //Turnos
@@ -127,6 +156,8 @@ namespace CNegocio
             var services = new PacienteServices(repository);
             return await services.ObtenerPacientes();
         }
+
+    
 
     }
 

@@ -1,5 +1,6 @@
 ﻿using CEntidades;
 using CNegocio;
+using CPresentacion.DecoratorPattern;
 using CPresentacion.Plantillas;
 using System;
 using System.Collections.Generic;
@@ -19,9 +20,20 @@ namespace CPresentacion.Views.UserControlsTurnos
         public ucColaTurno(Usuario usuario)
         {
             InitializeComponent();
+            DecorarDatagrid();
             user = usuario;
             CargarDatos();
         }
+        private void DecorarDatagrid()
+        {
+            IDataGridDecorator estilo = new BordeDecorator(
+                            new SeleccionDecorator(
+                            new FilasAlternasDecorator(
+                            new HeaderDecorator(
+                            new DataGridBase()))));
+            estilo.Aplicar(viewDatosTurnos);
+        }
+
         private void CargarDatos()
         {
             user.IdEmpleado = ReglasNegocio.IdAsistente(user.IdUsuario);

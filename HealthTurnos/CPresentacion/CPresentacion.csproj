@@ -87,6 +87,13 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DecoratorPattern\BordeDecorator.cs" />
+    <Compile Include="DecoratorPattern\DataGridBase.cs" />
+    <Compile Include="DecoratorPattern\DataGridDecorator.cs" />
+    <Compile Include="DecoratorPattern\FilasAlternasDecorator.cs" />
+    <Compile Include="DecoratorPattern\HeaderDecorator.cs" />
+    <Compile Include="DecoratorPattern\IDataGridDecorator.cs" />
+    <Compile Include="DecoratorPattern\SeleccionDecorator.cs" />
     <Compile Include="Views\fmMedicos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -242,6 +249,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Imgs\Fondo Login.png" />
+    <None Include="Imgs\FondoLogin.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

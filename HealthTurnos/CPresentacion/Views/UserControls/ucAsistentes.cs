@@ -1,5 +1,6 @@
 ﻿using CEntidades;
 using CNegocio;
+using CPresentacion.DecoratorPattern;
 using CPresentacion.Plantillas;
 using FontAwesome.Sharp;
 using System;
@@ -19,9 +20,18 @@ namespace CPresentacion.Views.UserControls
         public ucAsistentes()
         {
             InitializeComponent();
+            DecorarDatagrid();
             CargarDatos();
         }
-
+        private void DecorarDatagrid()
+        {
+            IDataGridDecorator estilo = new BordeDecorator(
+                            new SeleccionDecorator(
+                            new FilasAlternasDecorator(
+                            new HeaderDecorator(
+                            new DataGridBase()))));
+            estilo.Aplicar(viewDatosAsistentes);
+        }
         private void CargarDatos()
         {
             cbxTurnos.DataSource = Asistente.listaTurnos;

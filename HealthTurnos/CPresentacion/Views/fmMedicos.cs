@@ -1,5 +1,6 @@
 ﻿using CEntidades;
 using CNegocio;
+using CPresentacion.DecoratorPattern;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,7 +19,17 @@ namespace CPresentacion.Views
         public fmMedicos()
         {
             InitializeComponent();
+            DecorarDatagrid();
             CargarDatos();
+        }
+        private void DecorarDatagrid()
+        {
+            IDataGridDecorator estilo = new BordeDecorator(
+                            new SeleccionDecorator(
+                            new FilasAlternasDecorator(
+                            new HeaderDecorator(
+                            new DataGridBase()))));
+            estilo.Aplicar(viewDataMedico);
         }
         private void CargarDatos()
         {

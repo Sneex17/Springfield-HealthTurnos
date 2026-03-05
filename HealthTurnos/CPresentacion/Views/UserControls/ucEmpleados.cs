@@ -1,4 +1,10 @@
-﻿using System;
+﻿using CEntidades;
+using CNegocio;
+using CPresentacion.DecoratorPattern;
+using CPresentacion.Plantillas;
+using FluentValidation;
+using FontAwesome.Sharp;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,11 +13,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using CPresentacion.Plantillas;
-using CNegocio;
-using FontAwesome.Sharp;
-using CEntidades;
-using FluentValidation;
 
 namespace CPresentacion.Views.UserControls
 {
@@ -21,9 +22,18 @@ namespace CPresentacion.Views.UserControls
         public ucEmpleados()
         {
             InitializeComponent();
+            DecorarDatagrid();
             CargarDatos();
         }
-
+        private void DecorarDatagrid()
+        {
+            IDataGridDecorator estilo = new BordeDecorator(
+                            new SeleccionDecorator(
+                            new FilasAlternasDecorator(
+                            new HeaderDecorator(
+                            new DataGridBase()))));
+            estilo.Aplicar(viewDatosEmpleados);
+        }
         private void CargarDatos()
         {
             var lista = ReglasNegocio.verEmpleados();

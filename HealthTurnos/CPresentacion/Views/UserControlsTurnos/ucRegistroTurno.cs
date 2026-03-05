@@ -2,6 +2,7 @@
 using CEntidades.BuilderPattern;
 using CEntidades.StatePattern;
 using CNegocio;
+using CPresentacion.DecoratorPattern;
 using CPresentacion.Plantillas;
 using FluentValidation;
 using System;
@@ -22,9 +23,20 @@ namespace CPresentacion.Views.UserControlsTurnos
         public ucRegistroTurno(Usuario usuario)
         {
             InitializeComponent();
+            DecorarDatagrid();
             user = usuario;
             CargarDatos();
             
+        }
+
+        private void DecorarDatagrid()
+        {
+            IDataGridDecorator estilo = new BordeDecorator(
+                            new SeleccionDecorator(
+                            new FilasAlternasDecorator(
+                            new HeaderDecorator(
+                            new DataGridBase()))));
+            estilo.Aplicar(viewDatosTurnos);
         }
         private void CargarDatos()
         {

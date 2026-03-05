@@ -26,14 +26,16 @@ namespace CPresentacion.Views
             user = usuario;
             user.IdEmpleado = ReglasNegocio.IdAsistente(user.IdUsuario);
             ControlDeRoles(user.IdRol);
-            //var materialSkinManager = MaterialSkinManager.Instance;
-            //materialSkinManager.AddFormToManage(this);
-            //materialSkinManager.ColorScheme = new ColorScheme(
-            //    Primary.Orange100,
-            //    Primary.Orange700,
-            //    Primary.Orange200,
-            //    Accent.LightBlue200,
-            //    TextShade.WHITE);
+            var materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+            materialSkinManager.ColorScheme = new ColorScheme(
+                Color.FromArgb(0x4F, 0x52, 0xBA),  // Primary       #4F52BA
+                Color.FromArgb(0x3D, 0x3D, 0x8F),  // Dark Primary  #3D3D8F
+                Color.FromArgb(0xF4, 0xF6, 0xFB),  // Light Primary #F4F6FB
+                Color.FromArgb(0x42, 0xA5, 0xF5),  // Accent        #42A5F5
+                TextShade.WHITE
+            );
         }
 
         private void ControlDeRoles(int rol)

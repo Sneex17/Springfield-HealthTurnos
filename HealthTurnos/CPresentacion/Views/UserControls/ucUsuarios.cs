@@ -1,5 +1,6 @@
 ﻿using CEntidades;
 using CNegocio;
+using CPresentacion.DecoratorPattern;
 using CPresentacion.Plantillas;
 using FontAwesome.Sharp;
 using System;
@@ -19,10 +20,19 @@ namespace CPresentacion.Views.UserControls
         public ucUsuarios()
         {
             InitializeComponent();
+            DecorarDatagrid();
             CargarComponentes();
             CargarDatos();
         }
-
+        private void DecorarDatagrid()
+        {
+            IDataGridDecorator estilo = new BordeDecorator(
+                            new SeleccionDecorator(
+                            new FilasAlternasDecorator(
+                            new HeaderDecorator(
+                            new DataGridBase()))));
+            estilo.Aplicar(viewDatosUsuarios);
+        }
         private void CargarComponentes()
         {
             cbxRoles.DataSource = ReglasNegocio.verRoles();

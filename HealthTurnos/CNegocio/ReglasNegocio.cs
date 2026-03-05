@@ -52,6 +52,11 @@ namespace CNegocio
             MedicoController.ActualizarMedico(medico);
         }
 
+        public static DataTable ProximoPaciente(int id)
+        {
+            return TurnoController.VerProximoTurno(id);
+        }
+
         //Asistentes
         public static DataTable verAsistentes()
         {
@@ -147,6 +152,11 @@ namespace CNegocio
         public static void RegistrarTurno(Turno turno)
         {
             TurnoController.InsertarTurno(turno);
+        }
+
+        public static void CambiosDeTurno(Turno turno)
+        {
+            TurnoController.ActualizarTurno(turno);
         }
 
         //Pacientes

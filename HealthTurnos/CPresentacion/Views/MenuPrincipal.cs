@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CEntidades;
+using CNegocio;
 using CPresentacion.Views.UserControls;
 using CPresentacion.Views.UserControlsMedicos;
 using CPresentacion.Views.UserControlsTurnos;
@@ -23,6 +24,7 @@ namespace CPresentacion.Views
         {
             InitializeComponent();
             user = usuario;
+            user.IdEmpleado = ReglasNegocio.IdAsistente(user.IdUsuario);
             ControlDeRoles(user.IdRol);
             //var materialSkinManager = MaterialSkinManager.Instance;
             //materialSkinManager.AddFormToManage(this);

@@ -68,5 +68,21 @@ namespace CDatos.Controllers
                 resultado = comando.ExecuteNonQuery();
             }
         }
+
+        public static DataTable VerProximoTurno(int id)
+        {
+            using (SqlConnection acceso = ConexionBD.Instancia.ObtenerConexion())
+            {
+                SqlCommand comando = new SqlCommand("spPrimerTurno", acceso);
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@IdMedico", id);
+                SqlDataAdapter adapter = new SqlDataAdapter(comando);
+
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+
+                return table;
+            }
+        }
     }
 }

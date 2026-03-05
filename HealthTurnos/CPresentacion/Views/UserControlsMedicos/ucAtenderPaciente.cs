@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CEntidades;
+using CEntidades.BuilderPattern;
+using CEntidades.StatePattern;
 using CNegocio;
 using CPresentacion.Plantillas;
 
@@ -21,6 +23,7 @@ namespace CPresentacion.Views.UserControlsMedicos
             InitializeComponent();
             user = usuario;
             CargarComponentes();
+            
         }
         private void CargarComponentes()
         {
@@ -35,6 +38,108 @@ namespace CPresentacion.Views.UserControlsMedicos
             {
                 CargarComponentes();
             }
+        }
+
+        private void BuCargarPaciente_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var lista = ReglasNegocio.ProximoPaciente(user.IdEmpleado);
+
+                if (lista.Rows.Count == 0)
+                {
+                    throw new ControlExcepciones("No hay paciente en espera para atender");
+                }
+
+                int id = Convert.ToInt32(lista.Rows[0]["IdTurno"].ToString());
+                rbObservaciones.Text = lista.Rows[0]["Observaciones"].ToString();
+
+                if (lista.Rows[0]["Estado"].ToString() == "Pendiente")
+                {
+                    EstadoTurno estado = new EstadoTurno();
+                    estado.CambioEstado(new EstadoEnAtencion());
+
+                    CambioEstado(id, rbObservaciones.Text, estado);
+                    var listaActual = ReglasNegocio.ProximoPaciente(user.IdEmpleado);
+
+                    texbIdTurno.Text = listaActual.Rows[0]["IdTurno"].ToString();
+                    textbFecha.Text = listaActual.Rows[0]["Fecha"].ToString();
+                    textbIdPaciente.Text = listaActual.Rows[0]["IdPaciente"].ToString();
+                    textbNombrePaciente.Text = listaActual.Rows[0]["Paciente"].ToString();
+                    textbSexoPaciente.Text = listaActual.Rows[0]["Sexo"].ToString();
+                    textbPrioridadPaciente.Text = listaActual.Rows[0]["Prioridad"].ToString();
+                    rbObservaciones.Text = listaActual.Rows[0]["Observaciones"].ToString();
+                    textbEstado.Text = listaActual.Rows[0]["Estado"].ToString();
+                }
+                else
+                {
+                    texbIdTurno.Text = lista.Rows[0]["IdTurno"].ToString();
+                    textbFecha.Text = lista.Rows[0]["Fecha"].ToString();
+                    textbIdPaciente.Text = lista.Rows[0]["IdPaciente"].ToString();
+                    textbNombrePaciente.Text = lista.Rows[0]["Paciente"].ToString();
+                    textbSexoPaciente.Text = lista.Rows[0]["Sexo"].ToString();
+                    textbPrioridadPaciente.Text = lista.Rows[0]["Prioridad"].ToString();
+                    rbObservaciones.Text = lista.Rows[0]["Observaciones"].ToString();
+                    textbEstado.Text = lista.Rows[0]["Estado"].ToString();
+                }
+            }
+            catch (ControlExcepciones error)
+            {
+                MessageBox.Show($"{error.Message}", "Atención de pacientes", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show($"{error.Message}", "Atención de pacientes",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
+            
+        }
+
+        private void CambioEstado(int id, string observaciones, EstadoTurno estado)
+        {
+            ITurnoBuilder turnoBuilder = new TurnoBuilder();
+            Turno turno = turnoBuilder
+                .conIdTurno(id)
+                .conObservaciones(observaciones)
+                .conEstado(estado)
+                .CrearTurno();
+
+            ReglasNegocio.CambiosDeTurno(turno);
+        }
+
+        private void BuFinalizar_Click(object sender, EventArgs e)
+        {
+            var mensaje = MessageBox.Show($"Desea finalizar esta consulta como: {cbxProximoEstado.Text}?", 
+                "Terminar consulta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if(mensaje == DialogResult.Yes)
+            {
+                switch (cbxProximoEstado.Text)
+                {
+                    case "Atendido":
+                        {
+                            int id = Convert.ToInt32(texbIdTurno.Text);
+                            EstadoTurno estado = new EstadoTurno();
+                            estado.CambioEstado(new EstadoAtendido());
+
+                            CambioEstado(id, rbObservaciones.Text, estado);
+                        }
+                        break;
+
+                    case "Cancelado":
+                        {
+                            int id = Convert.ToInt32(texbIdTurno.Text);
+                            EstadoTurno estado = new EstadoTurno();
+                            estado.CambioEstado(new EstadoCancelado());
+
+                            CambioEstado(id, rbObservaciones.Text, estado);
+                        }
+                        break;
+                }
+            }
+            
         }
     }
 }

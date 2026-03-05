@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CEntidades;
 using CPresentacion.Views.UserControls;
+using CPresentacion.Views.UserControlsMedicos;
 using CPresentacion.Views.UserControlsTurnos;
 using MaterialSkin;
 using MaterialSkin.Controls;
@@ -160,6 +161,14 @@ namespace CPresentacion.Views
                 ucColaTurno colaTurno = new ucColaTurno(user);
                 colaTurno.Dock = DockStyle.Fill;
                 tabColaTurnos.Controls.Add(colaTurno);
+            }
+
+            if (materialTabControl1.SelectedTab == tabAtenderPacientes
+                && tabAtenderPacientes.Controls.Count == 0)
+            {
+                ucAtenderPaciente atenderPaciente = new ucAtenderPaciente(user);
+                atenderPaciente.Dock = DockStyle.Fill;
+                tabAtenderPacientes.Controls.Add(atenderPaciente);
             }
 
         }

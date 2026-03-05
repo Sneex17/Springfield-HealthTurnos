@@ -164,7 +164,7 @@ namespace CNegocio
 
         public static bool PacienteConTurnoActivo(int id, int paciente)
         {
-            DataRow[] turnoActivo = TurnoController.VerTurnos(id).Select($"IdPaciente = '{id}'");
+            DataRow[] turnoActivo = TurnoController.VerTurnos(id).Select($"IdPaciente = '{paciente}'");
 
             foreach (var item in turnoActivo)
             {
@@ -174,7 +174,7 @@ namespace CNegocio
                     return true;
                 }
             }
-            return true;
+            return false;
         }
     }
 }

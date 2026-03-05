@@ -120,6 +120,12 @@
     <Compile Include="Views\MenuPrincipal.Designer.cs">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\UserControlsMedicos\ucAtenderPaciente.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\UserControlsMedicos\ucAtenderPaciente.Designer.cs">
+      <DependentUpon>ucAtenderPaciente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\UserControlsTurnos\ucColaTurno.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -192,6 +198,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\UserControlsMedicos\ucAtenderPaciente.resx">
+      <DependentUpon>ucAtenderPaciente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\UserControlsTurnos\ucColaTurno.resx">
       <DependentUpon>ucColaTurno.cs</DependentUpon>

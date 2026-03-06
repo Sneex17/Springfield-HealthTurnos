@@ -2,6 +2,40 @@
 <Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <Body>
     <ReportItems>
+      <Textbox Name="Textbox32">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Reportes de turnos cancelados</Value>
+                <Style>
+                  <FontFamily>montserrat</FontFamily>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox32</rd:DefaultName>
+        <Top>0.667cm</Top>
+        <Left>7.46142cm</Left>
+        <Height>0.6cm</Height>
+        <Width>6.6275cm</Width>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
       <Tablix Name="Tablix1">
         <TablixBody>
           <TablixColumns>
@@ -482,53 +516,19 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Top>2.19337cm</Top>
-        <Left>1.96003cm</Left>
+        <Top>2.653cm</Top>
+        <Left>2.472cm</Left>
         <Height>1.2cm</Height>
         <Width>16.056cm</Width>
+        <ZIndex>1</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
         </Style>
       </Tablix>
-      <Textbox Name="Textbox32">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Reportes de turnos atendidos</Value>
-                <Style>
-                  <FontFamily>montserrat</FontFamily>
-                  <FontWeight>Bold</FontWeight>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Center</TextAlign>
-            </Style>
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox32</rd:DefaultName>
-        <Top>0.14111cm</Top>
-        <Left>6.96003cm</Left>
-        <Height>0.6cm</Height>
-        <Width>6.6275cm</Width>
-        <ZIndex>1</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
     </ReportItems>
-    <Height>21cm</Height>
+    <Height>22cm</Height>
     <Style />
   </Body>
   <Width>21cm</Width>
@@ -542,7 +542,7 @@
           <Source>Embedded</Source>
           <Value>LogoReportes</Value>
           <Sizing>FitProportional</Sizing>
-          <Left>1.0287cm</Left>
+          <Left>1.69977cm</Left>
           <Height>4cm</Height>
           <Width>4.26757cm</Width>
           <Style>
@@ -574,7 +574,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox32</rd:DefaultName>
           <Top>1.4365cm</Top>
-          <Left>5.29627cm</Left>
+          <Left>5.96734cm</Left>
           <Height>1.00217cm</Height>
           <Width>4.913cm</Width>
           <ZIndex>1</ZIndex>
@@ -610,10 +610,46 @@
           </Paragraphs>
           <rd:DefaultName>Textbox32</rd:DefaultName>
           <Top>2.61506cm</Top>
-          <Left>5.29627cm</Left>
+          <Left>5.96734cm</Left>
           <Height>0.6cm</Height>
           <Width>5.90783cm</Width>
           <ZIndex>2</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox39">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Now()</Value>
+                  <Style>
+                    <FontFamily>montserrat</FontFamily>
+                    <FontWeight>Bold</FontWeight>
+                    <Color>White</Color>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Right</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox32</rd:DefaultName>
+          <Top>2.53636cm</Top>
+          <Left>13.39241cm</Left>
+          <Height>0.6cm</Height>
+          <Width>5.90783cm</Width>
+          <ZIndex>3</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -647,45 +683,9 @@
           </Paragraphs>
           <rd:DefaultName>Textbox32</rd:DefaultName>
           <Top>1.49892cm</Top>
-          <Left>13.71617cm</Left>
+          <Left>14.38724cm</Left>
           <Height>1.00217cm</Height>
           <Width>4.913cm</Width>
-          <ZIndex>3</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Textbox Name="Textbox39">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>=Now()</Value>
-                  <Style>
-                    <FontFamily>montserrat</FontFamily>
-                    <FontWeight>Bold</FontWeight>
-                    <Color>White</Color>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style>
-                <TextAlign>Right</TextAlign>
-              </Style>
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox32</rd:DefaultName>
-          <Top>2.53636cm</Top>
-          <Left>12.72134cm</Left>
-          <Height>0.6cm</Height>
-          <Width>5.90783cm</Width>
           <ZIndex>4</ZIndex>
           <Style>
             <Border>
@@ -731,8 +731,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox32</rd:DefaultName>
-          <Top>0.61834cm</Top>
-          <Left>13.02677cm</Left>
+          <Top>0.819cm</Top>
+          <Left>13.39241cm</Left>
           <Height>0.6cm</Height>
           <Width>5.90783cm</Width>
           <Style>
@@ -760,27 +760,22 @@
     <TopMargin>0cm</TopMargin>
     <BottomMargin>0cm</BottomMargin>
     <ColumnSpacing>0.13cm</ColumnSpacing>
-    <Style>
-      <Border>
-        <Color>SlateBlue</Color>
-        <Style>None</Style>
-      </Border>
-    </Style>
+    <Style />
   </Page>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="DsTurnosAtendidos">
+    <DataSource Name="DsTurnosCancelados">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>6435954c-140d-4bec-b3fd-10c96a4157b6</rd:DataSourceID>
+      <rd:DataSourceID>1dcc9e69-52fe-4d25-92b9-f7fa2669319d</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
     <DataSet Name="DataSet1">
       <Query>
-        <DataSourceName>DsTurnosAtendidos</DataSourceName>
+        <DataSourceName>DsTurnosCancelados</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
@@ -834,12 +829,12 @@
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>DsTurnosAtendidos</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\xrami\OneDrive\Documentos\Springfield HealthTurnos\HealthTurnos\CPresentacion\DataSets\DsTurnosAtendidos.xsd</rd:SchemaPath>
-        <rd:TableName>spVerReporteTurnosAtentidos</rd:TableName>
+        <rd:DataSetName>DsTurnosCancelados</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\xrami\OneDrive\Documentos\Springfield HealthTurnos\HealthTurnos\CPresentacion\DataSets\DsTurnosCancelados.xsd</rd:SchemaPath>
+        <rd:TableName>spVerReporteTurnosCancelados</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>spVerReporteTurnosAtentidosTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>spVerReporteTurnosCanceladosTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
@@ -924,5 +919,5 @@ AL9HuOaaa+jq6mLhwoWVVlhZv2EIwPXXX/9mP2INNdRQQw011FBDDTXUUEMNNdRQQw011FBDDTXUUEMN
     </EmbeddedImage>
   </EmbeddedImages>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>5ae912bf-c772-4d82-80ed-cba4946aa137</rd:ReportID>
+  <rd:ReportID>c7a83ca9-dbc3-4a56-8cd3-a72209d2b140</rd:ReportID>
 </Report>

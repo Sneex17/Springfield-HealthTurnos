@@ -2,6 +2,7 @@
 using CNegocio;
 using CPresentacion.DataSets;
 using CPresentacion.DataSets.DsTurnosAtendidosTableAdapters;
+using CPresentacion.DataSets.DsTurnosCanceladosTableAdapters;
 using CPresentacion.Plantillas;
 using Microsoft.Reporting.WinForms;
 using System;
@@ -51,9 +52,7 @@ namespace CPresentacion.Views.UserControlsReportes
                     string mensaje = $"La fecha de inicio debe ser menor a la fehca de fin\n" +
                         $"Fecha ingresadas:\nInicio: {dateTimeFrom.Value}\nFin: {dateTimeTo.Value}";
                     throw new ControlExcepciones(mensaje);
-                }
-                
-
+                }         
             }
             catch (ControlExcepciones error)
             {
@@ -77,6 +76,22 @@ namespace CPresentacion.Views.UserControlsReportes
             turnosAtentidos.Fill(dsTurnosAtendidos.spVerReporteTurnosAtentidos, user.IdEmpleado);
 
             ReportDataSource reporte = new ReportDataSource("DataSet1", dsTurnosAtendidos.spVerReporteTurnosAtentidos.DefaultView);
+
+            reportViewerGeneral.LocalReport.DataSources.Clear();
+            reportViewerGeneral.LocalReport.DataSources.Add(reporte);
+            reportViewerGeneral.RefreshReport();
+        }
+
+        private void BuRTurnosCancelados_Click(object sender, EventArgs e)
+        {
+            Ruta ruta = new Ruta("ReporteTurnosCancelados.rdlc");
+            reportViewerGeneral.LocalReport.ReportPath = ruta.GetRuta();
+
+            DsTurnosCancelados dsTurnosCancelados = new DsTurnosCancelados();
+            spVerReporteTurnosCanceladosTableAdapter turnosCancelados = new spVerReporteTurnosCanceladosTableAdapter();
+            turnosCancelados.Fill(dsTurnosCancelados.spVerReporteTurnosCancelados, user.IdEmpleado);
+
+            ReportDataSource reporte = new ReportDataSource("DataSet1", dsTurnosCancelados.spVerReporteTurnosCancelados.DefaultView);
 
             reportViewerGeneral.LocalReport.DataSources.Clear();
             reportViewerGeneral.LocalReport.DataSources.Add(reporte);

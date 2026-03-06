@@ -92,6 +92,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DsTurnosAtendidos.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSets\DsTurnosCancelados.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsTurnosCancelados.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DecoratorPattern\BordeDecorator.cs" />
     <Compile Include="DecoratorPattern\DataGridBase.cs" />
     <Compile Include="DecoratorPattern\DataGridDecorator.cs" />
@@ -193,6 +198,7 @@
       <DependentUpon>ucUsuarios.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Reportes\ReporteTurnosAtendidos.rdlc" />
+    <EmbeddedResource Include="Reportes\ReporteTurnosCancelados.rdlc" />
     <EmbeddedResource Include="Views\fmMedicos.resx">
       <DependentUpon>fmMedicos.cs</DependentUpon>
     </EmbeddedResource>
@@ -258,6 +264,17 @@
     </None>
     <None Include="DataSets\DsTurnosAtendidos.xss">
       <DependentUpon>DsTurnosAtendidos.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DsTurnosCancelados.xsc">
+      <DependentUpon>DsTurnosCancelados.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DsTurnosCancelados.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsTurnosCancelados.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\DsTurnosCancelados.xss">
+      <DependentUpon>DsTurnosCancelados.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -648,3 +648,15 @@ set nocount on
 begin
 select * from vwReportesTurnosAtendidos where IdAsistente = @id or IdMedico = @id
 end
+go
+
+create proc spVerReporteTurnosCancelados
+(
+@id int
+)
+as
+set nocount on
+begin
+select * from vwReportesTurnosCancelados where IdAsistente = @id or IdMedico = @id
+end
+go

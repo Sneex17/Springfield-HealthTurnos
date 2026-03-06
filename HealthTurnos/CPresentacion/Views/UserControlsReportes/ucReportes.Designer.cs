@@ -250,6 +250,7 @@
             this.BuRTurnosCancelados.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             this.BuRTurnosCancelados.Timer_Effect_1 = 5;
             this.BuRTurnosCancelados.Timer_RGB = 300;
+            this.BuRTurnosCancelados.Click += new System.EventHandler(this.BuRTurnosCancelados_Click);
             // 
             // BuRTurnosAtendidos
             // 

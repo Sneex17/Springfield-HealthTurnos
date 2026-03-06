@@ -601,3 +601,50 @@ BEGIN
         IdTurno = @IdTurno;
 END
 GO
+
+--Viernes 6
+
+create view vwReportesTurnosAtendidos
+with schemabinding
+as
+select t.IdTurno, t.IdPaciente, t.Paciente, t.Sexo,
+a.IdEmpleado IdAsistente,  a.Nombre,
+m.IdEmpleado IdMedico, m.Nombre Medico,
+p.Nombre Prioridad, t.Observaciones, t.Fecha,
+e.Estado Estado
+from dbo.Turno as t
+inner join dbo.Empleado as a on t.IdAsistente = a.IdEmpleado
+inner join dbo.Empleado as m on t.IdMedico = m.IdEmpleado
+inner join dbo.Prioridad as p on t.IdPrioridad = p.IdPrioridad
+inner join dbo.Estado as e on t.IdEstado = e.IdEstado
+where t.IdEstado = 3
+go
+
+
+create view vwReportesTurnosCancelados
+with schemabinding
+as
+select t.IdTurno, t.IdPaciente, t.Paciente, t.Sexo,
+a.IdEmpleado IdAsistente,  a.Nombre,
+m.IdEmpleado IdMedico, m.Nombre Medico,
+p.Nombre Prioridad, t.Observaciones, t.Fecha,
+e.Estado Estado
+from dbo.Turno as t
+inner join dbo.Empleado as a on t.IdAsistente = a.IdEmpleado
+inner join dbo.Empleado as m on t.IdMedico = m.IdEmpleado
+inner join dbo.Prioridad as p on t.IdPrioridad = p.IdPrioridad
+inner join dbo.Estado as e on t.IdEstado = e.IdEstado
+where t.IdEstado = 4
+go
+
+--- Procedimientos de los reportes
+
+create proc spVerReporteTurnosAtentidos
+(
+@id int
+)
+as
+set nocount on
+begin
+select * from vwReportesTurnosAtendidos where IdAsistente = @id or IdMedico = @id
+end

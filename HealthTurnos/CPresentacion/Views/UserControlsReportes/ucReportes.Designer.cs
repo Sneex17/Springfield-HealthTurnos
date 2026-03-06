@@ -47,7 +47,7 @@
             // 
             // labelText
             // 
-            this.labelText.Size = new System.Drawing.Size(101, 26);
+            this.labelText.Size = new System.Drawing.Size(129, 33);
             this.labelText.Text = "Reportes";
             // 
             // panelContainer
@@ -129,9 +129,9 @@
             this.dateTimeFrom.CalendarFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.dateTimeFrom.FontSize = ReaLTaiizor.Extension.Poison.PoisonDateTimeSize.Medium;
             this.dateTimeFrom.Location = new System.Drawing.Point(8, 37);
-            this.dateTimeFrom.MinimumSize = new System.Drawing.Size(0, 29);
+            this.dateTimeFrom.MinimumSize = new System.Drawing.Size(0, 30);
             this.dateTimeFrom.Name = "dateTimeFrom";
-            this.dateTimeFrom.Size = new System.Drawing.Size(201, 29);
+            this.dateTimeFrom.Size = new System.Drawing.Size(201, 30);
             this.dateTimeFrom.TabIndex = 0;
             // 
             // label1
@@ -141,7 +141,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(4, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(120, 20);
+            this.label1.Size = new System.Drawing.Size(145, 24);
             this.label1.TabIndex = 1;
             this.label1.Text = "Fecha de inicio";
             // 
@@ -150,9 +150,9 @@
             this.dateTimeTo.CalendarFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.dateTimeTo.FontSize = ReaLTaiizor.Extension.Poison.PoisonDateTimeSize.Medium;
             this.dateTimeTo.Location = new System.Drawing.Point(8, 93);
-            this.dateTimeTo.MinimumSize = new System.Drawing.Size(0, 29);
+            this.dateTimeTo.MinimumSize = new System.Drawing.Size(0, 30);
             this.dateTimeTo.Name = "dateTimeTo";
-            this.dateTimeTo.Size = new System.Drawing.Size(201, 29);
+            this.dateTimeTo.Size = new System.Drawing.Size(201, 30);
             this.dateTimeTo.TabIndex = 2;
             // 
             // label2
@@ -162,7 +162,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(4, 69);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(101, 20);
+            this.label2.Size = new System.Drawing.Size(122, 24);
             this.label2.TabIndex = 3;
             this.label2.Text = "Fecha de fin";
             // 
@@ -292,6 +292,7 @@
             this.BuRTurnosAtendidos.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             this.BuRTurnosAtendidos.Timer_Effect_1 = 5;
             this.BuRTurnosAtendidos.Timer_RGB = 300;
+            this.BuRTurnosAtendidos.Click += new System.EventHandler(this.BuRTurnosAtendidos_Click);
             // 
             // reportViewerGeneral
             // 

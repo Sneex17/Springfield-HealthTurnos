@@ -1,15 +1,19 @@
-﻿using System;
+﻿using CEntidades;
+using CNegocio;
+using CPresentacion.DataSets;
+using CPresentacion.DataSets.DsTurnosAtendidosTableAdapters;
+using CPresentacion.Plantillas;
+using Microsoft.Reporting.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using CEntidades;
-using CNegocio;
-using CPresentacion.Plantillas;
 
 namespace CPresentacion.Views.UserControlsReportes
 {
@@ -61,6 +65,22 @@ namespace CPresentacion.Views.UserControlsReportes
                 MessageBox.Show($"{error.Message}", "Error en el reporte",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void BuRTurnosAtendidos_Click(object sender, EventArgs e)
+        {
+            Ruta ruta = new Ruta("ReporteTurnosAtendidos.rdlc");
+            reportViewerGeneral.LocalReport.ReportPath = ruta.GetRuta();
+
+            DsTurnosAtendidos dsTurnosAtendidos = new DsTurnosAtendidos();
+            spVerReporteTurnosAtentidosTableAdapter turnosAtentidos = new spVerReporteTurnosAtentidosTableAdapter();
+            turnosAtentidos.Fill(dsTurnosAtendidos.spVerReporteTurnosAtentidos, user.IdEmpleado);
+
+            ReportDataSource reporte = new ReportDataSource("DataSet1", dsTurnosAtendidos.spVerReporteTurnosAtentidos.DefaultView);
+
+            reportViewerGeneral.LocalReport.DataSources.Clear();
+            reportViewerGeneral.LocalReport.DataSources.Add(reporte);
+            reportViewerGeneral.RefreshReport();
         }
     }
 }

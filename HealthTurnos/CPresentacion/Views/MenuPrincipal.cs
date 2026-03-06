@@ -11,6 +11,7 @@ using CEntidades;
 using CNegocio;
 using CPresentacion.Views.UserControls;
 using CPresentacion.Views.UserControlsMedicos;
+using CPresentacion.Views.UserControlsReportes;
 using CPresentacion.Views.UserControlsTurnos;
 using MaterialSkin;
 using MaterialSkin.Controls;
@@ -19,7 +20,9 @@ namespace CPresentacion.Views
 {
     public partial class MenuPrincipal : MaterialForm
     {
+        
         Usuario user = new Usuario();
+        
         public MenuPrincipal(Usuario usuario)
         {
             InitializeComponent();
@@ -91,13 +94,15 @@ namespace CPresentacion.Views
 
         private void materialTabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (materialTabControl1.SelectedTab == tabRegistrarTurno
-                && tabRegistrarTurno.Controls.Count == 0)
+            if (materialTabControl1.SelectedTab == tabReportes
+                && tabReportes.Controls.Count == 0)
             {
-                
+                ucReportes reportes = new ucReportes(user);
+                reportes.Dock = DockStyle.Fill;
+                tabReportes.Controls.Add(reportes);
             }
 
-            if(materialTabControl1.SelectedTab == tabPaciente
+            if (materialTabControl1.SelectedTab == tabPaciente
                 && tabPaciente.Controls.Count == 0)
             {
                 AbrirFormularioEnTab(new fmPacientes(), tabPaciente);

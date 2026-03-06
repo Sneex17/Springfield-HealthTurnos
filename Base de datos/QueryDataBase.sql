@@ -457,8 +457,10 @@ constraint FK_TurnoEstado foreign key (IdEstado) references Estado(IdEstado)
 )
 go
 
-CREATE PROCEDURE spInsertarTurno
+CREATE OR ALTER PROCEDURE spInsertarTurno
     @IdPaciente    INT,
+    @Paciente varchar(50),
+    @Sexo varchar(15),
     @IdAsistente   INT,
     @Fecha         DATETIME,
     @IdMedico      INT,
@@ -469,13 +471,40 @@ AS
 BEGIN
     SET NOCOUNT ON;
 
-    INSERT INTO Turno (IdPaciente, IdAsistente, Fecha, IdMedico, IdPrioridad, Observaciones, IdEstado)
-    VALUES           (@IdPaciente, @IdAsistente, @Fecha, @IdMedico, @IdPrioridad, @Observaciones, @IdEstado);
+    INSERT INTO Turno (IdPaciente, Paciente, Sexo, IdAsistente, Fecha, IdMedico, IdPrioridad, Observaciones, IdEstado)
+    VALUES           (@IdPaciente, @Paciente, @Sexo, @IdAsistente, @Fecha, @IdMedico, @IdPrioridad, @Observaciones, @IdEstado);
 
 END
+go
+
+
+create view vwListaTurnos
+with schemabinding
+as
+select t.IdTurno, t.IdPaciente, t.Paciente, t.Sexo,
+a.IdEmpleado IdAsistente,  a.Nombre,
+m.IdEmpleado IdMedico, m.Nombre Medico,
+p.Nombre Prioridad, t.Observaciones, t.Fecha,
+e.Estado Estado
+from dbo.Turno as t
+inner join dbo.Empleado as a on t.IdAsistente = a.IdEmpleado
+inner join dbo.Empleado as m on t.IdMedico = m.IdEmpleado
+inner join dbo.Prioridad as p on t.IdPrioridad = p.IdPrioridad
+inner join dbo.Estado as e on t.IdEstado = e.IdEstado
+go
+
+
+create proc spListaTurnos
+@id int
+as
+begin
+set nocount on
+select * from vwListaTurnos where IdAsistente = @id or IdMedico = @id
+end
 
 
 --miercoles 4/3/2026
+select * from Empleado
 select * from Usuario
 select * from Rol
 go
@@ -504,3 +533,71 @@ select * from Especialidad
 
 select * from vwVerUsuarios
 
+
+select * from vwListaTurnos where IdAsistente = 7 or IdMedico = 7
+
+update Usuario set IdEmpleado = 2 where IdUsuario = 1
+select * from Usuario
+delete turno where IdMedico = 2
+ 
+select top 1 * from Turno where IdEstado = 1 order by IdTurno asc
+
+select * from Estado
+
+update Turno set IdEstado =  1 where IdTurno = 5
+update Turno set IdEstado =  3 where IdTurno = 1
+
+select * from Usuario
+select * from Empleado
+
+delete Turno
+delete Usuario where IdUsuario = 10
+
+update Usuario set Username = 'ha' where IdUsuario = 5
+
+
+SELECT COUNT(*) FROM Asistente WHERE IdEmpleado = 6
+
+select* from Empleado
+select * from Usuario
+select * from Asistente
+select * from Medico
+
+--Jueves 5/3/26
+select * from Turno
+
+update Turno set IdEstado =  1 where IdTurno = 9
+go
+
+create or alter proc spPrimerTurno
+(
+@IdMedico int
+)
+as
+begin
+select top 1 t.IdTurno, t.Fecha, t.IdPaciente, t.Paciente, t.Sexo,
+p.Nombre as Prioridad, t.Observaciones, e.Estado as Estado
+from Turno as t
+inner join Prioridad as p on p.IdPrioridad = t.IdPrioridad
+inner join Estado as e on e.IdEstado = t.IdEstado
+where (t.IdEstado = 2 or t.IdEstado = 1) and IdMedico = @IdMedico order by IdTurno asc
+end
+
+go
+
+CREATE PROCEDURE spActualizarTurno
+    @IdTurno    INT,
+    @Observaciones  NVARCHAR(500),
+    @IdEstado   INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    UPDATE Turno
+    SET
+        Observaciones   = @Observaciones,
+        IdEstado        = @IdEstado
+    WHERE
+        IdTurno = @IdTurno;
+END
+GO

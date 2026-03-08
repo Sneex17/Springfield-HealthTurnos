@@ -50,8 +50,8 @@ namespace CPresentacion
         {
             if(CheckSoyPaciente.Checked == true)
             {
-                fmMenuPaciente menuPaciente = new fmMenuPaciente();
-                menuPaciente.Show();
+                fmInicioPaciente inicioPaciente = new fmInicioPaciente();
+                inicioPaciente.Show();
                 this.Hide();
             }
             else

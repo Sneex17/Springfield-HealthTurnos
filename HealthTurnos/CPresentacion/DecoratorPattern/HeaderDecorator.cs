@@ -14,7 +14,7 @@ namespace CPresentacion.DecoratorPattern
             viewData.EnableHeadersVisualStyles = false;
             viewData.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(0x4F, 0x52, 0xBA);
             viewData.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            viewData.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 9.5f, FontStyle.Bold);
+            viewData.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 8.5f, FontStyle.Bold);
             viewData.ColumnHeadersDefaultCellStyle.Padding = new Padding(10, 0, 0, 0);
             viewData.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             viewData.ColumnHeadersHeight = 42;

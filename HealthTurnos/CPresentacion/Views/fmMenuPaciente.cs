@@ -18,8 +18,8 @@ namespace CPresentacion.Views
     public partial class fmMenuPaciente : MaterialForm
     {
         List<Character> listaPaciente = new List<Character>();
-        List<Character> listaAdulto = new List<Character>();
-        string mensaje;
+        //List<Character> listaAdulto = new List<Character>();
+        string mensajes;
 
         public fmMenuPaciente()
         {
@@ -58,46 +58,60 @@ namespace CPresentacion.Views
 
         private void BuSiguiente_Click(object sender, EventArgs e)
         {
-            if(rbAdulto.Checked == true)
+            try
             {
-                int idAdulto = Convert.ToInt32(textbAldulto.Text);
-                var adulto = from L in listaPaciente where L.id == idAdulto select L;
-
-                foreach (var adultos in adulto)
+                if (rbAdulto.Checked == true)
                 {
-                    textbIdPaciente.Text = adultos.id.ToString();
-                    textbNombrePaciente.Text =  adultos.name.ToString();
-                    textbSexoPaciente.Text = adultos.gender.ToString();
-                }
+                    int idAdulto = Convert.ToInt32(textbAldulto.Text);
+                    var adulto = from L in listaPaciente where L.id == idAdulto select L;
 
-                var estado = new EstadoTurno();
-                textbEstado.Text = estado.estado.Estado.ToString();
+                    foreach (var adultos in adulto)
+                    {
+                        textbIdPaciente.Text = adultos.id.ToString();
+                        textbNombrePaciente.Text = adultos.name.ToString();
+                        textbSexoPaciente.Text = adultos.gender.ToString();
+                    }
+
+                    var estado = new EstadoTurno();
+                    textbEstado.Text = estado.estado.Estado.ToString();
+                }
+                else
+                {
+                    int idAdulto = Convert.ToInt32(textbAldulto.Text);
+                    var adulto = from L in listaPaciente where L.id == idAdulto select L;
+
+
+                    int idNino = Convert.ToInt32(textbNino.Text);
+                    var nino = from L in listaPaciente where L.id == idNino select L;
+
+                    foreach (var adultos in adulto)
+                    {
+                        mensajes = $"El adulto {adultos.name} ha solicitado una consulta para un menor a su cargo.";
+                    }
+
+
+                    foreach (var ninos in nino)
+                    {
+                        textbIdPaciente.Text = ninos.id.ToString();
+                        textbNombrePaciente.Text = ninos.name.ToString();
+                        textbSexoPaciente.Text = ninos.gender.ToString();
+                    }
+
+                    var estado = new EstadoTurno();
+                    textbEstado.Text = estado.estado.Estado.ToString();
+                }
             }
-            else
+            catch (ControlExcepciones error)
             {
-                int idAdulto = Convert.ToInt32(textbAldulto.Text);
-                var adulto = from L in listaPaciente where L.id == idAdulto select L;
-                
-
-                int idNino = Convert.ToInt32(textbNino.Text);
-                var nino = from L in listaPaciente where L.id == idNino select L;
-
-                foreach (var adultos in adulto)
-                {
-                    mensaje = $"El adulto {adultos.name} ha solicitado una consulta para un menor a su cargo.";
-                }
-
-
-                foreach (var ninos in nino)
-                {
-                    textbIdPaciente.Text = ninos.id.ToString();
-                    textbNombrePaciente.Text = ninos.name.ToString();
-                    textbSexoPaciente.Text = ninos.gender.ToString();
-                }
-
-                var estado = new EstadoTurno();
-                textbEstado.Text = estado.estado.Estado.ToString();
-            } 
+                MessageBox.Show($"{error.Message}", "Error en la operación",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show($"{error.Message}", "Error en la operación",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
 
         private void BuBuscarMedico_Click(object sender, EventArgs e)
@@ -108,7 +122,6 @@ namespace CPresentacion.Views
                 textbIdMedico.Text = medico.IdEmpleado.ToString();
                 textbNombreMedico.Text = medico.Nombre.ToString();
                 textbEspecialidadMedico.Text = ReglasNegocio.EspecialidadMedico(medico.IdEmpleado);
-
             };
             medicos.ShowDialog();
         }
@@ -152,7 +165,7 @@ namespace CPresentacion.Views
 
                 if (rbAdulto.Checked == false)
                 {
-                    rbObservaciones.Text = $"{mensaje}\n{rbObservaciones.Text}";
+                    rbObservaciones.Text = $"{mensajes}\n{rbObservaciones.Text}";
                 }
 
                     ITurnoBuilder turnoBuilder = new TurnoBuilder();
@@ -176,11 +189,17 @@ namespace CPresentacion.Views
                         resultado.Errors.Select(M => M.ErrorMessage));
                     throw new ControlExcepciones(errores);
                 }
-                //ReglasNegocio.RegistrarTurno(turno);
 
-                MessageBox.Show($"{turno.Paciente.id}\n, {turno.Medico.IdEmpleado}\n, {turno.Asistente.IdEmpleado},\n, {turno.Fecha},\n, {turno.Prioridad.IdPrioridad},\n, {turno.Estado.estado.Estado},\n", "Error en la operación",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                var mensaje = MessageBox.Show("Desea registrar este turno?", "Registro de turno",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
+                if(mensaje == DialogResult.Yes)
+                {
+                    ReglasNegocio.RegistrarTurno(turno);
+
+                    MessageBox.Show($"{turno.Paciente.id}\n, {turno.Medico.IdEmpleado}\n, {turno.Asistente.IdEmpleado},\n, {turno.Fecha},\n, {turno.Prioridad.IdPrioridad},\n, {turno.Estado.estado.Estado},\n", "Error en la operación",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
             catch (ControlExcepciones error)
             {
@@ -192,6 +211,13 @@ namespace CPresentacion.Views
                 MessageBox.Show($"{error.Message}", "Error en la operación",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void BuSalir_Click(object sender, EventArgs e)
+        {
+            fmInicioPaciente inicioPaciente = new fmInicioPaciente();
+            inicioPaciente.Show();
+            this.Hide();
         }
     }
 }

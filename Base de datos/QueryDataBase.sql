@@ -660,3 +660,32 @@ begin
 select * from vwReportesTurnosCancelados where IdAsistente = @id or IdMedico = @id
 end
 go
+
+create view vwReportesTurnosFechas
+with schemabinding
+as
+select t.IdTurno, t.IdPaciente, t.Paciente, t.Sexo,
+a.IdEmpleado IdAsistente,  a.Nombre,
+m.IdEmpleado IdMedico, m.Nombre Medico,
+p.Nombre Prioridad, t.Observaciones, t.Fecha,
+e.Estado Estado
+from dbo.Turno as t
+inner join dbo.Empleado as a on t.IdAsistente = a.IdEmpleado
+inner join dbo.Empleado as m on t.IdMedico = m.IdEmpleado
+inner join dbo.Prioridad as p on t.IdPrioridad = p.IdPrioridad
+inner join dbo.Estado as e on t.IdEstado = e.IdEstado
+where t.IdEstado in(3,4)
+go
+
+create proc spVerReporteTurnosRangoFecha
+(
+@id int,
+@Inicio date,
+@Fin date
+)
+as
+set nocount on
+begin
+select * from vwReportesTurnosFechas where IdAsistente = @id or IdMedico = @id and Fecha between @Inicio and @Fin
+end
+go

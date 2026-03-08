@@ -184,6 +184,12 @@
     <Compile Include="Views\UserControls\ucEspecialidades.Designer.cs">
       <DependentUpon>ucEspecialidades.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\UserControls\ucHome.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\UserControls\ucHome.Designer.cs">
+      <DependentUpon>ucHome.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\UserControls\ucMedicos.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -250,6 +256,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\UserControls\ucEspecialidades.resx">
       <DependentUpon>ucEspecialidades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\UserControls\ucHome.resx">
+      <DependentUpon>ucHome.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\UserControls\ucMedicos.resx">
       <DependentUpon>ucMedicos.cs</DependentUpon>

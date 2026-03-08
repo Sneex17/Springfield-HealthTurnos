@@ -39,8 +39,18 @@ namespace CPresentacion.Views
                 Color.FromArgb(0x42, 0xA5, 0xF5),  // Accent        #42A5F5
                 TextShade.WHITE
             );
+            cargarHome();
         }
-
+        private void cargarHome()
+        {
+            if (materialTabControl1.SelectedTab == tabHome
+                && tabHome.Controls.Count == 0)
+            {
+                ucHome home = new ucHome(user);
+                home.Dock = DockStyle.Fill;
+                tabHome.Controls.Add(home);
+            }
+        }
         private void ControlDeRoles(int rol)
         {
             switch (rol)
@@ -94,6 +104,8 @@ namespace CPresentacion.Views
 
         private void materialTabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            cargarHome();
+
             if (materialTabControl1.SelectedTab == tabReportes
                 && tabReportes.Controls.Count == 0)
             {
@@ -182,11 +194,6 @@ namespace CPresentacion.Views
 
         }
 
-        private void BuCerrar_Click(object sender, EventArgs e)
-        {
-            Login login = new Login();
-            login.Show();
-            this.Hide();
-        }
+       
     }
 }

@@ -122,6 +122,14 @@ namespace CNegocio
             return empleado;
         }
 
+        public static string Username(int id)
+        { 
+            DataRow[] asistente = UsuarioController.VerUsuarios().Select($"IdUsuario = '{id}'");
+            string empleado = asistente[0]["Username"].ToString();
+
+            return empleado;
+        }
+
 
         //Especialidades
         public static List<Especialidad> VerEspecialidades()

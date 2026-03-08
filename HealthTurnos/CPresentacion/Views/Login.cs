@@ -48,35 +48,56 @@ namespace CPresentacion
 
         private void BuIngresar_Click(object sender, EventArgs e)
         {
-            var usuario = new Usuario()
+            if(CheckSoyPaciente.Checked == true)
             {
-                Username = textbUsuario.Text,
-                Passwords = textbPassword.Text
-            };
-
-            int resultado = ReglasNegocio.UsuarioExiste(usuario);
-
-            if(resultado != 0)
-            {
-                int rol = ReglasNegocio.RolUsuario(resultado);
-
-                if(rol != 0)
-                {
-                    usuario.IdUsuario = resultado;
-                    usuario.IdRol = rol;
-
-                    MenuPrincipal menu = new MenuPrincipal(usuario);
-                    menu.Show();
-                    this.Hide();
-                }
+                fmMenuPaciente menuPaciente = new fmMenuPaciente();
+                menuPaciente.Show();
+                this.Hide();
             }
             else
             {
-                MessageBox.Show("Usuario o Contraseña incorrectas","Usuario no valido", 
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                var usuario = new Usuario()
+                {
+                    Username = textbUsuario.Text,
+                    Passwords = textbPassword.Text
+                };
+
+                int resultado = ReglasNegocio.UsuarioExiste(usuario);
+
+                if (resultado != 0)
+                {
+                    int rol = ReglasNegocio.RolUsuario(resultado);
+
+                    if (rol != 0)
+                    {
+                        usuario.IdUsuario = resultado;
+                        usuario.IdRol = rol;
+
+                        MenuPrincipal menu = new MenuPrincipal(usuario);
+                        menu.Show();
+                        this.Hide();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Usuario o Contraseña incorrectas", "Usuario no valido",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }  
+        }
+
+        private void CheckSoyPaciente_CheckedChanged(object sender, EventArgs e)
+        {
+            if(CheckSoyPaciente.Checked == true)
+            {
+                textbUsuario.Enabled = false;
+                textbPassword.Enabled = false;
             }
-            
-            
+            else
+            {
+                textbUsuario.Enabled = true;
+                textbPassword.Enabled = true;
+            }
         }
     }
 }

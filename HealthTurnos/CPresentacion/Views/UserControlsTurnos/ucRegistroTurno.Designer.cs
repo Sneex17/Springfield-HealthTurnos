@@ -57,7 +57,7 @@
             // 
             // panelInfo
             // 
-            this.panelInfo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelInfo.Margin = new System.Windows.Forms.Padding(2);
             this.panelInfo.Size = new System.Drawing.Size(1248, 69);
             // 
             // labelText
@@ -90,7 +90,7 @@
             this.panelContainer.Controls.Add(this.label2);
             this.panelContainer.Controls.Add(this.textbIdPaciente);
             this.panelContainer.Controls.Add(this.label1);
-            this.panelContainer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelContainer.Margin = new System.Windows.Forms.Padding(2);
             this.panelContainer.Size = new System.Drawing.Size(1248, 617);
             // 
             // textbSexoPaciente
@@ -342,7 +342,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximumSize = new System.Drawing.Size(1248, 686);
             this.MinimumSize = new System.Drawing.Size(1248, 686);
             this.Name = "ucRegistroTurno";

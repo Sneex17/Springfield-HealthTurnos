@@ -3,6 +3,7 @@ using CNegocio;
 using CPresentacion.DataSets;
 using CPresentacion.DataSets.DsTurnosAtendidosTableAdapters;
 using CPresentacion.DataSets.DsTurnosCanceladosTableAdapters;
+using CPresentacion.DataSets.DsTurnosRangoFechaTableAdapters;
 using CPresentacion.Plantillas;
 using Microsoft.Reporting.WinForms;
 using System;
@@ -52,7 +53,21 @@ namespace CPresentacion.Views.UserControlsReportes
                     string mensaje = $"La fecha de inicio debe ser menor a la fehca de fin\n" +
                         $"Fecha ingresadas:\nInicio: {dateTimeFrom.Value}\nFin: {dateTimeTo.Value}";
                     throw new ControlExcepciones(mensaje);
-                }         
+                }
+
+                Ruta ruta = new Ruta("ReporteTurnosFecha.rdlc");
+                reportViewerGeneral.LocalReport.ReportPath = ruta.GetRuta();
+
+                DsTurnosRangoFecha dsTurnosRango = new DsTurnosRangoFecha();
+                spVerReporteTurnosRangoFechaTableAdapter turnosFechas = new spVerReporteTurnosRangoFechaTableAdapter();
+                turnosFechas.Fill(dsTurnosRango.spVerReporteTurnosRangoFecha, user.IdEmpleado, dateTimeFrom.Value.Date, dateTimeTo.Value.Date);
+
+                ReportDataSource reporte = new ReportDataSource("DataSet1", dsTurnosRango.spVerReporteTurnosRangoFecha.DefaultView);
+
+                reportViewerGeneral.LocalReport.DataSources.Clear();
+                reportViewerGeneral.LocalReport.DataSources.Add(reporte);
+                reportViewerGeneral.RefreshReport();
+
             }
             catch (ControlExcepciones error)
             {

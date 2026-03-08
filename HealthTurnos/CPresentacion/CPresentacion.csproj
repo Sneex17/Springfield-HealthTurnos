@@ -214,6 +214,12 @@
     <Compile Include="Views\UserControls\ucMedicos.Designer.cs">
       <DependentUpon>ucMedicos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\UserControls\ucMonitoreo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\UserControls\ucMonitoreo.Designer.cs">
+      <DependentUpon>ucMonitoreo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\UserControls\ucRoles.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -289,6 +295,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\UserControls\ucMedicos.resx">
       <DependentUpon>ucMedicos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\UserControls\ucMonitoreo.resx">
+      <DependentUpon>ucMonitoreo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\UserControls\ucRoles.resx">
       <DependentUpon>ucRoles.cs</DependentUpon>

@@ -72,6 +72,7 @@ namespace CPresentacion.Views
                         tabEspecialidades.Parent = null;
                         tabRoles.Parent = null;
                         tabUsuarios.Parent = null;
+                        tabMonitoreo.Parent = null;
 
                     }
                     break;
@@ -84,6 +85,7 @@ namespace CPresentacion.Views
                         tabEspecialidades.Parent = null;
                         tabRoles.Parent = null;
                         tabUsuarios.Parent = null;
+                        tabMonitoreo.Parent = null;
                         
                     }
                     break;
@@ -192,8 +194,13 @@ namespace CPresentacion.Views
                 tabAtenderPacientes.Controls.Add(atenderPaciente);
             }
 
-        }
-
-       
+            if (materialTabControl1.SelectedTab == tabMonitoreo
+                && tabMonitoreo.Controls.Count == 0)
+            {
+                ucMonitoreo monitoreo = new ucMonitoreo(user);
+                monitoreo.Dock = DockStyle.Fill;
+                tabMonitoreo.Controls.Add(monitoreo);
+            }
+        } 
     }
 }

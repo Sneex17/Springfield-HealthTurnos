@@ -43,6 +43,7 @@
             this.tabUsuarios = new System.Windows.Forms.TabPage();
             this.tabReportes = new System.Windows.Forms.TabPage();
             this.iconSplitButton1 = new FontAwesome.Sharp.IconSplitButton();
+            this.tabMonitoreo = new System.Windows.Forms.TabPage();
             this.materialTabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,6 +60,7 @@
             this.materialTabControl1.Controls.Add(this.tabAsistente);
             this.materialTabControl1.Controls.Add(this.tabRoles);
             this.materialTabControl1.Controls.Add(this.tabUsuarios);
+            this.materialTabControl1.Controls.Add(this.tabMonitoreo);
             this.materialTabControl1.Controls.Add(this.tabReportes);
             this.materialTabControl1.Depth = 0;
             this.materialTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -83,87 +85,87 @@
             // 
             // tabRegistrarTurno
             // 
-            this.tabRegistrarTurno.Location = new System.Drawing.Point(4, 40);
+            this.tabRegistrarTurno.Location = new System.Drawing.Point(4, 22);
             this.tabRegistrarTurno.Name = "tabRegistrarTurno";
             this.tabRegistrarTurno.Padding = new System.Windows.Forms.Padding(3);
-            this.tabRegistrarTurno.Size = new System.Drawing.Size(936, 539);
+            this.tabRegistrarTurno.Size = new System.Drawing.Size(936, 557);
             this.tabRegistrarTurno.TabIndex = 1;
             this.tabRegistrarTurno.Text = "Registrar turno";
             this.tabRegistrarTurno.UseVisualStyleBackColor = true;
             // 
             // tabPaciente
             // 
-            this.tabPaciente.Location = new System.Drawing.Point(4, 40);
+            this.tabPaciente.Location = new System.Drawing.Point(4, 22);
             this.tabPaciente.Name = "tabPaciente";
             this.tabPaciente.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPaciente.Size = new System.Drawing.Size(936, 539);
+            this.tabPaciente.Size = new System.Drawing.Size(936, 557);
             this.tabPaciente.TabIndex = 2;
             this.tabPaciente.Text = "Consulta paciente";
             this.tabPaciente.UseVisualStyleBackColor = true;
             // 
             // tabAtenderPacientes
             // 
-            this.tabAtenderPacientes.Location = new System.Drawing.Point(4, 40);
+            this.tabAtenderPacientes.Location = new System.Drawing.Point(4, 22);
             this.tabAtenderPacientes.Name = "tabAtenderPacientes";
             this.tabAtenderPacientes.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAtenderPacientes.Size = new System.Drawing.Size(936, 539);
+            this.tabAtenderPacientes.Size = new System.Drawing.Size(936, 557);
             this.tabAtenderPacientes.TabIndex = 3;
             this.tabAtenderPacientes.Text = "Atender pacientes";
             this.tabAtenderPacientes.UseVisualStyleBackColor = true;
             // 
             // tabColaTurnos
             // 
-            this.tabColaTurnos.Location = new System.Drawing.Point(4, 40);
+            this.tabColaTurnos.Location = new System.Drawing.Point(4, 22);
             this.tabColaTurnos.Name = "tabColaTurnos";
-            this.tabColaTurnos.Size = new System.Drawing.Size(936, 539);
+            this.tabColaTurnos.Size = new System.Drawing.Size(936, 557);
             this.tabColaTurnos.TabIndex = 4;
             this.tabColaTurnos.Text = "Colar de turnos";
             this.tabColaTurnos.UseVisualStyleBackColor = true;
             // 
             // tabEmpleados
             // 
-            this.tabEmpleados.Location = new System.Drawing.Point(4, 40);
+            this.tabEmpleados.Location = new System.Drawing.Point(4, 22);
             this.tabEmpleados.Name = "tabEmpleados";
             this.tabEmpleados.Padding = new System.Windows.Forms.Padding(3);
-            this.tabEmpleados.Size = new System.Drawing.Size(936, 539);
+            this.tabEmpleados.Size = new System.Drawing.Size(936, 557);
             this.tabEmpleados.TabIndex = 5;
             this.tabEmpleados.Text = "Gest. de empleados";
             this.tabEmpleados.UseVisualStyleBackColor = true;
             // 
             // tabEspecialidades
             // 
-            this.tabEspecialidades.Location = new System.Drawing.Point(4, 40);
+            this.tabEspecialidades.Location = new System.Drawing.Point(4, 22);
             this.tabEspecialidades.Name = "tabEspecialidades";
             this.tabEspecialidades.Padding = new System.Windows.Forms.Padding(3);
-            this.tabEspecialidades.Size = new System.Drawing.Size(936, 539);
+            this.tabEspecialidades.Size = new System.Drawing.Size(936, 557);
             this.tabEspecialidades.TabIndex = 8;
             this.tabEspecialidades.Text = "Gest. de especialidades";
             this.tabEspecialidades.UseVisualStyleBackColor = true;
             // 
             // tabMedicos
             // 
-            this.tabMedicos.Location = new System.Drawing.Point(4, 40);
+            this.tabMedicos.Location = new System.Drawing.Point(4, 22);
             this.tabMedicos.Name = "tabMedicos";
-            this.tabMedicos.Size = new System.Drawing.Size(936, 539);
+            this.tabMedicos.Size = new System.Drawing.Size(936, 557);
             this.tabMedicos.TabIndex = 6;
             this.tabMedicos.Text = "Gest. de médicos";
             this.tabMedicos.UseVisualStyleBackColor = true;
             // 
             // tabAsistente
             // 
-            this.tabAsistente.Location = new System.Drawing.Point(4, 40);
+            this.tabAsistente.Location = new System.Drawing.Point(4, 22);
             this.tabAsistente.Name = "tabAsistente";
-            this.tabAsistente.Size = new System.Drawing.Size(936, 539);
+            this.tabAsistente.Size = new System.Drawing.Size(936, 557);
             this.tabAsistente.TabIndex = 7;
             this.tabAsistente.Text = "Gest. de asistentes";
             this.tabAsistente.UseVisualStyleBackColor = true;
             // 
             // tabRoles
             // 
-            this.tabRoles.Location = new System.Drawing.Point(4, 40);
+            this.tabRoles.Location = new System.Drawing.Point(4, 22);
             this.tabRoles.Name = "tabRoles";
             this.tabRoles.Padding = new System.Windows.Forms.Padding(3);
-            this.tabRoles.Size = new System.Drawing.Size(936, 539);
+            this.tabRoles.Size = new System.Drawing.Size(936, 557);
             this.tabRoles.TabIndex = 10;
             this.tabRoles.Text = "Gest. Roles";
             this.tabRoles.UseVisualStyleBackColor = true;
@@ -199,6 +201,15 @@
             this.iconSplitButton1.Size = new System.Drawing.Size(23, 23);
             this.iconSplitButton1.Text = "iconSplitButton1";
             // 
+            // tabMonitoreo
+            // 
+            this.tabMonitoreo.Location = new System.Drawing.Point(4, 40);
+            this.tabMonitoreo.Name = "tabMonitoreo";
+            this.tabMonitoreo.Size = new System.Drawing.Size(936, 539);
+            this.tabMonitoreo.TabIndex = 12;
+            this.tabMonitoreo.Text = " Estadísticas";
+            this.tabMonitoreo.UseVisualStyleBackColor = true;
+            // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -231,5 +242,6 @@
         private System.Windows.Forms.TabPage tabRoles;
         private System.Windows.Forms.TabPage tabReportes;
         private FontAwesome.Sharp.IconSplitButton iconSplitButton1;
+        private System.Windows.Forms.TabPage tabMonitoreo;
     }
 }

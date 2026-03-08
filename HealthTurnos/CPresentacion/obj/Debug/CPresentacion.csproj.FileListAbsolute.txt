@@ -188,3 +188,4 @@ C:\Users\xrami\OneDrive\Documentos\Springfield HealthTurnos\HealthTurnos\CPresen
 C:\Users\xrami\OneDrive\Documentos\Springfield HealthTurnos\HealthTurnos\CPresentacion\obj\Debug\CPresentacion.Views.fmMenuPaciente.resources
 C:\Users\xrami\OneDrive\Documentos\Springfield HealthTurnos\HealthTurnos\CPresentacion\obj\Debug\CPresentacion.Views.fmInicioPaciente.resources
 C:\Users\xrami\OneDrive\Documentos\Springfield HealthTurnos\HealthTurnos\CPresentacion\obj\Debug\CPresentacion.Views.fmVerColaTurnos.resources
+C:\Users\xrami\OneDrive\Documentos\Springfield HealthTurnos\HealthTurnos\CPresentacion\obj\Debug\CPresentacion.Views.UserControls.ucMonitoreo.resources

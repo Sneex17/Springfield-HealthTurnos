@@ -122,7 +122,7 @@ namespace CPresentacion.Views.UserControlsTurnos
                         resultado.Errors.Select(M => M.ErrorMessage));
                     throw new ControlExcepciones(errores);
                 }
-                //ReglasNegocio.RegistrarTurno(turno);
+                ReglasNegocio.RegistrarTurno(turno);
 
                 MessageBox.Show($"{turno.Paciente.id}\n, {turno.Medico.IdEmpleado}\n, {turno.Asistente.IdEmpleado},\n, {turno.Fecha},\n, {turno.Prioridad.IdPrioridad},\n, {turno.Estado.estado.Estado},\n", "Error en la operación",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);

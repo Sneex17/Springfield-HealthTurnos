@@ -25,23 +25,35 @@ namespace CPresentacion.Views.UserControls
 
         private void CargarDatos()
         {
-            lbCountEmpleados.Text = ReglasNegocio.verEmpleados().Count.ToString();
-            lbCountUsuarios.Text = ReglasNegocio.verUsuarios().Rows.Count.ToString();
-
             var lista = ReglasNegocio.TotalTurnos();
             lbCountTurnos.Text = lista.Rows.Count.ToString();
 
-            lbCountTurnosPendientes.Text = lista.Select($"IdEstado = {1}").Length.ToString();
-            lbCountTurnosEnAtencion.Text = lista.Select($"IdEstado = {2}").Length.ToString();
-            lbCountTurnosAtendidos.Text = lista.Select($"IdEstado = {3}").Length.ToString();
-            lbCountTurnosCancelados.Text = lista.Select($"IdEstado = {4}").Length.ToString();
 
+            int pendientes = lista.Select("IdEstado = 1").Length;
+            int enAtencion = lista.Select("IdEstado = 2").Length;
+            int atendidos = lista.Select("IdEstado = 3").Length;
+            int cancelados = lista.Select("IdEstado = 4").Length;
+            int normales = lista.Select("IdPrioridad = 1").Length;
+            int prioritarios = lista.Select("IdPrioridad = 2").Length;
+            int emergencia = lista.Select("IdPrioridad = 3").Length;
 
-            lbCountTurnosNormales.Text = lista.Select($"IdPrioridad = {1}").Length.ToString();
-            lbCountTurnosPrioritarios.Text = lista.Select($"IdPrioridad = {2}").Length.ToString();
-            lbCountTurnosEmergencia.Text = lista.Select($"IdPrioridad = {3}").Length.ToString();
+            // Labels
+            lbCountEmpleados.Text = ReglasNegocio.verEmpleados().Count.ToString();
+            lbCountUsuarios.Text = ReglasNegocio.verUsuarios().Rows.Count.ToString();
+            lbCountTurnos.Text = lista.Rows.Count.ToString();
+            lbCountTurnosPendientes.Text = pendientes.ToString();
+            lbCountTurnosEnAtencion.Text = enAtencion.ToString();
+            lbCountTurnosAtendidos.Text = atendidos.ToString();
+            lbCountTurnosCancelados.Text = cancelados.ToString();
+            lbCountTurnosNormales.Text = normales.ToString();
+            lbCountTurnosPrioritarios.Text = prioritarios.ToString();
+            lbCountTurnosEmergencia.Text = emergencia.ToString();
 
-
+            // Gráfica — pasar int, no string
+            GraficaTurnos.Series[0].Points.AddXY($"Pendientes {pendientes}", pendientes);
+            GraficaTurnos.Series[0].Points.AddXY($"En Atención {enAtencion}", enAtencion);
+            GraficaTurnos.Series[0].Points.AddXY($"Atendidos {atendidos}", atendidos);
+            GraficaTurnos.Series[0].Points.AddXY($"Cancelados {cancelados}", cancelados);
         }
     }
 }

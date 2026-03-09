@@ -28,6 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.cyberGroupBox1 = new ReaLTaiizor.Controls.CyberGroupBox();
             this.lbCountUsuarios = new System.Windows.Forms.Label();
             this.lbCountEmpleados = new System.Windows.Forms.Label();
@@ -35,6 +39,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cyberGroupBox2 = new ReaLTaiizor.Controls.CyberGroupBox();
+            this.lbCountTurnosEmergencia = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lbCountTurnosPrioritarios = new System.Windows.Forms.Label();
+            this.lbCountTurnosNormales = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.lbCountTurnosCancelados = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.lbCountTurnosAtendidos = new System.Windows.Forms.Label();
@@ -46,16 +56,12 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.lbCountTurnosEmergencia = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.lbCountTurnosPrioritarios = new System.Windows.Forms.Label();
-            this.lbCountTurnosNormales = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
+            this.GraficaTurnos = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panelInfo.SuspendLayout();
             this.panelContainer.SuspendLayout();
             this.cyberGroupBox1.SuspendLayout();
             this.cyberGroupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GraficaTurnos)).BeginInit();
             this.SuspendLayout();
             // 
             // labelText
@@ -65,6 +71,7 @@
             // 
             // panelContainer
             // 
+            this.panelContainer.Controls.Add(this.GraficaTurnos);
             this.panelContainer.Controls.Add(this.cyberGroupBox2);
             this.panelContainer.Controls.Add(this.cyberGroupBox1);
             // 
@@ -92,7 +99,7 @@
             this.cyberGroupBox1.Lighting = false;
             this.cyberGroupBox1.LinearGradient_Background = false;
             this.cyberGroupBox1.LinearGradientPen = false;
-            this.cyberGroupBox1.Location = new System.Drawing.Point(54, 21);
+            this.cyberGroupBox1.Location = new System.Drawing.Point(69, 352);
             this.cyberGroupBox1.Name = "cyberGroupBox1";
             this.cyberGroupBox1.PenWidth = 15;
             this.cyberGroupBox1.RGB = false;
@@ -196,24 +203,90 @@
             this.cyberGroupBox2.Lighting = false;
             this.cyberGroupBox2.LinearGradient_Background = false;
             this.cyberGroupBox2.LinearGradientPen = false;
-            this.cyberGroupBox2.Location = new System.Drawing.Point(54, 132);
+            this.cyberGroupBox2.Location = new System.Drawing.Point(38, 26);
             this.cyberGroupBox2.Name = "cyberGroupBox2";
             this.cyberGroupBox2.PenWidth = 15;
             this.cyberGroupBox2.RGB = false;
             this.cyberGroupBox2.Rounding = true;
             this.cyberGroupBox2.RoundingInt = 60;
-            this.cyberGroupBox2.Size = new System.Drawing.Size(829, 167);
+            this.cyberGroupBox2.Size = new System.Drawing.Size(472, 288);
             this.cyberGroupBox2.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.cyberGroupBox2.TabIndex = 8;
             this.cyberGroupBox2.Tag = "Cyber";
             this.cyberGroupBox2.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             this.cyberGroupBox2.Timer_RGB = 300;
             // 
+            // lbCountTurnosEmergencia
+            // 
+            this.lbCountTurnosEmergencia.AutoSize = true;
+            this.lbCountTurnosEmergencia.Font = new System.Drawing.Font("Montserrat SemiBold", 11F, System.Drawing.FontStyle.Bold);
+            this.lbCountTurnosEmergencia.Location = new System.Drawing.Point(328, 123);
+            this.lbCountTurnosEmergencia.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbCountTurnosEmergencia.Name = "lbCountTurnosEmergencia";
+            this.lbCountTurnosEmergencia.Size = new System.Drawing.Size(57, 21);
+            this.lbCountTurnosEmergencia.TabIndex = 19;
+            this.lbCountTurnosEmergencia.Text = "Count";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Montserrat SemiBold", 11F, System.Drawing.FontStyle.Bold);
+            this.label5.Location = new System.Drawing.Point(328, 99);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(102, 21);
+            this.label5.TabIndex = 18;
+            this.label5.Text = "Emergencia";
+            // 
+            // lbCountTurnosPrioritarios
+            // 
+            this.lbCountTurnosPrioritarios.AutoSize = true;
+            this.lbCountTurnosPrioritarios.Font = new System.Drawing.Font("Montserrat SemiBold", 11F, System.Drawing.FontStyle.Bold);
+            this.lbCountTurnosPrioritarios.Location = new System.Drawing.Point(168, 123);
+            this.lbCountTurnosPrioritarios.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbCountTurnosPrioritarios.Name = "lbCountTurnosPrioritarios";
+            this.lbCountTurnosPrioritarios.Size = new System.Drawing.Size(57, 21);
+            this.lbCountTurnosPrioritarios.TabIndex = 17;
+            this.lbCountTurnosPrioritarios.Text = "Count";
+            // 
+            // lbCountTurnosNormales
+            // 
+            this.lbCountTurnosNormales.AutoSize = true;
+            this.lbCountTurnosNormales.Font = new System.Drawing.Font("Montserrat SemiBold", 11F, System.Drawing.FontStyle.Bold);
+            this.lbCountTurnosNormales.Location = new System.Drawing.Point(26, 123);
+            this.lbCountTurnosNormales.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbCountTurnosNormales.Name = "lbCountTurnosNormales";
+            this.lbCountTurnosNormales.Size = new System.Drawing.Size(57, 21);
+            this.lbCountTurnosNormales.TabIndex = 16;
+            this.lbCountTurnosNormales.Text = "Count";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Montserrat SemiBold", 11F, System.Drawing.FontStyle.Bold);
+            this.label13.Location = new System.Drawing.Point(168, 99);
+            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(94, 21);
+            this.label13.TabIndex = 15;
+            this.label13.Text = "Prioritarios";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Montserrat SemiBold", 11F, System.Drawing.FontStyle.Bold);
+            this.label15.Location = new System.Drawing.Point(26, 99);
+            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(84, 21);
+            this.label15.TabIndex = 14;
+            this.label15.Text = "Normales";
+            // 
             // lbCountTurnosCancelados
             // 
             this.lbCountTurnosCancelados.AutoSize = true;
             this.lbCountTurnosCancelados.Font = new System.Drawing.Font("Montserrat SemiBold", 11F, System.Drawing.FontStyle.Bold);
-            this.lbCountTurnosCancelados.Location = new System.Drawing.Point(631, 64);
+            this.lbCountTurnosCancelados.Location = new System.Drawing.Point(328, 197);
             this.lbCountTurnosCancelados.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbCountTurnosCancelados.Name = "lbCountTurnosCancelados";
             this.lbCountTurnosCancelados.Size = new System.Drawing.Size(57, 21);
@@ -224,7 +297,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Montserrat SemiBold", 11F, System.Drawing.FontStyle.Bold);
-            this.label14.Location = new System.Drawing.Point(631, 40);
+            this.label14.Location = new System.Drawing.Point(328, 173);
             this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(99, 21);
@@ -235,7 +308,7 @@
             // 
             this.lbCountTurnosAtendidos.AutoSize = true;
             this.lbCountTurnosAtendidos.Font = new System.Drawing.Font("Montserrat SemiBold", 11F, System.Drawing.FontStyle.Bold);
-            this.lbCountTurnosAtendidos.Location = new System.Drawing.Point(489, 64);
+            this.lbCountTurnosAtendidos.Location = new System.Drawing.Point(186, 197);
             this.lbCountTurnosAtendidos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbCountTurnosAtendidos.Name = "lbCountTurnosAtendidos";
             this.lbCountTurnosAtendidos.Size = new System.Drawing.Size(57, 21);
@@ -257,7 +330,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Montserrat SemiBold", 11F, System.Drawing.FontStyle.Bold);
-            this.label11.Location = new System.Drawing.Point(489, 40);
+            this.label11.Location = new System.Drawing.Point(186, 173);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(88, 21);
@@ -330,71 +403,28 @@
             this.label8.TabIndex = 2;
             this.label8.Text = "Total";
             // 
-            // lbCountTurnosEmergencia
+            // GraficaTurnos
             // 
-            this.lbCountTurnosEmergencia.AutoSize = true;
-            this.lbCountTurnosEmergencia.Font = new System.Drawing.Font("Montserrat SemiBold", 11F, System.Drawing.FontStyle.Bold);
-            this.lbCountTurnosEmergencia.Location = new System.Drawing.Point(328, 123);
-            this.lbCountTurnosEmergencia.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbCountTurnosEmergencia.Name = "lbCountTurnosEmergencia";
-            this.lbCountTurnosEmergencia.Size = new System.Drawing.Size(57, 21);
-            this.lbCountTurnosEmergencia.TabIndex = 19;
-            this.lbCountTurnosEmergencia.Text = "Count";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Montserrat SemiBold", 11F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(328, 99);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(102, 21);
-            this.label5.TabIndex = 18;
-            this.label5.Text = "Emergencia";
-            // 
-            // lbCountTurnosPrioritarios
-            // 
-            this.lbCountTurnosPrioritarios.AutoSize = true;
-            this.lbCountTurnosPrioritarios.Font = new System.Drawing.Font("Montserrat SemiBold", 11F, System.Drawing.FontStyle.Bold);
-            this.lbCountTurnosPrioritarios.Location = new System.Drawing.Point(168, 123);
-            this.lbCountTurnosPrioritarios.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbCountTurnosPrioritarios.Name = "lbCountTurnosPrioritarios";
-            this.lbCountTurnosPrioritarios.Size = new System.Drawing.Size(57, 21);
-            this.lbCountTurnosPrioritarios.TabIndex = 17;
-            this.lbCountTurnosPrioritarios.Text = "Count";
-            // 
-            // lbCountTurnosNormales
-            // 
-            this.lbCountTurnosNormales.AutoSize = true;
-            this.lbCountTurnosNormales.Font = new System.Drawing.Font("Montserrat SemiBold", 11F, System.Drawing.FontStyle.Bold);
-            this.lbCountTurnosNormales.Location = new System.Drawing.Point(26, 123);
-            this.lbCountTurnosNormales.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbCountTurnosNormales.Name = "lbCountTurnosNormales";
-            this.lbCountTurnosNormales.Size = new System.Drawing.Size(57, 21);
-            this.lbCountTurnosNormales.TabIndex = 16;
-            this.lbCountTurnosNormales.Text = "Count";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Montserrat SemiBold", 11F, System.Drawing.FontStyle.Bold);
-            this.label13.Location = new System.Drawing.Point(168, 99);
-            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(94, 21);
-            this.label13.TabIndex = 15;
-            this.label13.Text = "Prioritarios";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Montserrat SemiBold", 11F, System.Drawing.FontStyle.Bold);
-            this.label15.Location = new System.Drawing.Point(26, 99);
-            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(84, 21);
-            this.label15.TabIndex = 14;
-            this.label15.Text = "Normales";
+            chartArea1.Name = "ChartArea1";
+            this.GraficaTurnos.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.GraficaTurnos.Legends.Add(legend1);
+            this.GraficaTurnos.Location = new System.Drawing.Point(599, 0);
+            this.GraficaTurnos.Name = "GraficaTurnos";
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.Font = new System.Drawing.Font("Montserrat SemiBold", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            series1.YValuesPerPoint = 2;
+            this.GraficaTurnos.Series.Add(series1);
+            this.GraficaTurnos.Size = new System.Drawing.Size(337, 289);
+            this.GraficaTurnos.TabIndex = 9;
+            this.GraficaTurnos.Text = "chart1";
+            title1.Font = new System.Drawing.Font("Montserrat SemiBold", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title1.Name = "Title1";
+            title1.Text = "Gráfica de turnos";
+            this.GraficaTurnos.Titles.Add(title1);
             // 
             // ucMonitoreo
             // 
@@ -408,6 +438,7 @@
             this.cyberGroupBox1.PerformLayout();
             this.cyberGroupBox2.ResumeLayout(false);
             this.cyberGroupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GraficaTurnos)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -438,5 +469,6 @@
         private System.Windows.Forms.Label lbCountTurnosNormales;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.DataVisualization.Charting.Chart GraficaTurnos;
     }
 }

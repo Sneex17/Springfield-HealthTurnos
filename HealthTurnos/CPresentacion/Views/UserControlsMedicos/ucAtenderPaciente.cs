@@ -12,6 +12,7 @@ using CEntidades.BuilderPattern;
 using CEntidades.StatePattern;
 using CNegocio;
 using CPresentacion.Plantillas;
+using CPresentacion.Views.fmDialogos;
 
 namespace CPresentacion.Views.UserControlsMedicos
 {
@@ -28,6 +29,7 @@ namespace CPresentacion.Views.UserControlsMedicos
         private void CargarComponentes()
         {
             cbxProximoEstado.Items.Clear();
+            cbxProximoEstado.Text = "Seleccionar estado";
             cbxProximoEstado.Items.Add("Atendido");
             cbxProximoEstado.Items.Add("Cancelado");
         }
@@ -40,6 +42,18 @@ namespace CPresentacion.Views.UserControlsMedicos
             }
         }
 
+        private void LimpiarTextbox()
+        {
+            texbIdTurno.Text = string.Empty;
+            textbFecha.Text = string.Empty;
+            textbIdPaciente.Text = string.Empty;
+            textbNombrePaciente.Text = string.Empty;
+            textbSexoPaciente.Text = string.Empty;
+            textbPrioridadPaciente.Text = string.Empty;
+            rbObservaciones.Text = string.Empty;
+            textbEstado.Text = string.Empty;
+            cbxProximoEstado.Text = "Seleccionar estado";
+        }
         private void BuCargarPaciente_Click(object sender, EventArgs e)
         {
             try
@@ -82,6 +96,12 @@ namespace CPresentacion.Views.UserControlsMedicos
                     rbObservaciones.Text = lista.Rows[0]["Observaciones"].ToString();
                     textbEstado.Text = lista.Rows[0]["Estado"].ToString();
                 }
+
+                if(!string.IsNullOrWhiteSpace(texbIdTurno.Text))
+                {
+                    BuCargarPaciente.Enabled = false;
+                    BuFinalizar.Enabled = true;
+                }
             }
             catch (ControlExcepciones error)
             {
@@ -92,11 +112,14 @@ namespace CPresentacion.Views.UserControlsMedicos
             {
                 MessageBox.Show($"{error.Message}", "Atención de pacientes",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            
-            
+            } 
         }
 
+        private async void CargarProximo()
+        {
+            await Task.Delay(2200);
+            BuCargarPaciente_Click(null, EventArgs.Empty);
+        }
         private void CambioEstado(int id, string observaciones, EstadoTurno estado)
         {
             ITurnoBuilder turnoBuilder = new TurnoBuilder();
@@ -138,6 +161,26 @@ namespace CPresentacion.Views.UserControlsMedicos
                         }
                         break;
                 }
+
+                var mensajeFinal = MessageBox.Show($"Consulta finalizada\nDesea cargar y llamar al siguiente paciente en turno?",
+                "Consulta finalizada", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+
+                if(mensajeFinal == DialogResult.Yes)
+                {
+                    LimpiarTextbox();
+                    fmMensajeProximoTurno mensajeProximoTurno = new fmMensajeProximoTurno();
+                    mensajeProximoTurno.ShowDialog();
+
+                    CargarProximo();
+                }
+                else
+                {
+                    LimpiarTextbox();
+                    BuCargarPaciente.Enabled = true;
+                    BuFinalizar.Enabled = false;
+                }
+
             }
             
         }

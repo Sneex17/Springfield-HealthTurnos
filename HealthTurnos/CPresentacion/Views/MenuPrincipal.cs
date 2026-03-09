@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -15,6 +16,7 @@ using CPresentacion.Views.UserControlsReportes;
 using CPresentacion.Views.UserControlsTurnos;
 using MaterialSkin;
 using MaterialSkin.Controls;
+using CPresentacion.Views.fmDialogos;
 
 namespace CPresentacion.Views
 {
@@ -40,6 +42,14 @@ namespace CPresentacion.Views
                 TextShade.WHITE
             );
             cargarHome();
+            MensajeBienvenida();
+        }
+
+        private async void MensajeBienvenida()
+        {
+            await Task.Delay(1300);
+            fmMensajeBienvenida mensajeBienvenida = new fmMensajeBienvenida();
+            mensajeBienvenida.ShowDialog();
         }
         private void cargarHome()
         {

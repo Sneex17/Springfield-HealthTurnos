@@ -110,6 +110,18 @@
     <Compile Include="DecoratorPattern\HeaderDecorator.cs" />
     <Compile Include="DecoratorPattern\IDataGridDecorator.cs" />
     <Compile Include="DecoratorPattern\SeleccionDecorator.cs" />
+    <Compile Include="Views\fmDialogos\fmMensajeBienvenida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\fmDialogos\fmMensajeBienvenida.Designer.cs">
+      <DependentUpon>fmMensajeBienvenida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\fmDialogos\fmMensajeProximoTurno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\fmDialogos\fmMensajeProximoTurno.Designer.cs">
+      <DependentUpon>fmMensajeProximoTurno.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\fmInicioPaciente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -236,6 +248,12 @@
     <EmbeddedResource Include="Reportes\ReporteTurnosAtendidos.rdlc" />
     <EmbeddedResource Include="Reportes\ReporteTurnosCancelados.rdlc" />
     <EmbeddedResource Include="Reportes\ReporteTurnosFecha.rdlc" />
+    <EmbeddedResource Include="Views\fmDialogos\fmMensajeBienvenida.resx">
+      <DependentUpon>fmMensajeBienvenida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\fmDialogos\fmMensajeProximoTurno.resx">
+      <DependentUpon>fmMensajeProximoTurno.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\fmInicioPaciente.resx">
       <DependentUpon>fmInicioPaciente.cs</DependentUpon>
     </EmbeddedResource>
@@ -357,6 +375,7 @@
     <None Include="Imgs\Fondo Login.png" />
     <None Include="Imgs\FondoLogin.png" />
     <None Include="Imgs\LogoUsuarios.png" />
+    <None Include="Imgs\MedicoSaludando.jpg" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

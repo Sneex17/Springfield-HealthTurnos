@@ -166,6 +166,10 @@ namespace CNegocio
         {
             TurnoController.ActualizarTurno(turno);
         }
+        public static DataTable TotalTurnos()
+        {
+            return TurnoController.TotalTurnos();
+        }
 
         //Pacientes
         public static async Task<List<Character>> VerPacientes()

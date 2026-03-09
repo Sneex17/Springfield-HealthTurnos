@@ -9,6 +9,7 @@ namespace CEntidades.BuilderPattern
 {
     public class Turno
     {
+        public static List<Turno> listaTurnos = new List<Turno>();
         public int IdTurno { get; set; }
         public Character Paciente { get; set; }
         public DateTime Fecha { get; set; }

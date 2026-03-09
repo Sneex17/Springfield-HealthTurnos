@@ -1,8 +1,10 @@
 ﻿using CEntidades;
 using CEntidades.BuilderPattern;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace CDatos.Controllers
 {
@@ -81,6 +83,19 @@ namespace CDatos.Controllers
                 DataTable table = new DataTable();
                 adapter.Fill(table);
 
+                return table;
+            }
+        }
+
+        public static DataTable TotalTurnos()
+        {
+            using (SqlConnection acceso = ConexionBD.Instancia.ObtenerConexion())
+            {
+                SqlCommand comando = new SqlCommand("spTotalTurnos", acceso);
+                comando.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter adapter = new SqlDataAdapter(comando);
+                DataTable table = new DataTable();
+                adapter.Fill(table);
                 return table;
             }
         }

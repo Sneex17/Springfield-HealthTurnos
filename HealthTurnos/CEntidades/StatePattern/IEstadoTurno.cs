@@ -8,7 +8,7 @@ namespace CEntidades.StatePattern
 {
     public interface IEstadoTurno
     {
-        int IdEstado { get; }
+        int IdEstado { get;}
         string Estado { get; }
         void Pendiente(EstadoTurno estadoTurno);
         void EnAtencion(EstadoTurno estadoTurno);

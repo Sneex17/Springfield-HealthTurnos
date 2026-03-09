@@ -580,7 +580,9 @@ p.Nombre as Prioridad, t.Observaciones, e.Estado as Estado
 from Turno as t
 inner join Prioridad as p on p.IdPrioridad = t.IdPrioridad
 inner join Estado as e on e.IdEstado = t.IdEstado
-where (t.IdEstado = 2 or t.IdEstado = 1) and IdMedico = @IdMedico order by IdTurno asc
+where (t.IdEstado = 2 or t.IdEstado = 1) and 
+(t.IdPrioridad = 3 or t.IdPrioridad = 2 or t.IdPrioridad = 1) and 
+IdMedico = @IdMedico order by IdTurno asc
 end
 
 go
@@ -689,3 +691,20 @@ begin
 select * from vwReportesTurnosFechas where IdAsistente = @id or IdMedico = @id and Fecha between @Inicio and @Fin
 end
 go
+--Domingo 8/3/26
+select * from Turno
+
+
+select * from vwListaAsistente
+
+select * from Prioridad
+
+select * from vwVerUsuarios
+
+create proc spTotalTurnos
+as
+set nocount on
+begin
+select * from Turno
+end 
+

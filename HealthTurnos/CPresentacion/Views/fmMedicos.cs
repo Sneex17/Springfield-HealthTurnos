@@ -34,6 +34,10 @@ namespace CPresentacion.Views
         private void CargarDatos()
         {
             viewDataMedico.DataSource = ReglasNegocio.verMedicos();
+            cbxOpciones.Items.Add("IdEmpleado");
+            cbxOpciones.Items.Add("Nombre");
+            cbxOpciones.Items.Add("Apellido");
+            cbxOpciones.Items.Add("Especialidad");
         }
 
         private void viewDataPacientes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -46,6 +50,47 @@ namespace CPresentacion.Views
             };
             SeleccionarMedico?.Invoke(medico);
             this.Close();
+        }
+        private void CargarFiltro(string campo)
+        {
+            if (string.IsNullOrWhiteSpace(textbFiltro.Text))
+            {
+                viewDataMedico.DataSource = ReglasNegocio.verMedicos();
+            }
+            else
+            {
+                string filtro;
+
+                // Si el campo es numérico (ID)
+                if (campo == "IdEmpleado")
+                {
+                    filtro = $"{campo} = {textbFiltro.Text}";
+                }
+                else // Si es texto (Nombre, Apellido, Especialidad)
+                {
+                    filtro = $"{campo} LIKE '%{textbFiltro.Text}%'";
+                }
+
+                DataTable dt = ReglasNegocio.verMedicos();
+                DataRow[] filas = dt.Select(filtro);
+
+                // Convertir resultado a DataTable para asignarlo al DataSource
+                viewDataMedico.DataSource = filas.Length > 0
+                    ? filas.CopyToDataTable()
+                    : dt.Clone(); // tabla vacía si no hay resultados
+            }
+
+        }
+        private void textbFiltro_TextChanged(object sender, EventArgs e)
+        {
+
+            string opcion = cbxOpciones.Text;
+
+            if (opcion == "IdEmpleado" || opcion == "Nombre" ||
+                opcion == "Apellido" || opcion == "Especialidad")
+            {
+                CargarFiltro(opcion);
+            }
         }
     }
 }

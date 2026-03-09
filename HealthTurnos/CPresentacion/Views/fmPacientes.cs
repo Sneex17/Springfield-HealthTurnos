@@ -49,6 +49,7 @@ namespace CPresentacion
         }
         private void DatosFiltros(List<Character> lista)
         {
+            viewDataPacientes.Rows.Clear();
             foreach (var lm in lista)
             {
                 if (lm.status == "Alive")
@@ -63,39 +64,33 @@ namespace CPresentacion
         }
         private void textbFiltro_TextChanged(object sender, EventArgs e)
         {
-            if(string.IsNullOrWhiteSpace(textbFiltro.Text))
+            if (string.IsNullOrWhiteSpace(textbFiltro.Text))
             {
                 DatosFiltros(lista);
+                return; 
             }
-            else
+
+            switch (cbxOpciones.Text)
             {
-                switch (cbxOpciones.Text)
-                {
-                    case "IdPaciente":
-                        {
-                            var resultado = (from L in lista where(L.id == 
-                                             Convert.ToInt32(textbFiltro.Text)) select L).ToList();
+                case "IdPaciente":
+                    if (int.TryParse(textbFiltro.Text, out int idBuscado))
+                    {
+                        var resultado = lista.Where(L => L.id == idBuscado).ToList();
+                        DatosFiltros(resultado);
+                    }
+                    break;
 
-                            DatosFiltros(resultado);
-                        }
-                        break;
-                    case "Nombre":
-                        {
-                            var resultado = lista.Where(L =>
-                            L.name.ToLower().Contains(textbFiltro.Text.ToLower())).ToList();
+                case "Nombre":
+                    var porNombre = lista.Where(L =>
+                        L.name.ToLower().Contains(textbFiltro.Text.ToLower())).ToList();
+                    DatosFiltros(porNombre);
+                    break;
 
-                            DatosFiltros(resultado);
-                        }
-                        break;
-                    case "Sexo":
-                        {
-                            var resultado = lista.Where(L =>
-                            L.gender.ToLower().Contains(textbFiltro.Text.ToLower())).ToList();
-
-                            DatosFiltros(resultado);
-                        }
-                        break;
-                }
+                case "Sexo":
+                    var porSexo = lista.Where(L =>
+                        L.gender.ToLower().Contains(textbFiltro.Text.ToLower())).ToList();
+                    DatosFiltros(porSexo);
+                    break;
             }
         }
 

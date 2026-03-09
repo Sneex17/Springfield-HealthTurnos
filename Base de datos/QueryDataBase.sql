@@ -714,3 +714,5 @@ select* from Empleado
 select * from Usuario
 select * from Asistente
 select * from Medico
+
+select * from vwListaMedicos

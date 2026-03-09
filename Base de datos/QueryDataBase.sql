@@ -708,3 +708,9 @@ begin
 select * from Turno
 end 
 
+--Lunes 9/3/26
+
+select* from Empleado
+select * from Usuario
+select * from Asistente
+select * from Medico

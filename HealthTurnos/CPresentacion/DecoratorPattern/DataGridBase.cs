@@ -7,6 +7,7 @@ namespace CPresentacion.DecoratorPattern
     {
         public void Aplicar(DataGridView viewData)
         {
+            viewData.ReadOnly = true;
             viewData.BackgroundColor = Color.FromArgb(0xF4, 0xF6, 0xFB);
             viewData.BorderStyle = BorderStyle.None;
             viewData.RowHeadersVisible = false;

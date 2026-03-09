@@ -41,10 +41,8 @@ namespace CPresentacion.Views.UserControls
             lbCountEmpleados.Text = ReglasNegocio.verEmpleados().Count.ToString();
             lbCountUsuarios.Text = ReglasNegocio.verUsuarios().Rows.Count.ToString();
             lbCountTurnos.Text = lista.Rows.Count.ToString();
-            lbCountTurnosPendientes.Text = pendientes.ToString();
-            lbCountTurnosEnAtencion.Text = enAtencion.ToString();
-            lbCountTurnosAtendidos.Text = atendidos.ToString();
-            lbCountTurnosCancelados.Text = cancelados.ToString();
+            lbCountAsistentes.Text = ReglasNegocio.verAsistentes().Rows.Count.ToString();
+            lbCountMedicos.Text = ReglasNegocio.verMedicos().Rows.Count.ToString();
             lbCountTurnosNormales.Text = normales.ToString();
             lbCountTurnosPrioritarios.Text = prioritarios.ToString();
             lbCountTurnosEmergencia.Text = emergencia.ToString();

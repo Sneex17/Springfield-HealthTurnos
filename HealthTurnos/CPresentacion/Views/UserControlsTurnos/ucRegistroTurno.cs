@@ -25,10 +25,22 @@ namespace CPresentacion.Views.UserControlsTurnos
             InitializeComponent();
             DecorarDatagrid();
             user = usuario;
-            CargarDatos();
-            
+            CargarDatos();   
         }
 
+        private void LimpiarTextbox()
+        {
+            textbIdPaciente.Text = string.Empty;
+            textbNombrePaciente.Text = string.Empty;
+            textbSexoPaciente.Text = string.Empty;
+
+            textbIdMedico.Text = string.Empty;
+            textbNombreMedico.Text = string.Empty;
+            textbEspecialidadMedico.Text = string.Empty;
+
+            rbObservaciones.Text = string.Empty;
+            textbEstado.Text = string.Empty;
+        }
         private void DecorarDatagrid()
         {
             IDataGridDecorator estilo = new BordeDecorator(
@@ -122,10 +134,23 @@ namespace CPresentacion.Views.UserControlsTurnos
                         resultado.Errors.Select(M => M.ErrorMessage));
                     throw new ControlExcepciones(errores);
                 }
-                ReglasNegocio.RegistrarTurno(turno);
 
-                MessageBox.Show($"{turno.Paciente.id}\n, {turno.Medico.IdEmpleado}\n, {turno.Asistente.IdEmpleado},\n, {turno.Fecha},\n, {turno.Prioridad.IdPrioridad},\n, {turno.Estado.estado.Estado},\n", "Error en la operación",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                var mensaje = MessageBox.Show($"Desea registrar el turno del paciente {turno.Paciente.name}?", 
+                    "Registro de turno", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if(mensaje == DialogResult.Yes)
+                {
+                    ReglasNegocio.RegistrarTurno(turno);
+
+                    MessageBox.Show($"Turno del paciente {turno.Paciente.name} registrado con exito!",
+                    "Registro de turno", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LimpiarTextbox();
+                }
+
+                
+
+                //MessageBox.Show($"{turno.Paciente.id}\n, {turno.Medico.IdEmpleado}\n, {turno.Asistente.IdEmpleado},\n, {turno.Fecha},\n, {turno.Prioridad.IdPrioridad},\n, {turno.Estado.estado.Estado},\n", "Error en la operación",
+                //    MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
             catch(ControlExcepciones error)

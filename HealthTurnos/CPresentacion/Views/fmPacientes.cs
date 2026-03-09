@@ -25,7 +25,6 @@ namespace CPresentacion
             DecorarDatagrid();
             Cargar();
             CagarComponentes();
-
         }
         private void DecorarDatagrid()
         {

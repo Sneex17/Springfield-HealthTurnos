@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.cyberGroupBox1 = new ReaLTaiizor.Controls.CyberGroupBox();
             this.lbCountUsuarios = new System.Windows.Forms.Label();
             this.lbCountEmpleados = new System.Windows.Forms.Label();
@@ -39,6 +39,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cyberGroupBox2 = new ReaLTaiizor.Controls.CyberGroupBox();
+            this.lbCountAsistentes = new System.Windows.Forms.Label();
+            this.lbCountMedicos = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.lbCountTurnosEmergencia = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.lbCountTurnosPrioritarios = new System.Windows.Forms.Label();
@@ -46,17 +51,12 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.lbCountTurnos = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.GraficaTurnos = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.cyberGroupBox3 = new ReaLTaiizor.Controls.CyberGroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.cyberGroupBox4 = new ReaLTaiizor.Controls.CyberGroupBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.lbCountAsistentes = new System.Windows.Forms.Label();
-            this.lbCountMedicos = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.panelInfo.SuspendLayout();
             this.panelContainer.SuspendLayout();
             this.cyberGroupBox1.SuspendLayout();
@@ -68,7 +68,7 @@
             // 
             // labelText
             // 
-            this.labelText.Size = new System.Drawing.Size(266, 26);
+            this.labelText.Size = new System.Drawing.Size(340, 33);
             this.labelText.Text = "Monitoreo de estadísticas";
             // 
             // panelContainer
@@ -124,7 +124,7 @@
             this.lbCountUsuarios.Location = new System.Drawing.Point(168, 64);
             this.lbCountUsuarios.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbCountUsuarios.Name = "lbCountUsuarios";
-            this.lbCountUsuarios.Size = new System.Drawing.Size(57, 21);
+            this.lbCountUsuarios.Size = new System.Drawing.Size(72, 26);
             this.lbCountUsuarios.TabIndex = 7;
             this.lbCountUsuarios.Text = "Count";
             // 
@@ -136,7 +136,7 @@
             this.lbCountEmpleados.Location = new System.Drawing.Point(26, 64);
             this.lbCountEmpleados.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbCountEmpleados.Name = "lbCountEmpleados";
-            this.lbCountEmpleados.Size = new System.Drawing.Size(57, 21);
+            this.lbCountEmpleados.Size = new System.Drawing.Size(72, 26);
             this.lbCountEmpleados.TabIndex = 6;
             this.lbCountEmpleados.Text = "Count";
             // 
@@ -148,7 +148,7 @@
             this.label3.Location = new System.Drawing.Point(168, 40);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(77, 21);
+            this.label3.Size = new System.Drawing.Size(97, 26);
             this.label3.TabIndex = 4;
             this.label3.Text = "Usuarios";
             // 
@@ -160,7 +160,7 @@
             this.label2.Location = new System.Drawing.Point(51, 6);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(194, 21);
+            this.label2.Size = new System.Drawing.Size(249, 26);
             this.label2.TabIndex = 3;
             this.label2.Text = "Detalles administrativos";
             // 
@@ -172,7 +172,7 @@
             this.label1.Location = new System.Drawing.Point(26, 40);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(96, 21);
+            this.label1.Size = new System.Drawing.Size(122, 26);
             this.label1.TabIndex = 2;
             this.label1.Text = "Empleados";
             // 
@@ -213,6 +213,66 @@
             this.cyberGroupBox2.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             this.cyberGroupBox2.Timer_RGB = 300;
             // 
+            // lbCountAsistentes
+            // 
+            this.lbCountAsistentes.AutoSize = true;
+            this.lbCountAsistentes.Font = new System.Drawing.Font("Montserrat SemiBold", 11F, System.Drawing.FontStyle.Bold);
+            this.lbCountAsistentes.ForeColor = System.Drawing.Color.Black;
+            this.lbCountAsistentes.Location = new System.Drawing.Point(168, 64);
+            this.lbCountAsistentes.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbCountAsistentes.Name = "lbCountAsistentes";
+            this.lbCountAsistentes.Size = new System.Drawing.Size(72, 26);
+            this.lbCountAsistentes.TabIndex = 11;
+            this.lbCountAsistentes.Text = "Count";
+            // 
+            // lbCountMedicos
+            // 
+            this.lbCountMedicos.AutoSize = true;
+            this.lbCountMedicos.Font = new System.Drawing.Font("Montserrat SemiBold", 11F, System.Drawing.FontStyle.Bold);
+            this.lbCountMedicos.ForeColor = System.Drawing.Color.Black;
+            this.lbCountMedicos.Location = new System.Drawing.Point(26, 64);
+            this.lbCountMedicos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbCountMedicos.Name = "lbCountMedicos";
+            this.lbCountMedicos.Size = new System.Drawing.Size(72, 26);
+            this.lbCountMedicos.TabIndex = 10;
+            this.lbCountMedicos.Text = "Count";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Montserrat SemiBold", 11F, System.Drawing.FontStyle.Bold);
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(51, 6);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(268, 26);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "Detalles de los empleados";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Montserrat SemiBold", 11F, System.Drawing.FontStyle.Bold);
+            this.label11.ForeColor = System.Drawing.Color.Black;
+            this.label11.Location = new System.Drawing.Point(168, 40);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(114, 26);
+            this.label11.TabIndex = 9;
+            this.label11.Text = "Asistentes";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Montserrat SemiBold", 11F, System.Drawing.FontStyle.Bold);
+            this.label12.ForeColor = System.Drawing.Color.Black;
+            this.label12.Location = new System.Drawing.Point(26, 40);
+            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(93, 26);
+            this.label12.TabIndex = 8;
+            this.label12.Text = "Médicos";
+            // 
             // lbCountTurnosEmergencia
             // 
             this.lbCountTurnosEmergencia.AutoSize = true;
@@ -221,7 +281,7 @@
             this.lbCountTurnosEmergencia.Location = new System.Drawing.Point(241, 61);
             this.lbCountTurnosEmergencia.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbCountTurnosEmergencia.Name = "lbCountTurnosEmergencia";
-            this.lbCountTurnosEmergencia.Size = new System.Drawing.Size(57, 21);
+            this.lbCountTurnosEmergencia.Size = new System.Drawing.Size(72, 26);
             this.lbCountTurnosEmergencia.TabIndex = 19;
             this.lbCountTurnosEmergencia.Text = "Count";
             // 
@@ -233,7 +293,7 @@
             this.label5.Location = new System.Drawing.Point(241, 37);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(102, 21);
+            this.label5.Size = new System.Drawing.Size(131, 26);
             this.label5.TabIndex = 18;
             this.label5.Text = "Emergencia";
             // 
@@ -245,7 +305,7 @@
             this.lbCountTurnosPrioritarios.Location = new System.Drawing.Point(121, 61);
             this.lbCountTurnosPrioritarios.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbCountTurnosPrioritarios.Name = "lbCountTurnosPrioritarios";
-            this.lbCountTurnosPrioritarios.Size = new System.Drawing.Size(57, 21);
+            this.lbCountTurnosPrioritarios.Size = new System.Drawing.Size(72, 26);
             this.lbCountTurnosPrioritarios.TabIndex = 17;
             this.lbCountTurnosPrioritarios.Text = "Count";
             // 
@@ -257,7 +317,7 @@
             this.lbCountTurnosNormales.Location = new System.Drawing.Point(11, 61);
             this.lbCountTurnosNormales.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbCountTurnosNormales.Name = "lbCountTurnosNormales";
-            this.lbCountTurnosNormales.Size = new System.Drawing.Size(57, 21);
+            this.lbCountTurnosNormales.Size = new System.Drawing.Size(72, 26);
             this.lbCountTurnosNormales.TabIndex = 16;
             this.lbCountTurnosNormales.Text = "Count";
             // 
@@ -269,7 +329,7 @@
             this.label13.Location = new System.Drawing.Point(121, 37);
             this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(94, 21);
+            this.label13.Size = new System.Drawing.Size(119, 26);
             this.label13.TabIndex = 15;
             this.label13.Text = "Prioritarios";
             // 
@@ -281,7 +341,7 @@
             this.label15.Location = new System.Drawing.Point(11, 37);
             this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(84, 21);
+            this.label15.Size = new System.Drawing.Size(106, 26);
             this.label15.TabIndex = 14;
             this.label15.Text = "Normales";
             // 
@@ -293,21 +353,9 @@
             this.lbCountTurnos.Location = new System.Drawing.Point(28, 64);
             this.lbCountTurnos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbCountTurnos.Name = "lbCountTurnos";
-            this.lbCountTurnos.Size = new System.Drawing.Size(57, 21);
+            this.lbCountTurnos.Size = new System.Drawing.Size(72, 26);
             this.lbCountTurnos.TabIndex = 6;
             this.lbCountTurnos.Text = "Count";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Montserrat SemiBold", 11F, System.Drawing.FontStyle.Bold);
-            this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(51, 6);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(209, 21);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "Detalles de los empleados";
             // 
             // label8
             // 
@@ -317,32 +365,32 @@
             this.label8.Location = new System.Drawing.Point(28, 40);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(47, 21);
+            this.label8.Size = new System.Drawing.Size(59, 26);
             this.label8.TabIndex = 2;
             this.label8.Text = "Total";
             // 
             // GraficaTurnos
             // 
-            chartArea2.Name = "ChartArea1";
-            this.GraficaTurnos.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.GraficaTurnos.Legends.Add(legend2);
+            chartArea1.Name = "ChartArea1";
+            this.GraficaTurnos.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.GraficaTurnos.Legends.Add(legend1);
             this.GraficaTurnos.Location = new System.Drawing.Point(599, 0);
             this.GraficaTurnos.Name = "GraficaTurnos";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series2.Font = new System.Drawing.Font("Montserrat SemiBold", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            series2.YValuesPerPoint = 2;
-            this.GraficaTurnos.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.Font = new System.Drawing.Font("Montserrat SemiBold", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            series1.YValuesPerPoint = 2;
+            this.GraficaTurnos.Series.Add(series1);
             this.GraficaTurnos.Size = new System.Drawing.Size(337, 289);
             this.GraficaTurnos.TabIndex = 9;
             this.GraficaTurnos.Text = "chart1";
-            title2.Font = new System.Drawing.Font("Montserrat SemiBold", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            title2.Name = "Title1";
-            title2.Text = "Gráfica de turnos";
-            this.GraficaTurnos.Titles.Add(title2);
+            title1.Font = new System.Drawing.Font("Montserrat SemiBold", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title1.Name = "Title1";
+            title1.Text = "Gráfica de turnos";
+            this.GraficaTurnos.Titles.Add(title1);
             // 
             // cyberGroupBox3
             // 
@@ -387,7 +435,7 @@
             this.label4.Location = new System.Drawing.Point(28, 6);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 21);
+            this.label4.Size = new System.Drawing.Size(79, 26);
             this.label4.TabIndex = 20;
             this.label4.Text = "Turnos";
             // 
@@ -438,57 +486,9 @@
             this.label9.Location = new System.Drawing.Point(39, 6);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(71, 21);
+            this.label9.Size = new System.Drawing.Size(92, 26);
             this.label9.TabIndex = 20;
             this.label9.Text = "Detalles";
-            // 
-            // lbCountAsistentes
-            // 
-            this.lbCountAsistentes.AutoSize = true;
-            this.lbCountAsistentes.Font = new System.Drawing.Font("Montserrat SemiBold", 11F, System.Drawing.FontStyle.Bold);
-            this.lbCountAsistentes.ForeColor = System.Drawing.Color.Black;
-            this.lbCountAsistentes.Location = new System.Drawing.Point(168, 64);
-            this.lbCountAsistentes.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbCountAsistentes.Name = "lbCountAsistentes";
-            this.lbCountAsistentes.Size = new System.Drawing.Size(57, 21);
-            this.lbCountAsistentes.TabIndex = 11;
-            this.lbCountAsistentes.Text = "Count";
-            // 
-            // lbCountMedicos
-            // 
-            this.lbCountMedicos.AutoSize = true;
-            this.lbCountMedicos.Font = new System.Drawing.Font("Montserrat SemiBold", 11F, System.Drawing.FontStyle.Bold);
-            this.lbCountMedicos.ForeColor = System.Drawing.Color.Black;
-            this.lbCountMedicos.Location = new System.Drawing.Point(26, 64);
-            this.lbCountMedicos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbCountMedicos.Name = "lbCountMedicos";
-            this.lbCountMedicos.Size = new System.Drawing.Size(57, 21);
-            this.lbCountMedicos.TabIndex = 10;
-            this.lbCountMedicos.Text = "Count";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Montserrat SemiBold", 11F, System.Drawing.FontStyle.Bold);
-            this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(168, 40);
-            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(89, 21);
-            this.label11.TabIndex = 9;
-            this.label11.Text = "Asistentes";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Montserrat SemiBold", 11F, System.Drawing.FontStyle.Bold);
-            this.label12.ForeColor = System.Drawing.Color.Black;
-            this.label12.Location = new System.Drawing.Point(26, 40);
-            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(74, 21);
-            this.label12.TabIndex = 8;
-            this.label12.Text = "Médicos";
             // 
             // ucMonitoreo
             // 
